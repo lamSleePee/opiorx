@@ -8,12 +8,14 @@ const Home = () => {
   return (
     <div className="app">
       <Navbar />
-      <div id="home" className="hero-section">
-        <Spline scene="/scene.splinecode" />
-        <div className="hero-content">
-          <h1 className="hero-title">BREAK THE CHAIN</h1>
-        </div>
-      </div>
+            <div id="home" className="hero-section">
+              <div className="spline-container">
+                <Spline scene="/scene.splinecode" />
+              </div>
+              <div className="hero-content">
+                <h1 className="hero-title">BREAK THE CHAIN</h1>
+              </div>
+            </div>
       <DataSection />
     </div>
   );
