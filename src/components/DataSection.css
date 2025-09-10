@@ -1,0 +1,558 @@
+/* Data Section Styles */
+.data-section {
+  width: 100% !important;
+  min-height: 100vh !important;
+  background: #000000 !important;
+  padding: 4rem 2rem !important;
+  position: relative !important;
+  z-index: 10 !important;
+  margin: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
+
+.data-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.data-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.data-header h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.02em;
+}
+
+.data-header p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.chart-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.charts-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.paragraph-container {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.chart-container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 3rem;
+  position: relative;
+  min-height: 500px;
+}
+
+.chart-container.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-container h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #8B5CF6;
+  padding-bottom: 1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Data Footer */
+.data-footer {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+
+.data-footer p {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.data-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.data-footer strong {
+  color: #8B5CF6;
+  font-weight: 700;
+}
+
+/* Card Fan Stack Styles */
+.card-fan-section {
+  margin: 4rem 0;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  text-align: left;
+}
+
+.card-fan-container {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  margin: 4rem 0;
+  padding: 0 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.5s ease;
+  z-index: 20;
+}
+
+/* Frosted glass background when card is selected - covers the entire section */
+.card-fan-section:has(.hormone-card.selected)::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  z-index: 10;
+  pointer-events: none;
+  animation: frostedGlassFadeIn 0.5s ease-out;
+}
+
+@keyframes frostedGlassFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+}
+
+.hormone-card {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+  border: 2px solid var(--card-color);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center bottom;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hormone-card:nth-child(1) {
+  transform: rotate(-30deg) translateY(0px) translateX(-30px);
+  z-index: 5;
+}
+
+.hormone-card:nth-child(2) {
+  transform: rotate(-15deg) translateY(0px) translateX(-15px);
+  z-index: 4;
+}
+
+.hormone-card:nth-child(3) {
+  transform: rotate(0deg) translateY(0px) translateX(0px);
+  z-index: 3;
+}
+
+.hormone-card:nth-child(4) {
+  transform: rotate(15deg) translateY(0px) translateX(15px);
+  z-index: 2;
+}
+
+.hormone-card:nth-child(5) {
+  transform: rotate(30deg) translateY(0px) translateX(30px);
+  z-index: 1;
+}
+
+.card-fan-container:hover .hormone-card:nth-child(1) {
+  transform: rotate(-25deg) translateX(-400px) translateY(-100px) scale(1.05);
+  z-index: 10;
+}
+
+.card-fan-container:hover .hormone-card:nth-child(2) {
+  transform: rotate(-10deg) translateX(-200px) translateY(-60px) scale(1.05);
+  z-index: 9;
+}
+
+.card-fan-container:hover .hormone-card:nth-child(3) {
+  transform: rotate(0deg) translateY(-100px) scale(1.1);
+  z-index: 8;
+}
+
+.card-fan-container:hover .hormone-card:nth-child(4) {
+  transform: rotate(10deg) translateX(200px) translateY(-60px) scale(1.05);
+  z-index: 7;
+}
+
+.card-fan-container:hover .hormone-card:nth-child(5) {
+  transform: rotate(25deg) translateX(400px) translateY(-100px) scale(1.05);
+  z-index: 6;
+}
+
+/* Selected card state */
+.hormone-card.selected {
+  transform: rotate(0deg) translateY(-120px) scale(1.3) !important;
+  z-index: 30 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8) !important;
+  border-width: 3px !important;
+  position: relative;
+}
+
+/* Stacked cards when one is selected */
+.hormone-card.stacked {
+  transform: rotate(0deg) translateY(50px) scale(0.8) !important;
+  z-index: 1 !important;
+  opacity: 0.6 !important;
+  filter: blur(1px) !important;
+}
+
+/* When a card is selected, disable hover effects on all cards */
+.card-fan-container:has(.hormone-card.selected) .hormone-card:not(.selected) {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-fan-container:has(.hormone-card.selected) .hormone-card:not(.selected):hover {
+  transform: rotate(0deg) translateY(50px) scale(0.8) !important;
+}
+
+.card-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--card-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-icon svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 10px var(--card-color));
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--card-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.card-benefits {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--card-color);
+}
+
+.card-benefits strong {
+  color: var(--card-color);
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container.full-width {
+    grid-column: 1;
+  }
+  
+  .card-fan-container {
+    height: 500px;
+    padding: 0 2rem;
+  }
+  
+  .hormone-card {
+    width: 280px;
+    height: 360px;
+    padding: 1.8rem;
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(1) {
+    transform: rotate(-25deg) translateX(-300px) translateY(-80px) scale(1.05);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(2) {
+    transform: rotate(-10deg) translateX(-150px) translateY(-50px) scale(1.05);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(3) {
+    transform: rotate(0deg) translateY(-80px) scale(1.08);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(4) {
+    transform: rotate(10deg) translateX(150px) translateY(-50px) scale(1.05);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(5) {
+    transform: rotate(25deg) translateX(300px) translateY(-80px) scale(1.05);
+  }
+  
+  /* Selected card state - tablet */
+  .hormone-card.selected {
+    transform: rotate(0deg) translateY(-100px) scale(1.25) !important;
+  }
+  
+  /* Stacked cards - tablet */
+  .hormone-card.stacked {
+    transform: rotate(0deg) translateY(40px) scale(0.75) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-section {
+    padding: 2rem 1rem;
+  }
+  
+  .data-header h2 {
+    font-size: 2rem;
+  }
+  
+  .data-header p {
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .card-fan-container {
+    height: 450px;
+    padding: 0 1rem;
+  }
+  
+  .hormone-card {
+    width: 250px;
+    height: 320px;
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.4rem;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+  }
+  
+  .card-benefits {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(1) {
+    transform: rotate(-20deg) translateX(-180px) translateY(-60px) scale(1.04);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(2) {
+    transform: rotate(-8deg) translateX(-90px) translateY(-35px) scale(1.03);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(3) {
+    transform: rotate(0deg) translateY(-60px) scale(1.06);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(4) {
+    transform: rotate(8deg) translateX(90px) translateY(-35px) scale(1.03);
+  }
+  
+  .card-fan-container:hover .hormone-card:nth-child(5) {
+    transform: rotate(20deg) translateX(180px) translateY(-60px) scale(1.04);
+  }
+  
+  /* Selected card state - mobile */
+  .hormone-card.selected {
+    transform: rotate(0deg) translateY(-80px) scale(1.2) !important;
+  }
+  
+  /* Stacked cards - mobile */
+  .hormone-card.stacked {
+    transform: rotate(0deg) translateY(30px) scale(0.7) !important;
+  }
+}
+
+/* Custom Recharts Styling */
+.recharts-cartesian-axis-tick-value {
+  fill: #94a3b8 !important;
+  font-size: 12px !important;
+}
+
+.recharts-cartesian-axis-tick-line {
+  stroke: #475569 !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #334155 !important;
+  stroke-dasharray: 3 3 !important;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+.recharts-tooltip-content {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.recharts-tooltip-label {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+}
+
+.recharts-legend-wrapper {
+  padding-top: 1rem !important;
+}
+
+.recharts-legend-item-text {
+  color: #e2e8f0 !important;
+  font-size: 14px !important;
+}
+
+/* Animation for charts */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.chart-container:nth-child(1) { animation-delay: 0.1s; }
+.chart-container:nth-child(2) { animation-delay: 0.2s; }
+.chart-container:nth-child(3) { animation-delay: 0.3s; }
+.chart-container:nth-child(4) { animation-delay: 0.4s; }
+.chart-container:nth-child(5) { animation-delay: 0.5s; }
