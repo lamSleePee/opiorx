@@ -1,0 +1,338 @@
+/* Bio Sensor Component Styles */
+.bio-sensor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Bio Sensor SVG Styling */
+.biosensor-svg {
+  width: 560px;
+  height: 400px;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 768px) {
+  .biosensor-svg {
+    width: 420px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .biosensor-svg {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+/* Individual SVG Element Styling */
+.sensor-background {
+  fill: #0a0a0f;
+  stroke: #0f0f1a;
+  stroke-width: 2;
+  transition: fill 0.3s ease;
+}
+
+.sensor-background:hover {
+  fill: #0f0f1a;
+}
+
+.main-horizontal-line {
+  fill: #ffffff;
+  stroke: #f3f4f6;
+  stroke-width: 1;
+  transition: all 0.3s ease;
+}
+
+.main-horizontal-line:hover {
+  fill: #93c5fd;
+  stroke: #60a5fa;
+}
+
+.vertical-line {
+  fill: #ffffff;
+  stroke: #f3f4f6;
+  stroke-width: 1;
+  transition: all 0.3s ease;
+}
+
+.vertical-line:hover {
+  fill: #93c5fd;
+  stroke: #60a5fa;
+}
+
+.data-line {
+  fill: #ffffff;
+  stroke: #f3f4f6;
+  stroke-width: 1;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.data-line:hover {
+  fill: #93c5fd;
+  stroke: #60a5fa;
+  opacity: 1;
+}
+
+.main-sensor {
+  fill: #ffffff;
+  stroke: #f3f4f6;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  cursor: pointer;
+}
+
+.main-sensor:hover {
+  fill: #f3f4f6;
+  stroke: #e5e7eb;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+}
+
+.main-sensor:active {
+  animation: clickPulse 1s ease-in-out forwards;
+}
+
+.main-sensor.activated {
+  fill: #e0f2fe;
+  stroke: #b3e5fc;
+  filter: drop-shadow(0 0 3px rgba(147, 197, 253, 0.3));
+}
+
+@keyframes clickPulse {
+  0% {
+    fill: #ffffff;
+    stroke: #f3f4f6;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+  30% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 20px rgba(224, 242, 254, 1));
+  }
+  70% {
+    fill: #f0f9ff;
+    stroke: #dbeafe;
+    filter: drop-shadow(0 0 15px rgba(240, 249, 255, 0.8));
+  }
+  100% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 3px rgba(147, 197, 253, 0.3));
+  }
+}
+
+/* Lines and nodes glow effect after main sensor animation */
+.biosensor-svg.lines-activated .main-horizontal-line,
+.biosensor-svg.lines-activated .vertical-line,
+.biosensor-svg.lines-activated .data-line {
+  fill: #e0f2fe;
+  stroke: #b3e5fc;
+  filter: drop-shadow(0 0 8px rgba(147, 197, 253, 0.8));
+  animation: lineGlow 2s ease-in-out forwards;
+}
+
+.biosensor-svg.lines-activated .sensor-node {
+  fill: #e0f2fe;
+  stroke: #b3e5fc;
+  filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.6));
+  animation: subtleNodeGlow 2s ease-in-out forwards;
+}
+
+/* Sustained faint blue state after animation completes */
+.biosensor-svg.lines-activated .main-horizontal-line,
+.biosensor-svg.lines-activated .vertical-line,
+.biosensor-svg.lines-activated .data-line {
+  animation-fill-mode: forwards;
+}
+
+.biosensor-svg.lines-activated .sensor-node {
+  animation-fill-mode: forwards;
+}
+
+@keyframes lineGlow {
+  0% {
+    fill: #ffffff;
+    stroke: #f3f4f6;
+    filter: drop-shadow(0 0 0px rgba(147, 197, 253, 0));
+  }
+  30% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 12px rgba(147, 197, 253, 1));
+  }
+  70% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 8px rgba(147, 197, 253, 0.8));
+  }
+  100% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 3px rgba(147, 197, 253, 0.3));
+  }
+}
+
+@keyframes subtleNodeGlow {
+  0% {
+    fill: #ffffff;
+    stroke: #f3f4f6;
+    filter: drop-shadow(0 0 0px rgba(147, 197, 253, 0));
+  }
+  30% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 10px rgba(147, 197, 253, 0.8));
+  }
+  70% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.6));
+  }
+  100% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 2px rgba(147, 197, 253, 0.2));
+  }
+}
+
+.sensor-node {
+  stroke-width: 1;
+  transition: all 0.3s ease;
+  fill: #ffffff;
+  stroke: #f3f4f6;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+.sensor-node:hover {
+  fill: #f3f4f6;
+  stroke: #e5e7eb;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Individual node colors when activated */
+.sensor-node.node-1.activated {
+  fill: #e74c3c;
+  stroke: #c0392b;
+  filter: drop-shadow(0 0 12px rgba(231, 76, 60, 0.9));
+  animation: nodeActivationGlow 2s ease-in-out forwards;
+}
+
+.sensor-node.node-2.activated {
+  fill: #9b59b6;
+  stroke: #8e44ad;
+  filter: drop-shadow(0 0 12px rgba(155, 89, 182, 0.9));
+  animation: nodeActivationGlow 2s ease-in-out forwards;
+}
+
+.sensor-node.node-3.activated {
+  fill: #27ae60;
+  stroke: #229954;
+  filter: drop-shadow(0 0 12px rgba(39, 174, 96, 0.9));
+  animation: nodeActivationGlow 2s ease-in-out forwards;
+}
+
+.sensor-node.node-4.activated {
+  fill: #e91e63;
+  stroke: #c2185b;
+  filter: drop-shadow(0 0 12px rgba(233, 30, 99, 0.9));
+  animation: nodeActivationGlow 2s ease-in-out forwards;
+}
+
+.sensor-node.node-5.activated {
+  fill: #f39c12;
+  stroke: #e67e22;
+  filter: drop-shadow(0 0 12px rgba(243, 156, 18, 0.9));
+  animation: nodeActivationGlow 2s ease-in-out forwards;
+}
+
+@keyframes nodeActivationGlow {
+  0% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 2px rgba(147, 197, 253, 0.2));
+  }
+  30% {
+    fill: #e0f2fe;
+    stroke: #b3e5fc;
+    filter: drop-shadow(0 0 8px rgba(147, 197, 253, 0.6));
+  }
+  60% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+  80% {
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+  }
+}
+
+/* Detection Card */
+.detection-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1f2937;
+  border: 2px solid #374151;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 400px;
+  animation: cardSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-content h3 {
+  color: var(--node-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-content p {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-close-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #374151;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-close-btn:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+@keyframes cardSlideIn {
+  0% {
+    top: var(--click-y);
+    left: var(--click-x);
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
