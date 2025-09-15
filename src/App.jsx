@@ -11,20 +11,20 @@ const generatePatientData = () => {
     const time = new Date(now.getTime() - (23 - i) * 60 * 60 * 1000)
     data.push({
       time: time.getHours() + ':00',
-      painLevel: Math.floor(Math.random() * 8) + 1,
-      heartRate: Math.floor(Math.random() * 40) + 60,
-      bloodPressure: Math.floor(Math.random() * 20) + 120,
-      medicationEffectiveness: Math.floor(Math.random() * 40) + 60
+      opioidLevel: Math.floor(Math.random() * 100),
+      detectionAccuracy: Math.floor(Math.random() * 10) + 90,
+      sampleVolume: Math.floor(Math.random() * 20) + 80,
+      testReliability: Math.floor(Math.random() * 15) + 85
     })
   }
   return data
 }
 
 const patientMetrics = [
-  { name: 'Pain Level', value: '3', unit: '/10', trend: '-2', status: 'good' },
-  { name: 'Heart Rate', value: '72', unit: 'BPM', trend: '+1', status: 'normal' },
-  { name: 'Blood Pressure', value: '128', unit: 'mmHg', trend: '-3', status: 'normal' },
-  { name: 'Medication Effect', value: '85', unit: '%', trend: '+5', status: 'excellent' }
+  { name: 'Opioid Detection', value: 'Positive', unit: 'Result', trend: 'Active', status: 'warning' },
+  { name: 'Detection Accuracy', value: '99.2', unit: '%', trend: '+0.3', status: 'excellent' },
+  { name: 'Test Duration', value: '45', unit: 'seconds', trend: '-5', status: 'good' },
+  { name: 'Sample Quality', value: 'High', unit: 'Grade', trend: 'Stable', status: 'excellent' }
 ]
 
 function App() {
@@ -44,17 +44,17 @@ function App() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
-          <div className="nav-logo">
-            <h1>OpioRX</h1>
-            <span className="tagline">Precision Pain Management</span>
-          </div>
-          <div className="nav-menu">
-            <a href="#dashboard">Dashboard</a>
-            <a href="#monitoring">Monitoring</a>
-            <a href="#analytics">Analytics</a>
-            <a href="#patients">Patients</a>
-            <a href="#settings">Settings</a>
-          </div>
+        <div className="nav-logo">
+          <h1>OpioRX</h1>
+          <span className="tagline">Saliva-Based Opioid Detection</span>
+        </div>
+        <div className="nav-menu">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#detection">Detection</a>
+          <a href="#analytics">Analytics</a>
+          <a href="#patients">Patients</a>
+          <a href="#settings">Settings</a>
+        </div>
         </div>
       </nav>
 
@@ -65,11 +65,11 @@ function App() {
             <BioSensor />
           </div>
           <div className="hero-content">
-            <h1>Advanced Pain Management Technology</h1>
-            <p>Monitor opioid effectiveness with precision biosensor technology. Real-time patient tracking for safer, more effective pain management.</p>
+            <h1>Advanced Opioid Detection Technology</h1>
+            <p>Detect various opioids in saliva with precision biosensor technology. Instant screening for safer pain management and addiction monitoring.</p>
             <div className="hero-buttons">
-              <button className="btn-primary">Start Monitoring</button>
-              <button className="btn-secondary">View Dashboard</button>
+              <button className="btn-primary">Start Detection</button>
+              <button className="btn-secondary">View Results</button>
             </div>
           </div>
         </div>
@@ -78,24 +78,24 @@ function App() {
       {/* Metrics Overview */}
       <section className="metrics">
         <div className="metrics-container">
-          <h2>Patient Monitoring Metrics</h2>
-          <div className="metrics-grid">
-            {patientMetrics.map((metric, index) => (
-              <div key={index} className={`metric-card ${metric.status}`}>
-                <div className="metric-header">
-                  <h3>{metric.name}</h3>
-                  <span className={`status-indicator ${metric.status}`}></span>
-                </div>
-                <div className="metric-value">
-                  <span className="value">{metric.value}</span>
-                  <span className="unit">{metric.unit}</span>
-                </div>
-                <div className={`metric-trend ${metric.trend.startsWith('+') ? 'positive' : metric.trend.startsWith('-') ? 'negative' : 'neutral'}`}>
-                  {metric.trend}
-                </div>
+        <h2>Opioid Detection Metrics</h2>
+        <div className="metrics-grid">
+          {patientMetrics.map((metric, index) => (
+            <div key={index} className={`metric-card ${metric.status}`}>
+              <div className="metric-header">
+                <h3>{metric.name}</h3>
+                <span className={`status-indicator ${metric.status}`}></span>
               </div>
-            ))}
-          </div>
+              <div className="metric-value">
+                <span className="value">{metric.value}</span>
+                <span className="unit">{metric.unit}</span>
+              </div>
+              <div className={`metric-trend ${metric.trend.startsWith('+') ? 'positive' : metric.trend.startsWith('-') ? 'negative' : 'neutral'}`}>
+                {metric.trend}
+              </div>
+            </div>
+          ))}
+        </div>
         </div>
       </section>
 
@@ -103,7 +103,7 @@ function App() {
       <section className="charts">
         <div className="charts-container">
           <div className="chart-section">
-            <h3>Pain Level & Medication Effectiveness (24h)</h3>
+            <h3>Opioid Detection Levels (24h)</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={patientData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -111,22 +111,22 @@ function App() {
                 <YAxis yAxisId="left" />
                 <YAxis yAxisId="right" orientation="right" />
                 <Tooltip />
-                <Line yAxisId="left" type="monotone" dataKey="painLevel" stroke="#dc2626" strokeWidth={2} />
-                <Line yAxisId="right" type="monotone" dataKey="medicationEffectiveness" stroke="#059669" strokeWidth={2} />
+                <Line yAxisId="left" type="monotone" dataKey="opioidLevel" stroke="#dc2626" strokeWidth={2} />
+                <Line yAxisId="right" type="monotone" dataKey="detectionAccuracy" stroke="#059669" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </div>
           
           <div className="chart-section">
-            <h3>Vital Signs Overview</h3>
+            <h3>Test Performance Overview</h3>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={patientData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="heartRate" fill="#3b82f6" />
-                <Bar dataKey="bloodPressure" fill="#f59e0b" />
+                <Bar dataKey="sampleVolume" fill="#3b82f6" />
+                <Bar dataKey="testReliability" fill="#f59e0b" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -136,29 +136,29 @@ function App() {
       {/* Features Section */}
       <section className="features">
         <div className="features-container">
-          <h2>OpioRX Advanced Features</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">📊</div>
-              <h3>Real-time Monitoring</h3>
-              <p>Continuous tracking of pain levels and medication effectiveness with instant alerts for any concerning changes.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🧠</div>
-              <h3>AI Analytics</h3>
-              <p>Advanced machine learning algorithms analyze patient patterns and predict optimal medication timing and dosages.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🛡️</div>
-              <h3>Safety Protocols</h3>
-              <p>Built-in safety measures and overdose prevention systems to ensure patient safety at all times.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📱</div>
-              <h3>Mobile Integration</h3>
-              <p>Seamless integration with mobile apps for patients and healthcare providers for 24/7 monitoring.</p>
-            </div>
+        <h2>OpioRX Detection Features</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🔍</div>
+            <h3>Multi-Opioid Detection</h3>
+            <p>Detect various opioids including morphine, oxycodone, fentanyl, and codeine in saliva samples with 99%+ accuracy.</p>
           </div>
+          <div className="feature-card">
+            <div className="feature-icon">⚡</div>
+            <h3>Instant Results</h3>
+            <p>Get detection results in under 60 seconds with real-time biosensor technology for immediate clinical decision making.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🛡️</div>
+            <h3>Non-Invasive Testing</h3>
+            <p>Simple saliva collection eliminates the need for blood draws, making testing more comfortable and accessible.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">📊</div>
+            <h3>Quantitative Analysis</h3>
+            <p>Measure precise opioid concentrations to determine usage patterns and monitor treatment compliance effectively.</p>
+          </div>
+        </div>
         </div>
       </section>
 
