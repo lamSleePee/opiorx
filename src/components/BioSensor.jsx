@@ -10,6 +10,14 @@ const BioSensor = () => {
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 })
   const [nodeColor, setNodeColor] = useState('')
   const [selectedOpioids, setSelectedOpioids] = useState([])
+  const [horizontalLineWidth, setHorizontalLineWidth] = useState(0)
+  const [verticalLineUpHeight, setVerticalLineUpHeight] = useState(0)
+  const [verticalLineDownHeight, setVerticalLineDownHeight] = useState(0)
+  const [dataLine1Width, setDataLine1Width] = useState(0)
+  const [dataLine2Width, setDataLine2Width] = useState(0)
+  const [dataLine3Width, setDataLine3Width] = useState(0)
+  const [dataLine4Width, setDataLine4Width] = useState(0)
+  const [dataLine5Width, setDataLine5Width] = useState(0)
 
   // Opioid types and their corresponding node mappings
   const opioidTypes = {
@@ -28,11 +36,87 @@ const BioSensor = () => {
     setShowCard(false)
     setCardContent('')
     setNodeColor('')
+    setHorizontalLineWidth(0)
+    setVerticalLineUpHeight(0)
+    setVerticalLineDownHeight(0)
+    setDataLine1Width(0)
+    setDataLine2Width(0)
+    setDataLine3Width(0)
+    setDataLine4Width(0)
+    setDataLine5Width(0)
     
     // Small delay to allow reset to complete, then start new sequence
     setTimeout(() => {
       setLinesActivated(true)
       setMainSensorActivated(true) // Activate main sensor
+      
+      // Animate all lines using JavaScript
+      const animateLines = () => {
+        const interval = 7 // 7ms per pixel
+        const targetWidth = 140
+        const targetHeight = 197
+        
+        // Animate horizontal line
+        const animateHorizontal = () => {
+          let currentWidth = 0
+          const animate = () => {
+            if (currentWidth < targetWidth) {
+              currentWidth += 1
+              setHorizontalLineWidth(currentWidth)
+              setTimeout(animate, interval)
+            }
+          }
+          animate()
+        }
+        
+        const halfHeight = Math.floor(targetHeight / 2) // 98.5 -> 98
+        
+        // Animate vertical lines (after horizontal completes)
+        const animateVertical = () => {
+          let currentHeight = 0
+          
+          const animate = () => {
+            if (currentHeight < halfHeight) {
+              currentHeight += 1
+              setVerticalLineUpHeight(currentHeight)
+              setVerticalLineDownHeight(currentHeight)
+              setTimeout(animate, interval)
+            }
+          }
+          setTimeout(animate, targetWidth * interval) // Start after horizontal line
+        }
+        
+        // Animate data lines (after vertical completes)
+        const animateDataLines = () => {
+          const animateDataLine = (setter, delay) => {
+            let currentWidth = 0
+            const animate = () => {
+              if (currentWidth < targetWidth) {
+                currentWidth += 1
+                setter(currentWidth)
+                setTimeout(animate, interval)
+              }
+            }
+            setTimeout(animate, delay)
+          }
+          
+          // Animate each data line with a small delay between them
+          const baseDelay = (targetWidth + halfHeight) * interval
+          animateDataLine(setDataLine1Width, baseDelay)
+          animateDataLine(setDataLine2Width, baseDelay + 50)
+          animateDataLine(setDataLine3Width, baseDelay + 100)
+          animateDataLine(setDataLine4Width, baseDelay + 150)
+          animateDataLine(setDataLine5Width, baseDelay + 200)
+        }
+        
+        // Start all animations
+        animateHorizontal()
+        animateVertical()
+        animateDataLines()
+      }
+      
+      // Start the line animations
+      animateLines()
       
       // After line animation ends (2s), activate nodes based on selection
       setTimeout(() => {
@@ -125,12 +209,24 @@ const BioSensor = () => {
       >
         <rect className="sensor-background" width="420" height="300"/>
         <rect className="main-horizontal-line" x="70" y="148" width="140" height="3"/>
-        <rect className="vertical-line" x="210" y="248" width="197" height="3" transform="rotate(-90 210 248)"/>
+        <rect className="vertical-line" x="208.5" y="51" width="3" height="197"/>
         <rect className="data-line line-1" x="211" y="51" width="140" height="3"/>
         <rect className="data-line line-2" x="210" y="100" width="140" height="3"/>
         <rect className="data-line line-3" x="210" y="148" width="140" height="3"/>
         <rect className="data-line line-4" x="210" y="197" width="140" height="3"/>
         <rect className="data-line line-5" x="211" y="245" width="140" height="3"/>
+        
+        {/* Red layer on top */}
+        <rect className="main-horizontal-line-blue" x="70" y="148" width={horizontalLineWidth} height="3"/>
+        {/* Red vertical line going up from center */}
+        <rect className="vertical-line-blue" x="208.5" y={149.5 - verticalLineUpHeight} width="3" height={verticalLineUpHeight}/>
+        {/* Red vertical line going down from center */}
+        <rect className="vertical-line-blue" x="208.5" y="149.5" width="3" height={verticalLineDownHeight}/>
+        <rect className="data-line-blue line-1-blue" x="211" y="51" width={dataLine1Width} height="3"/>
+        <rect className="data-line-blue line-2-blue" x="210" y="100" width={dataLine1Width} height="3"/>
+        <rect className="data-line-blue line-3-blue" x="210" y="148" width={dataLine1Width} height="3"/>
+        <rect className="data-line-blue line-4-blue" x="210" y="197" width={dataLine1Width} height="3"/>
+        <rect className="data-line-blue line-5-blue" x="211" y="245" width={dataLine1Width} height="3"/>
         <circle 
           className={`main-sensor ${mainSensorActivated ? 'activated' : ''}`} 
           cx="70.5" 

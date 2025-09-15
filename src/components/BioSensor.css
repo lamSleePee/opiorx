@@ -86,7 +86,7 @@
 
 /* Bio Sensor SVG Styling */
 .biosensor-svg {
-  width: min(90vw, 728px);
+  width: min(70vw, 500px);
   height: auto;
   aspect-ratio: 728/520;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
@@ -97,19 +97,19 @@
 
 @media (max-width: 1024px) {
   .biosensor-svg {
-    width: min(85vw, 600px);
+    width: min(60vw, 450px);
   }
 }
 
 @media (max-width: 768px) {
   .biosensor-svg {
-    width: min(90vw, 500px);
+    width: min(70vw, 400px);
   }
 }
 
 @media (max-width: 480px) {
   .biosensor-svg {
-    width: min(95vw, 400px);
+    width: min(80vw, 350px);
   }
 }
 
@@ -160,6 +160,36 @@
 .data-line:hover {
   fill: #93c5fd;
   stroke: #60a5fa;
+  opacity: 1;
+}
+
+/* Blue layer lines */
+.main-horizontal-line-blue {
+  fill: #3b82f6;
+  stroke: #2563eb;
+  stroke-width: 1;
+  opacity: 0.9;
+}
+
+.vertical-line-blue {
+  fill: #3b82f6;
+  stroke: #2563eb;
+  stroke-width: 1;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.data-line-blue {
+  fill: #3b82f6;
+  stroke: #2563eb;
+  stroke-width: 1;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.data-line-blue:hover {
+  fill: #60a5fa;
+  stroke: #3b82f6;
   opacity: 1;
 }
 
