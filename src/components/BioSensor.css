@@ -3,8 +3,85 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
+}
+
+/* Opioid Selection Styles */
+.opioid-selection {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.opioid-selection h3 {
+  color: #f8fafc;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.opioid-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.opioid-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #374151;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.opioid-button:hover {
+  background: #334155;
+  border-color: #4b5563;
+  transform: translateY(-1px);
+}
+
+.opioid-button.selected {
+  background: #dc2626;
+  border-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.opioid-button.selected:hover {
+  background: #ef4444;
+  border-color: #f87171;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.selection-info {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.selection-info strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .opioid-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .opioid-button {
+    width: 200px;
+  }
 }
 
 /* Bio Sensor SVG Styling */
@@ -91,14 +168,14 @@
   stroke: #f3f4f6;
   stroke-width: 2;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.2));
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 512 511.991' width='32' height='32'><path fill='%23168DE2' d='M87.108 310.289c-33.533 33.534-27.587 78.622-47.833 112.042-8.719 14.393-17.943 20.48-29.155 31.691-13.352 13.353-13.513 35.043-.354 48.201l.002.002c13.159 13.159 34.848 12.998 48.201-.355 11.352-11.351 15.735-18.792 29.776-27.952 33.317-21.731 79.775-14.854 113.956-49.035 112.269-112.263 77.537-77.541 191.918-191.918L279.034 118.38c-112.973 112.967-78.957 78.941-191.926 191.909z'/><path fill='%2374C6FF' d='M138.758 287.346l154.623-154.623 85.889 85.889-103.986 103.986c-44.742-10.921-96.383 10.32-136.526-35.252z'/><path fill='%23DD4B4C' d='M430.511 192.192l54.874-54.875c32.672-32.671 36.702-82.1 4.047-114.754l-.001-.001c-32.655-32.655-82.099-28.609-114.754 4.047l-54.875 54.874 110.709 110.709z'/><path fill='%23C94849' d='M304.16 62.7l145.134 145.133c26.726 26.727-13.679 67.128-40.404 40.403L263.757 103.103C237.032 76.378 277.433 35.974 304.16 62.7z'/></svg>") 4 28, crosshair;
 }
 
 .main-sensor:hover {
   fill: #f3f4f6;
   stroke: #e5e7eb;
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.4));
 }
 
 .main-sensor:active {
@@ -108,29 +185,38 @@
 .main-sensor.activated {
   fill: #e0f2fe;
   stroke: #b3e5fc;
-  filter: drop-shadow(0 0 3px rgba(147, 197, 253, 0.3));
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 1)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.6));
 }
 
 @keyframes clickPulse {
   0% {
     fill: #ffffff;
     stroke: #f3f4f6;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.2));
   }
   30% {
     fill: #e0f2fe;
     stroke: #b3e5fc;
-    filter: drop-shadow(0 0 20px rgba(224, 242, 254, 1));
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 1)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.6));
   }
   70% {
     fill: #f0f9ff;
     stroke: #dbeafe;
-    filter: drop-shadow(0 0 15px rgba(240, 249, 255, 0.8));
+    filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.9)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.7)) drop-shadow(0 0 54px rgba(59, 130, 246, 0.5));
   }
   100% {
     fill: #e0f2fe;
     stroke: #b3e5fc;
-    filter: drop-shadow(0 0 3px rgba(147, 197, 253, 0.3));
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 1)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.6));
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #00ffff) drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 40px #00ffff) drop-shadow(0 0 80px #00ffff);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #00ffff) drop-shadow(0 0 16px #00ffff) drop-shadow(0 0 32px #00ffff) drop-shadow(0 0 64px #00ffff) drop-shadow(0 0 128px #00ffff);
   }
 }
 
@@ -223,40 +309,45 @@
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
-/* Individual node colors when activated */
+/* Individual node colors when activated with neon glow */
 .sensor-node.node-1.activated {
-  fill: #e74c3c;
-  stroke: #c0392b;
-  filter: drop-shadow(0 0 12px rgba(231, 76, 60, 0.9));
-  animation: nodeActivationGlow 2s ease-in-out forwards;
+  fill: #ff0080;
+  stroke: #ff0080;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #ff0080) drop-shadow(0 0 10px #ff0080) drop-shadow(0 0 20px #ff0080) drop-shadow(0 0 40px #ff0080);
+  animation: nodeActivationGlow 2s ease-in-out forwards, neonGlow1 1.5s ease-in-out 2s infinite;
 }
 
 .sensor-node.node-2.activated {
-  fill: #9b59b6;
-  stroke: #8e44ad;
-  filter: drop-shadow(0 0 12px rgba(155, 89, 182, 0.9));
-  animation: nodeActivationGlow 2s ease-in-out forwards;
+  fill: #8000ff;
+  stroke: #8000ff;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #8000ff) drop-shadow(0 0 10px #8000ff) drop-shadow(0 0 20px #8000ff) drop-shadow(0 0 40px #8000ff);
+  animation: nodeActivationGlow 2s ease-in-out forwards, neonGlow2 1.5s ease-in-out 2s infinite;
 }
 
 .sensor-node.node-3.activated {
-  fill: #27ae60;
-  stroke: #229954;
-  filter: drop-shadow(0 0 12px rgba(39, 174, 96, 0.9));
-  animation: nodeActivationGlow 2s ease-in-out forwards;
+  fill: #00ff00;
+  stroke: #00ff00;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #00ff00) drop-shadow(0 0 10px #00ff00) drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #00ff00);
+  animation: nodeActivationGlow 2s ease-in-out forwards, neonGlow3 1.5s ease-in-out 2s infinite;
 }
 
 .sensor-node.node-4.activated {
-  fill: #e91e63;
-  stroke: #c2185b;
-  filter: drop-shadow(0 0 12px rgba(233, 30, 99, 0.9));
-  animation: nodeActivationGlow 2s ease-in-out forwards;
+  fill: #ff4000;
+  stroke: #ff4000;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #ff4000) drop-shadow(0 0 10px #ff4000) drop-shadow(0 0 20px #ff4000) drop-shadow(0 0 40px #ff4000);
+  animation: nodeActivationGlow 2s ease-in-out forwards, neonGlow4 1.5s ease-in-out 2s infinite;
 }
 
 .sensor-node.node-5.activated {
-  fill: #f39c12;
-  stroke: #e67e22;
-  filter: drop-shadow(0 0 12px rgba(243, 156, 18, 0.9));
-  animation: nodeActivationGlow 2s ease-in-out forwards;
+  fill: #ffff00;
+  stroke: #ffff00;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #ffff00) drop-shadow(0 0 10px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 40px #ffff00);
+  animation: nodeActivationGlow 2s ease-in-out forwards, neonGlow5 1.5s ease-in-out 2s infinite;
 }
 
 @keyframes nodeActivationGlow {
@@ -278,6 +369,98 @@
   }
   100% {
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+  }
+}
+
+/* Neon glow animations for each node */
+@keyframes neonGlow1 {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #ff0080) drop-shadow(0 0 10px #ff0080) drop-shadow(0 0 20px #ff0080) drop-shadow(0 0 40px #ff0080);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #ff0080) drop-shadow(0 0 16px #ff0080) drop-shadow(0 0 32px #ff0080) drop-shadow(0 0 64px #ff0080);
+  }
+}
+
+@keyframes neonGlow2 {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #8000ff) drop-shadow(0 0 10px #8000ff) drop-shadow(0 0 20px #8000ff) drop-shadow(0 0 40px #8000ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #8000ff) drop-shadow(0 0 16px #8000ff) drop-shadow(0 0 32px #8000ff) drop-shadow(0 0 64px #8000ff);
+  }
+}
+
+@keyframes neonGlow3 {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #00ff00) drop-shadow(0 0 10px #00ff00) drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #00ff00);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #00ff00) drop-shadow(0 0 16px #00ff00) drop-shadow(0 0 32px #00ff00) drop-shadow(0 0 64px #00ff00);
+  }
+}
+
+@keyframes neonGlow4 {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #ff4000) drop-shadow(0 0 10px #ff4000) drop-shadow(0 0 20px #ff4000) drop-shadow(0 0 40px #ff4000);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #ff4000) drop-shadow(0 0 16px #ff4000) drop-shadow(0 0 32px #ff4000) drop-shadow(0 0 64px #ff4000);
+  }
+}
+
+@keyframes neonGlow5 {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #ffff00) drop-shadow(0 0 10px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 40px #ffff00);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #ffff00) drop-shadow(0 0 16px #ffff00) drop-shadow(0 0 32px #ffff00) drop-shadow(0 0 64px #ffff00);
+  }
+}
+
+/* Sustained glow animations for each node color */
+@keyframes sustainedGlow1 {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(231, 76, 60, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(231, 76, 60, 1)) drop-shadow(0 0 30px rgba(231, 76, 60, 0.6));
+  }
+}
+
+@keyframes sustainedGlow2 {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(155, 89, 182, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(155, 89, 182, 1)) drop-shadow(0 0 30px rgba(155, 89, 182, 0.6));
+  }
+}
+
+@keyframes sustainedGlow3 {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(39, 174, 96, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(39, 174, 96, 1)) drop-shadow(0 0 30px rgba(39, 174, 96, 0.6));
+  }
+}
+
+@keyframes sustainedGlow4 {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(233, 30, 99, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(233, 30, 99, 1)) drop-shadow(0 0 30px rgba(233, 30, 99, 0.6));
+  }
+}
+
+@keyframes sustainedGlow5 {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(243, 156, 18, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(243, 156, 18, 1)) drop-shadow(0 0 30px rgba(243, 156, 18, 0.6));
   }
 }
 
