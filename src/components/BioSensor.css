@@ -14,7 +14,7 @@
 }
 
 .opioid-selection h3 {
-  color: #f8fafc;
+  color: #0f172a;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -31,10 +31,10 @@
 
 .opioid-button {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #374151;
+  border: 2px solid #cbd5e1;
   border-radius: 8px;
-  background: #1e293b;
-  color: #e5e7eb;
+  background: #ffffff;
+  color: #475569;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -43,33 +43,33 @@
 }
 
 .opioid-button:hover {
-  background: #334155;
-  border-color: #4b5563;
+  background: #f1f5f9;
+  border-color: #94a3b8;
   transform: translateY(-1px);
 }
 
 .opioid-button.selected {
-  background: #dc2626;
-  border-color: #ef4444;
+  background: #0891b2;
+  border-color: #0e7490;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
 }
 
 .opioid-button.selected:hover {
-  background: #ef4444;
-  border-color: #f87171;
-  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+  background: #0e7490;
+  border-color: #155e75;
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.4);
 }
 
 .selection-info {
-  color: #9ca3af;
+  color: #64748b;
   font-size: 0.875rem;
   margin: 0;
   font-style: italic;
 }
 
 .selection-info strong {
-  color: #dc2626;
+  color: #0891b2;
   font-weight: 700;
 }
 
@@ -115,51 +115,51 @@
 
 /* Individual SVG Element Styling */
 .sensor-background {
-  fill: #0a0a0f;
-  stroke: #0f0f1a;
+  fill: #f8fafc;
+  stroke: #e2e8f0;
   stroke-width: 2;
   transition: fill 0.3s ease;
 }
 
 .sensor-background:hover {
-  fill: #0f0f1a;
+  fill: #f1f5f9;
 }
 
 .main-horizontal-line {
-  fill: #ffffff;
-  stroke: #f3f4f6;
+  fill: #0891b2;
+  stroke: #0e7490;
   stroke-width: 1;
   transition: all 0.3s ease;
 }
 
 .main-horizontal-line:hover {
-  fill: #93c5fd;
-  stroke: #60a5fa;
+  fill: #0e7490;
+  stroke: #155e75;
 }
 
 .vertical-line {
-  fill: #ffffff;
-  stroke: #f3f4f6;
+  fill: #0891b2;
+  stroke: #0e7490;
   stroke-width: 1;
   transition: all 0.3s ease;
 }
 
 .vertical-line:hover {
-  fill: #93c5fd;
-  stroke: #60a5fa;
+  fill: #0e7490;
+  stroke: #155e75;
 }
 
 .data-line {
-  fill: #ffffff;
-  stroke: #f3f4f6;
+  fill: #0891b2;
+  stroke: #0e7490;
   stroke-width: 1;
   transition: all 0.3s ease;
   opacity: 0.9;
 }
 
 .data-line:hover {
-  fill: #93c5fd;
-  stroke: #60a5fa;
+  fill: #0e7490;
+  stroke: #155e75;
   opacity: 1;
 }
 
@@ -194,18 +194,18 @@
 }
 
 .main-sensor {
-  fill: #ffffff;
-  stroke: #f3f4f6;
+  fill: #0891b2;
+  stroke: #0e7490;
   stroke-width: 2;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.2));
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 512 511.991' width='32' height='32'><path fill='%23168DE2' d='M87.108 310.289c-33.533 33.534-27.587 78.622-47.833 112.042-8.719 14.393-17.943 20.48-29.155 31.691-13.352 13.353-13.513 35.043-.354 48.201l.002.002c13.159 13.159 34.848 12.998 48.201-.355 11.352-11.351 15.735-18.792 29.776-27.952 33.317-21.731 79.775-14.854 113.956-49.035 112.269-112.263 77.537-77.541 191.918-191.918L279.034 118.38c-112.973 112.967-78.957 78.941-191.926 191.909z'/><path fill='%2374C6FF' d='M138.758 287.346l154.623-154.623 85.889 85.889-103.986 103.986c-44.742-10.921-96.383 10.32-136.526-35.252z'/><path fill='%23DD4B4C' d='M430.511 192.192l54.874-54.875c32.672-32.671 36.702-82.1 4.047-114.754l-.001-.001c-32.655-32.655-82.099-28.609-114.754 4.047l-54.875 54.874 110.709 110.709z'/><path fill='%23C94849' d='M304.16 62.7l145.134 145.133c26.726 26.727-13.679 67.128-40.404 40.403L263.757 103.103C237.032 76.378 277.433 35.974 304.16 62.7z'/></svg>") 4 28, crosshair;
+  filter: drop-shadow(0 0 8px rgba(8, 145, 178, 0.6)) drop-shadow(0 0 16px rgba(8, 145, 178, 0.4)) drop-shadow(0 0 24px rgba(8, 145, 178, 0.2));
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 512 511.991' width='32' height='32'><path fill='%230891B2' d='M87.108 310.289c-33.533 33.534-27.587 78.622-47.833 112.042-8.719 14.393-17.943 20.48-29.155 31.691-13.352 13.353-13.513 35.043-.354 48.201l.002.002c13.159 13.159 34.848 12.998 48.201-.355 11.352-11.351 15.735-18.792 29.776-27.952 33.317-21.731 79.775-14.854 113.956-49.035 112.269-112.263 77.537-77.541 191.918-191.918L279.034 118.38c-112.973 112.967-78.957 78.941-191.926 191.909z'/><path fill='%230E7490' d='M138.758 287.346l154.623-154.623 85.889 85.889-103.986 103.986c-44.742-10.921-96.383 10.32-136.526-35.252z'/><path fill='%230891B2' d='M430.511 192.192l54.874-54.875c32.672-32.671 36.702-82.1 4.047-114.754l-.001-.001c-32.655-32.655-82.099-28.609-114.754 4.047l-54.875 54.874 110.709 110.709z'/><path fill='%230E7490' d='M304.16 62.7l145.134 145.133c26.726 26.727-13.679 67.128-40.404 40.403L263.757 103.103C237.032 76.378 277.433 35.974 304.16 62.7z'/></svg>") 4 28, crosshair;
 }
 
 .main-sensor:hover {
-  fill: #f3f4f6;
-  stroke: #e5e7eb;
-  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.4));
+  fill: #0e7490;
+  stroke: #155e75;
+  filter: drop-shadow(0 0 12px rgba(8, 145, 178, 0.8)) drop-shadow(0 0 24px rgba(8, 145, 178, 0.6)) drop-shadow(0 0 36px rgba(8, 145, 178, 0.4));
 }
 
 .main-sensor:active {
@@ -215,7 +215,7 @@
 .main-sensor.activated {
   fill: #e0f2fe;
   stroke: #b3e5fc;
-  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 1)) drop-shadow(0 0 24px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 36px rgba(59, 130, 246, 0.6));
+  filter: drop-shadow(0 0 12px rgba(8, 145, 178, 1)) drop-shadow(0 0 24px rgba(8, 145, 178, 0.8)) drop-shadow(0 0 36px rgba(8, 145, 178, 0.6));
 }
 
 @keyframes clickPulse {
@@ -327,16 +327,16 @@
 .sensor-node {
   stroke-width: 1;
   transition: all 0.3s ease;
-  fill: #ffffff;
-  stroke: #f3f4f6;
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 512 511.991' width='32' height='32'><path fill='%23168DE2' d='M87.108 310.289c-33.533 33.534-27.587 78.622-47.833 112.042-8.719 14.393-17.943 20.48-29.155 31.691-13.352 13.353-13.513 35.043-.354 48.201l.002.002c13.159 13.159 34.848 12.998 48.201-.355 11.352-11.351 15.735-18.792 29.776-27.952 33.317-21.731 79.775-14.854 113.956-49.035 112.269-112.263 77.537-77.541 191.918-191.918L279.034 118.38c-112.973 112.967-78.957 78.941-191.926 191.909z'/><path fill='%2374C6FF' d='M138.758 287.346l154.623-154.623 85.889 85.889-103.986 103.986c-44.742-10.921-96.383 10.32-136.526-35.252z'/><path fill='%23DD4B4C' d='M430.511 192.192l54.874-54.875c32.672-32.671 36.702-82.1 4.047-114.754l-.001-.001c-32.655-32.655-82.099-28.609-114.754 4.047l-54.875 54.874 110.709 110.709z'/><path fill='%23C94849' d='M304.16 62.7l145.134 145.133c26.726 26.727-13.679 67.128-40.404 40.403L263.757 103.103C237.032 76.378 277.433 35.974 304.16 62.7z'/></svg>") 4 28, crosshair;
+  fill: #0891b2;
+  stroke: #0e7490;
+  filter: drop-shadow(0 0 4px rgba(8, 145, 178, 0.3));
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 512 511.991' width='32' height='32'><path fill='%230891B2' d='M87.108 310.289c-33.533 33.534-27.587 78.622-47.833 112.042-8.719 14.393-17.943 20.48-29.155 31.691-13.352 13.353-13.513 35.043-.354 48.201l.002.002c13.159 13.159 34.848 12.998 48.201-.355 11.352-11.351 15.735-18.792 29.776-27.952 33.317-21.731 79.775-14.854 113.956-49.035 112.269-112.263 77.537-77.541 191.918-191.918L279.034 118.38c-112.973 112.967-78.957 78.941-191.926 191.909z'/><path fill='%230E7490' d='M138.758 287.346l154.623-154.623 85.889 85.889-103.986 103.986c-44.742-10.921-96.383 10.32-136.526-35.252z'/><path fill='%230891B2' d='M430.511 192.192l54.874-54.875c32.672-32.671 36.702-82.1 4.047-114.754l-.001-.001c-32.655-32.655-82.099-28.609-114.754 4.047l-54.875 54.874 110.709 110.709z'/><path fill='%230E7490' d='M304.16 62.7l145.134 145.133c26.726 26.727-13.679 67.128-40.404 40.403L263.757 103.103C237.032 76.378 277.433 35.974 304.16 62.7z'/></svg>") 4 28, crosshair;
 }
 
 .sensor-node:hover {
-  fill: #f3f4f6;
-  stroke: #e5e7eb;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  fill: #0e7490;
+  stroke: #155e75;
+  filter: drop-shadow(0 0 8px rgba(8, 145, 178, 0.6));
 }
 
 /* Individual node colors when activated with neon glow */
@@ -500,11 +500,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #1f2937;
-  border: 2px solid #374151;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   min-width: 300px;
   max-width: 400px;
@@ -520,7 +520,7 @@
 }
 
 .card-content p {
-  color: #e5e7eb;
+  color: #475569;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -530,9 +530,9 @@
 .card-close-btn {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: #374151;
-  color: #e5e7eb;
-  border: 1px solid #4b5563;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
@@ -541,8 +541,8 @@
 }
 
 .card-close-btn:hover {
-  background: #4b5563;
-  border-color: #6b7280;
+  background: #e2e8f0;
+  border-color: #94a3b8;
 }
 
 @keyframes cardSlideIn {
