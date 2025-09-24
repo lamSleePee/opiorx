@@ -2661,7 +2661,7 @@ body {
 
 .method-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
@@ -2687,19 +2687,14 @@ body {
 
 .info-card li {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
   margin-bottom: 0.75rem;
   color: #64748b;
   line-height: 1.5;
 }
 
-.info-card li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #10b981;
-  font-weight: bold;
-}
+.bullet-with-icon { padding-left: 1.75rem; }
+.li-icon { position: absolute; left: 0; top: 0.15rem; color: #0ea5e9; }
 
 .limitations-section {
   background: white;
@@ -2788,6 +2783,12 @@ body {
 }
 
 /* Responsive Design for Testing Methods */
+@media (max-width: 1024px) {
+  .method-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .testing-methods-container {
     padding: 0 1rem;

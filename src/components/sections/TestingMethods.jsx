@@ -80,6 +80,111 @@ const TestTubeIcon = () => (
   </svg>
 )
 
+// Simple UI icons
+const CheckIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 6L9 17l-5-5" />
+  </svg>
+)
+
+const BriefcaseIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2"/>
+    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+  </svg>
+)
+
+// Domain-specific icons
+const BullseyeIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="5"/>
+    <circle cx="12" cy="12" r="1"/>
+  </svg>
+)
+
+const RadarIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 12l6-3"/>
+    <path d="M12 3v9H3"/>
+  </svg>
+)
+
+const StethoscopeIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 3v5a5 5 0 0 0 10 0V3"/>
+    <circle cx="18" cy="17" r="3"/>
+    <path d="M13 14v2a4 4 0 0 0 4 4"/>
+  </svg>
+)
+
+const GavelIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 4l6 6"/>
+    <path d="M1 21l12-12"/>
+    <rect x="12" y="2" width="6" height="4" transform="rotate(45 12 2)"/>
+    <path d="M7 19h8"/>
+  </svg>
+)
+
+const ShieldIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/>
+  </svg>
+)
+
+const GaugeIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 13a8 8 0 1 0-16 0"/>
+    <path d="M12 13l4-4"/>
+  </svg>
+)
+
+const QuestionIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M9.5 9a3 3 0 1 1 4.5 2.6c-.7.4-1 1-1 1.9"/>
+    <line x1="12" y1="17" x2="12" y2="17"/>
+  </svg>
+)
+
+const IntersectIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="9" cy="12" r="5"/>
+    <circle cx="15" cy="12" r="5"/>
+  </svg>
+)
+
+// Icon selector by keyword
+const getItemIcon = (type, label) => {
+  const t = (label || '').toLowerCase()
+  if (type === 'advantages') {
+    if (t.includes('sensitivity') || t.includes('rapid') || t.includes('fast')) return <RadarIcon />
+    if (t.includes('specificity') || t.includes('resolution')) return <BullseyeIcon />
+    return <CheckIcon />
+  }
+  if (type === 'applications') {
+    if (t.includes('clinical') || t.includes('diagnostics') || t.includes('poc') || t.includes('screening')) return <StethoscopeIcon />
+    if (t.includes('forensic') || t.includes('legal')) return <GavelIcon />
+    if (t.includes('workplace') || t.includes('compliance')) return <ShieldIcon />
+    if (t.includes('throughput') || t.includes('high‑throughput')) return <GaugeIcon />
+    return <BriefcaseIcon />
+  }
+  if (type === 'limitations') {
+    if (t.includes('cost')) return <DollarIcon />
+    if (t.includes('hardware')) return <DollarIcon />
+    if (t.includes('matrix')) return <TestTubeIcon />
+    if (t.includes('cross')) return <IntersectIcon />
+    if (t.includes('novel')) return <QuestionIcon />
+    if (t.includes('pressure') || t.includes('fast')) return <GaugeIcon />
+    if (t.includes('derivat')) return <TestTubeIcon />
+    if (t.includes('non‑volatile') || t.includes('non-volatile')) return <AlertTriangleIcon />
+    return <AlertTriangleIcon />
+  }
+  return <CheckIcon />
+}
+
 const TestingMethods = () => {
   const [activeTab, setActiveTab] = useState(0)
 
@@ -90,17 +195,11 @@ const TestingMethods = () => {
       fullName: 'Liquid Chromatography-Tandem Mass Spectrometry',
       icon: <LCIcon />,
       description: 'LC-MS/MS is considered the gold standard for opioid analysis, providing both screening and quantitative confirmation capabilities. This method offers exceptional sensitivity and specificity for detecting opioid compounds and their metabolites.',
-      advantages: [
-        'High sensitivity and specificity',
-        'Quantitative confirmation capabilities',
-        'Suitable for complex biological matrices',
-        'Can detect multiple compounds simultaneously'
-      ],
-      applications: [
-        'Clinical toxicology screening',
-        'Forensic analysis',
-        'Pharmaceutical quality control',
-        'Research and development'
+      advantages: [ 'High sensitivity', 'High specificity' ],
+      applications: [ 'Clinical', 'Forensic' ],
+      limitations: [
+        'Costly hardware',
+        'Matrix effects'
       ]
     },
     {
@@ -109,17 +208,11 @@ const TestingMethods = () => {
       fullName: 'Gas Chromatography-Mass Spectrometry',
       icon: <GCIcon />,
       description: 'GC-MS serves as a highly specific confirmatory method, particularly mandated in forensic and workplace settings. This technique provides excellent separation and identification of volatile and semi-volatile compounds.',
-      advantages: [
-        'High specificity and accuracy',
-        'Mandated in forensic settings',
-        'Excellent compound separation',
-        'Established library databases'
-      ],
-      applications: [
-        'Forensic toxicology',
-        'Workplace drug testing',
-        'Regulatory compliance',
-        'Legal proceedings'
+      advantages: [ 'High specificity', 'Accurate' ],
+      applications: [ 'Forensic', 'Workplace' ],
+      limitations: [
+        'Non‑volatile limits',
+        'Derivatization'
       ]
     },
     {
@@ -128,17 +221,11 @@ const TestingMethods = () => {
       fullName: 'Ultra-High Performance Liquid Chromatography',
       icon: <UHPLCIcon />,
       description: 'UHPLC represents a significant advancement in analytical chemistry for opioid detection. This technology combines enhanced separation efficiency, improved sensitivity, and faster analysis times compared to conventional HPLC methods.',
-      advantages: [
-        'Enhanced separation efficiency',
-        'Improved sensitivity',
-        'Faster analysis times',
-        'Higher resolution'
-      ],
-      applications: [
-        'High-throughput screening',
-        'Research laboratories',
-        'Clinical diagnostics',
-        'Pharmaceutical analysis'
+      advantages: [ 'Fast', 'High resolution' ],
+      applications: [ 'High‑throughput', 'Diagnostics' ],
+      limitations: [
+        'High pressure',
+        'Costly'
       ]
     },
     {
@@ -147,89 +234,11 @@ const TestingMethods = () => {
       fullName: 'Immunoassay Screening',
       icon: <ImmunoassayIcon />,
       description: 'Immunoassays are used for initial screening with specific cutoff levels (e.g., 3,000 ng/mL for clinical testing), though they require confirmation by more specific methods like GC-MS. These tests provide rapid preliminary results.',
-      advantages: [
-        'Rapid screening results',
-        'Cost-effective initial testing',
-        'High throughput capability',
-        'Easy to automate'
-      ],
-      applications: [
-        'Initial screening',
-        'Point-of-care testing',
-        'High-volume testing',
-        'Emergency screening'
-      ]
-    }
-  ]
-
-  const limitations = [
-    {
-      category: 'Detection Window Constraints',
-      icon: <ClockIcon />,
-      items: [
-        'Most opioids have relatively short detection windows in blood (6-24 hours) and urine (1-3 days for most opioids, longer for methadone)',
-        'Synthetic fentanyl analogs may have even shorter detection periods',
-        'Hair testing offers longer windows but requires 1-2 weeks for incorporation after use'
-      ]
-    },
-    {
-      category: 'Sensitivity and Specificity Issues',
-      icon: <AlertTriangleIcon />,
-      items: [
-        'Some opioids metabolize to the same compounds (codeine and heroin both produce morphine)',
-        'Cross-reactivity between structurally similar opioids can cause false positives',
-        'Novel synthetic opioids may not be detected by standard screening panels',
-        'Low-dose therapeutic use may fall below detection thresholds'
-      ]
-    },
-    {
-      category: 'Sample Matrix Limitations',
-      icon: <TestTubeIcon />,
-      items: [
-        'Urine samples can be diluted, substituted, or adulterated',
-        'Blood samples require rapid processing and proper storage',
-        'Postmortem samples may show redistribution artifacts affecting interpretation',
-        'Hair samples can be affected by cosmetic treatments or environmental contamination'
-      ]
-    },
-    {
-      category: 'Instrumentation Constraints',
-      icon: <LCIcon />,
-      items: [
-        'GC-MS and LC-MS/MS require expensive equipment and skilled operators',
-        'Method validation needed for each new synthetic opioid analog',
-        'Quantitative accuracy can be affected by matrix effects',
-        'Equipment downtime impacts turnaround times'
-      ]
-    },
-    {
-      category: 'Operational Limitations',
-      icon: <ClockIcon />,
-      items: [
-        'Confirmatory testing typically takes 24-72 hours or longer',
-        'Batch processing may delay individual results',
-        'Complex cases requiring additional testing extend timelines',
-        'Emergency situations may not allow adequate testing time'
-      ]
-    },
-    {
-      category: 'Cost Considerations',
-      icon: <DollarIcon />,
-      items: [
-        'Comprehensive panels testing multiple opioids are expensive',
-        'Confirmatory testing adds significant costs',
-        'Specialized testing for novel synthetics requires method development',
-        'Quality control and proficiency testing add ongoing expenses'
-      ]
-    },
-    {
-      category: 'Interpretive Challenges',
-      icon: <AlertTriangleIcon />,
-      items: [
-        'Individual metabolism differences affect detection and concentration',
-        'Tolerance development can alter expected concentration ranges',
-        'Drug interactions may affect metabolism and detection',
-        'Route of administration impacts detection patterns'
+      advantages: [ 'Rapid', 'Low cost' ],
+      applications: [ 'Screening', 'POC' ],
+      limitations: [
+        'Cross‑reactivity',
+        'Misses novelties'
       ]
     }
   ]
@@ -277,7 +286,7 @@ const TestingMethods = () => {
                     <h4>Key Advantages</h4>
                     <ul>
                       {testingMethods[activeTab].advantages.map((advantage, index) => (
-                        <li key={index}>{advantage}</li>
+                        <li key={index} className="bullet-with-icon"><span className="li-icon">{getItemIcon('advantages', advantage)}</span>{advantage}</li>
                       ))}
                     </ul>
                   </div>
@@ -286,35 +295,21 @@ const TestingMethods = () => {
                     <h4>Primary Applications</h4>
                     <ul>
                       {testingMethods[activeTab].applications.map((application, index) => (
-                        <li key={index}>{application}</li>
+                        <li key={index} className="bullet-with-icon"><span className="li-icon">{getItemIcon('applications', application)}</span>{application}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="info-card">
+                    <h4>Limitations</h4>
+                    <ul>
+                      {testingMethods[activeTab].limitations.map((lim, index) => (
+                        <li key={index} className="bullet-with-icon"><span className="li-icon">{getItemIcon('limitations', lim)}</span>{lim}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="limitations-section">
-            <div className="limitations-header">
-              <h3>Laboratory Testing Limitations</h3>
-              <p>Key constraints and challenges in current opioid detection methodologies</p>
-            </div>
-
-            <div className="limitations-grid">
-              {limitations.map((limitation, index) => (
-                <div key={index} className="limitation-card">
-                  <div className="limitation-header">
-                    <div className="limitation-icon">{limitation.icon}</div>
-                    <h4>{limitation.category}</h4>
-                  </div>
-                  <ul className="limitation-items">
-                    {limitation.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -324,3 +319,5 @@ const TestingMethods = () => {
 }
 
 export default TestingMethods
+
+

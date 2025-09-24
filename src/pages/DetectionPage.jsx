@@ -18,3 +18,4 @@ const DetectionPage = () => {
 export default DetectionPage
 
 
+

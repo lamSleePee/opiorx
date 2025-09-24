@@ -102,6 +102,32 @@ export const extendedCountryData = {
       'Safe injection sites operating in major cities'
     ]
   },
+  'United States': {
+    name: 'United States',
+    flag: 'us',
+    population: '333.0M',
+    drugDeaths: 107622,
+    drugDeathsPerMillion: 325,
+    primaryDrugs: ['Fentanyl', 'Heroin', 'Methamphetamine', 'Cocaine'],
+    crisisLevel: 'Severe',
+    trends: {
+      opioidUsers: 10000000,
+      fentanylDeaths: 70000,
+      methUsers: 2400000,
+      cocaineUsers: 5000000
+    },
+    sources: [
+      'CDC – Provisional Drug Overdose Deaths (2022)',
+      'NIDA – National Institute on Drug Abuse (2023)',
+      'UNODC World Drug Report (2023)'
+    ],
+    keyFacts: [
+      'Synthetic opioids (fentanyl) drive majority of deaths',
+      'Overdose deaths surpassed 100,000 in 2021–2022',
+      'Methamphetamine and cocaine co‑involvement rising',
+      'Harm‑reduction and naloxone access expanding'
+    ]
+  },
   'Mexico': {
     name: 'Mexico',
     flag: 'mx',
@@ -129,7 +155,61 @@ export const extendedCountryData = {
     ]
   },
 
+  // Asia
+  'India': {
+    name: 'India',
+    flag: 'in',
+    population: '1.41B',
+    drugDeaths: 45000,
+    drugDeathsPerMillion: 32,
+    primaryDrugs: ['Opioids', 'Cannabis', 'Tramadol', 'Heroin'],
+    crisisLevel: 'Moderate',
+    trends: {
+      opioidUsers: 23000000,
+      cannabisUsers: 31000000,
+      tramadolUsers: 3000000,
+      heroinUsers: 1800000
+    },
+    sources: [
+      'AIIMS – Magnitude of Substance Use in India (2019)',
+      'NCRB – Accidental Deaths & Suicides in India (2022)',
+      'UNODC World Drug Report (2023)'
+    ],
+    keyFacts: [
+      'Opioid use prevalence ~2.1% among adults',
+      'Tramadol and heroin remain key concerns',
+      'Large treatment gap; coverage improving via NDDTC network',
+      'State‑level hotspots in north and west India'
+    ]
+  },
+
   // Europe
+  'United Kingdom': {
+    name: 'United Kingdom',
+    flag: 'gb',
+    population: '67.3M',
+    drugDeaths: 4500,
+    drugDeathsPerMillion: 67,
+    primaryDrugs: ['Opioids', 'Cocaine', 'Benzodiazepines', 'Cannabis'],
+    crisisLevel: 'Moderate',
+    trends: {
+      opioidUsers: 1000000,
+      cocaineUsers: 3000000,
+      benzoUsers: 700000,
+      cannabisUsers: 7000000
+    },
+    sources: [
+      'ONS – Drug-related deaths in England & Wales (2022)',
+      'NHS – Adult substance misuse treatment statistics (2023)',
+      'EMCDDA – European Drug Report (2023)'
+    ],
+    keyFacts: [
+      'Record opioid‑related deaths in recent years',
+      'Cocaine use among young adults remains high',
+      'Naloxone and OST widely deployed',
+      'Regional variation across UK nations'
+    ]
+  },
   'France': {
     name: 'France',
     flag: 'fr',

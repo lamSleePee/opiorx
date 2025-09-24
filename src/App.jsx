@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import DeathCounter from './components/sections/DeathCounter'
+import ScrollText from './components/sections/ScrollText'
 import WorldMap from './components/charts/WorldMap'
 import GlobalStats from './components/sections/GlobalStats'
 import DrugAnalytics from './components/charts/DrugAnalytics'
@@ -69,6 +70,8 @@ function App() {
       default:
         return (
           <div className="home-page">
+            <ScrollText />
+            <Header onNavigate={handleNavigation} />
             <DeathCounter />
             <WorldMap />
             <TestingMethods />
@@ -90,7 +93,6 @@ function App() {
 
   return (
     <div className="app">
-      <Header onNavigate={handleNavigation} />
       <main className="main-content">
         {renderPage()}
       </main>

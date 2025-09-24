@@ -41,3 +41,5 @@ const PatientCharts = ({ patientData }) => {
 export default PatientCharts
 
 
+
+

@@ -480,14 +480,16 @@ const WorldMap = () => {
   return (
     <section className="world-map-section">
       <div className="world-map-container">
-        <div className="world-map-header">
-          <h2>Global Drug Abuse Crisis Visualization</h2>
-          <p>Interactive 3D world map showing drug abuse prevalence by country</p>
-        </div>
-        
-        <div className="highcharts-world-map">
-          <div id="container" ref={chartRef}></div>
-        </div>
+        {/**
+         * 3D Globe temporarily disabled as requested
+         * <div className="world-map-header">
+         *   <h2>Global Drug Abuse Crisis Visualization</h2>
+         *   <p>Interactive 3D world map showing drug abuse prevalence by country</p>
+         * </div>
+         * <div className="highcharts-world-map">
+         *   <div id="container" ref={chartRef}></div>
+         * </div>
+         */}
         
         <div className="life-expectancy-section">
           <div className="world-map-header">

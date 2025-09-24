@@ -24,3 +24,4 @@ const TechnologyHero = () => {
 export default TechnologyHero
 
 
+
