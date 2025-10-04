@@ -53,7 +53,7 @@ const ScrollText = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        color: "#0891b2",
+        color: "#000000",
         fontFamily: "'Helvetica Neue', sans-serif",
       }}
     >
@@ -67,7 +67,7 @@ const ScrollText = () => {
           transformOrigin: "center center",
         }}
       >
-        Detect
+        <span className="pd-gradient-text">Detect</span>
       </h1>
       <h1
         ref={addToRefs}
@@ -79,7 +79,7 @@ const ScrollText = () => {
           transformOrigin: "center center",
         }}
       >
-        opioid risk
+        <span className="pd-gradient-text">opioids</span> risk
       </h1>
       <h1
         ref={addToRefs}
@@ -91,7 +91,7 @@ const ScrollText = () => {
           transformOrigin: "center center",
         }}
       >
-        with real‑time
+        with <span className="pd-gradient-text">real‑time</span>
       </h1>
       <h1
         ref={addToRefs}
@@ -116,7 +116,7 @@ const ScrollText = () => {
           transformOrigin: "center center",
         }}
       >
-        insights
+        <span className="pd-gradient-text">insights</span>
       </h1>
       
     </div>

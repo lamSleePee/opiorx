@@ -1,6 +1,5 @@
 import React from 'react'
 import GlobalStats from '../components/sections/GlobalStats'
-import DrugAnalytics from '../components/charts/DrugAnalytics'
 
 const AnalyticsPage = () => {
   return (
@@ -10,7 +9,6 @@ const AnalyticsPage = () => {
         <p>Comprehensive drug abuse statistics and trends analysis</p>
       </div>
       <GlobalStats />
-      <DrugAnalytics />
     </div>
   )
 }

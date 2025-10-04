@@ -15,6 +15,7 @@ const Header = ({ onNavigate }) => {
         </div>
         <div className="nav-menu">
           <a href="#" onClick={(e) => handleClick(e, 'home')}>Home</a>
+          <a href="#" onClick={(e) => handleClick(e, 'project')}>Project</a>
           <a href="#" onClick={(e) => handleClick(e, 'dashboard')}>Dashboard</a>
           <a href="#" onClick={(e) => handleClick(e, 'detection')}>Detection</a>
           <a href="#" onClick={(e) => handleClick(e, 'analytics')}>Analytics</a>
