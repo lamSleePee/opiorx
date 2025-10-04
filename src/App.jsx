@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage'
 import AnalyticsPage from './pages/AnalyticsPage'
 import DetectionPage from './pages/DetectionPage'
 import ProjectDescription from './pages/ProjectDescription'
+import IGEMPosterPage from './pages/IGEMPosterPage'
 import './App.css'
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         return <DetectionPage />
       case 'project':
         return <ProjectDescription />
+      case 'igem':
+        return <IGEMPosterPage />
       case 'patients':
   return (
           <div className="page-header">

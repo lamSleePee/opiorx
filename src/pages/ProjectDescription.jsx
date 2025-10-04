@@ -1,44 +1,45 @@
 import React from 'react'
+import './ProjectDescription.css'
 
-// Inline SVGs matching the palette
+// Enhanced SVG icons with better styling
 const TargetIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="8"/>
-    <circle cx="12" cy="12" r="4"/>
-    <circle cx="12" cy="12" r="1"/>
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="6"/>
+    <circle cx="12" cy="12" r="2"/>
   </svg>
 )
 
 const ShieldIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/>
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l8 4v6c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V6l8-4z"/>
   </svg>
 )
 
 const ChartIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 3v18h18"/>
-    <rect x="6" y="12" width="3" height="6"/>
-    <rect x="11" y="9" width="3" height="9"/>
-    <rect x="16" y="6" width="3" height="12"/>
+    <rect x="6" y="12" width="3" height="6" rx="1"/>
+    <rect x="11" y="9" width="3" height="9" rx="1"/>
+    <rect x="16" y="6" width="3" height="12" rx="1"/>
   </svg>
 )
 
 const ClockIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="10"/>
     <polyline points="12,6 12,12 16,14"/>
   </svg>
 )
 
 const LightningIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
   </svg>
 )
 
 const MolecularIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="3"/>
     <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
     <circle cx="12" cy="12" r="10"/>
@@ -46,41 +47,55 @@ const MolecularIcon = () => (
 )
 
 const CheckIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M20 6L9 17l-5-5"/>
   </svg>
 )
 
 const ArrowUpIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="12" y1="19" x2="12" y2="5"/>
     <polyline points="5,12 12,5 19,12"/>
   </svg>
 )
 
+// New DBTL-specific icons
+const DesignIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </svg>
+)
+
+const TestIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12l2 2 4-4"/>
+    <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+  </svg>
+)
+
+const BuildIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+  </svg>
+)
+
+const LearnIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+  </svg>
+)
+
 const ProjectDescription = () => {
   return (
-    <section className="project-description-section">
-      <div className="pd-container">
-        <header className="pd-header">
-          <div className="pd-hero">
-            <div className="pd-rotor" aria-hidden="true">
-              <svg width="280" height="280" viewBox="0 0 280 280">
-                <defs>
-                  <linearGradient id="pdRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#e0f2fe"/>
-                    <stop offset="100%" stopColor="#0891b2"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="140" cy="140" r="120" fill="none" stroke="url(#pdRing)" strokeWidth="8" strokeLinecap="round" strokeDasharray="12 14"/>
-              </svg>
-            </div>
-            <div className="pd-hero-center">
-              <h1 className="pd-title">Project Description</h1>
-              <p className="pd-subtitle">Overview of OpioRX goals, scope, and technology stack.</p>
-            </div>
-          </div>
-        </header>
+    <div className="project-description-page">
+      <div className="page-header">
+        <h1>Project Description</h1>
+        <p>Overview of OpioRX goals, scope, and technology stack</p>
+      </div>
+      
+      <div className="project-description-content">
+        <div className="project-description-container">
 
         <div className="pd-card">
           <h3>Mission</h3>
@@ -170,7 +185,7 @@ const ProjectDescription = () => {
           <div className="dbtl-grid">
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">&lt; &gt;</span>
+                <span className="dbtl-icon"><DesignIcon /></span>
                 <h3>Design</h3>
               </div>
               <p>Comprehensive literature review of aptamer sequences targeting fentanyl, oxycodone, tramadol, and methadone. Multiple sequence alignment revealed conserved and variable regions. Secondary structure predictions identified stem-loop motifs and stability patterns.</p>
@@ -178,7 +193,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">✓</span>
+                <span className="dbtl-icon"><TestIcon /></span>
                 <h3>Test</h3>
               </div>
               <p>Docking results enabled selection of the most promising sequence as lead candidate for novel aptamer design with potential opioid-binding specificity.</p>
@@ -187,7 +202,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">🏭</span>
+                <span className="dbtl-icon"><BuildIcon /></span>
                 <h3>Build</h3>
               </div>
               <p>Molecular docking studies using ZDock protocol in BIOVIA Discovery Studio. Simulations provided insights into structural stability and binding affinity of aptamer-opioid interactions.</p>
@@ -195,7 +210,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">📈</span>
+                <span className="dbtl-icon"><LearnIcon /></span>
                 <h3>Learn</h3>
               </div>
               <p>Many predicted interactions were unfavorable due to rigid molecule treatment, causing steric clashes. This highlighted the need for more advanced simulation strategies with ligand flexibility.</p>
@@ -218,7 +233,7 @@ const ProjectDescription = () => {
           <div className="dbtl-grid">
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">&lt; &gt;</span>
+                <span className="dbtl-icon"><DesignIcon /></span>
                 <h3>Design</h3>
               </div>
               <p>To overcome steric clashes and unfavorable interactions, various docking protocols were evaluated for improved flexibility and accuracy.</p>
@@ -226,7 +241,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">✓</span>
+                <span className="dbtl-icon"><TestIcon /></span>
                 <h3>Test</h3>
               </div>
               <p>Molecular docking carried out using LibDock protocol with binding spheres defined based on structural data from secondary structure analysis.</p>
@@ -234,7 +249,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">🏭</span>
+                <span className="dbtl-icon"><BuildIcon /></span>
                 <h3>Build</h3>
               </div>
               <p>LibDock protocol was implemented to dock aptamer sequences against target opioids. Loop regions from secondary structures defined binding spheres, as these regions are crucial for aptamer-target interactions.</p>
@@ -242,7 +257,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">📈</span>
+                <span className="dbtl-icon"><LearnIcon /></span>
                 <h3>Learn</h3>
               </div>
               <p>Torsional angles played pivotal roles in DNA aptamer interactions. Steric clashes were resolved, molecules interacted favorably showing stronger interactions and higher target affinity. Potential aptamer was successfully identified.</p>
@@ -265,7 +280,7 @@ const ProjectDescription = () => {
           <div className="dbtl-grid">
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">&lt; &gt;</span>
+                <span className="dbtl-icon"><DesignIcon /></span>
                 <h3>Design</h3>
               </div>
               <p>Aptamer sequences targeting synthetic opioids (fentanyl, methadone, oxycodone, tramadol) were curated from literature. Secondary structure analysis and molecular docking identified candidate sequences with highest affinity and structural stability.</p>
@@ -273,7 +288,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">✓</span>
+                <span className="dbtl-icon"><TestIcon /></span>
                 <h3>Test</h3>
               </div>
               <p>Each mutated aptamer variant underwent rigorous evaluation through molecular docking and secondary structure prediction to quantify impact on binding affinity and conformational stability.</p>
@@ -281,7 +296,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">🏭</span>
+                <span className="dbtl-icon"><BuildIcon /></span>
                 <h3>Build</h3>
               </div>
               <p>Site-specific point mutations guided by affinity heat maps from docking results. Nucleotide positions with strong binding interactions were selectively mutated to generate variants aimed at enhancing binding characteristics.</p>
@@ -289,7 +304,7 @@ const ProjectDescription = () => {
 
             <div className="dbtl-card">
               <div className="dbtl-card-header">
-                <span className="dbtl-icon">📈</span>
+                <span className="dbtl-icon"><LearnIcon /></span>
                 <h3>Learn</h3>
               </div>
               <p>Point mutations caused notable alterations in aptamer stability (ΔG increased up to 3-fold, diminishing binding). However, select mutations yielded 2-3x binding affinity increase while moderately elevating ΔG (~2x), suggesting optimal stability-affinity balance.</p>
@@ -385,8 +400,9 @@ const ProjectDescription = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
