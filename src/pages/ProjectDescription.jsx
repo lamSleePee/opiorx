@@ -1,5 +1,4 @@
 import React from 'react'
-import './ProjectDescription.css'
 
 // Enhanced SVG icons with better styling
 const TargetIcon = () => (
@@ -32,57 +31,21 @@ const ClockIcon = () => (
   </svg>
 )
 
-const LightningIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+const MicroscopeIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 10a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/>
+    <path d="M9 10v6a3 3 0 0 0 6 0v-6"/>
+    <path d="M9 10h6"/>
+    <path d="M12 4v6"/>
+    <path d="M8 2h8"/>
   </svg>
 )
 
-const MolecularIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-    <circle cx="12" cy="12" r="10"/>
-  </svg>
-)
-
-const CheckIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 6L9 17l-5-5"/>
-  </svg>
-)
-
-const ArrowUpIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"/>
-    <polyline points="5,12 12,5 19,12"/>
-  </svg>
-)
-
-// New DBTL-specific icons
-const DesignIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-  </svg>
-)
-
-const TestIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 12l2 2 4-4"/>
-    <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-  </svg>
-)
-
-const BuildIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-  </svg>
-)
-
-const LearnIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+const AlertIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+    <line x1="12" y1="9" x2="12" y2="13"/>
+    <line x1="12" y1="17" x2="12.01" y2="17"/>
   </svg>
 )
 
@@ -90,316 +53,190 @@ const ProjectDescription = () => {
   return (
     <div className="project-description-page">
       <div className="page-header">
-        <h1>Project Description</h1>
-        <p>Overview of OpioRX goals, scope, and technology stack</p>
+        <h1>Opio-Rx: Rapid, Non-Invasive Real-Time Detection of Synthetic Opioids</h1>
+        <p>Revolutionary aptamer-based multiplex lateral flow diagnostic for synthetic opioid detection</p>
       </div>
       
       <div className="project-description-content">
         <div className="project-description-container">
-
-        <div className="pd-card">
-          <h3>Mission</h3>
-          <p>OpioRX enables rapid, accurate, and accessible detection of opioid exposure using saliva biosensors, paired with real‑time analytics and global context.</p>
-        </div>
-
-        <div className="pd-grid">
-          <div className="pd-card">
-            <div className="pd-card-head">
-              <span className="pd-icon"><TargetIcon /></span>
-              <h4>Key Features</h4>
+          
+          {/* Abstract Section */}
+          <div className="pd-section">
+            <div className="pd-section-header">
+              <TargetIcon />
+              <h2>Abstract</h2>
             </div>
-            <ul className="pd-list">
-              <li>Saliva biosensor pipeline</li>
-              <li>Interactive global analytics</li>
-              <li>Country crisis intelligence</li>
-              <li>Clinical decision support</li>
-            </ul>
+            <div className="pd-card">
+              <h3>Opio-Rx: Rapid, Non-Invasive Real-Time Detection of Synthetic Opioids</h3>
+              <p>The escalating global opioid crisis, defined by widespread misuse, dependence, and overdose fatalities, demands urgent innovation in detection strategies. Current diagnostic solutions, rely on slow and costly laboratory assays, remain inaccessible at the point of need, delaying timely interventions.</p>
+              
+              <p>Opio-Rx directly addresses this gap by presenting an aptamer-based multiplex lateral flow diagnostic for the rapid, non-invasive, and quantitative detection of synthetic opioids — including fentanyl, oxycodone, tramadol, methadone, and codeine — in salivary samples. By leveraging advanced computational design, we generate highly specific aptamers, overcoming the time and cost burdens of conventional SELEX. These aptamers are validated in vitro and then harnessed for optical detection through a FRET-based framework, enabling sensitive and quantitative opioid measurement.</p>
+              
+              <p>To empower end-users, Opio-Rx integrates with an AI-powered mobile application, capable of processing the fluorescence signals from the lateral flow device and instantly providing digital concentration readouts. This unified pipeline — computationally designed aptamers, FRET-based diagnostics, and AI-enabled analysis — positions Opio-Rx as a powerful, scalable tool for frontline intervention in the opioid crisis.</p>
+            </div>
           </div>
 
-          <div className="pd-card">
-            <div className="pd-card-head">
-              <span className="pd-icon"><ChartIcon /></span>
-              <h4>Technology</h4>
-            </div>
-            <ul className="pd-list">
-              <li>React, Vite, Highcharts</li>
-              <li>GSAP interactions</li>
-              <li>Modular components</li>
-              <li>Responsive UI</li>
-            </ul>
-          </div>
-
-          <div className="pd-card">
-            <div className="pd-card-head">
-              <span className="pd-icon"><ShieldIcon /></span>
-              <h4>Outcomes</h4>
-            </div>
-            <ul className="pd-list">
-              <li>Faster triage</li>
-              <li>Actionable insights</li>
-              <li>Risk reduction</li>
-              <li>Better coverage</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="pd-why">
-          <h3>Why OpioRX</h3>
-          <div className="pd-why-grid">
-            <div className="pd-why-item">
-              <ClockIcon />
-              <div>
-                <h5>Real‑time</h5>
-                <p>From signal to decision in minutes.</p>
-              </div>
-            </div>
-            <div className="pd-why-item">
+          {/* Introduction Section */}
+          <div className="pd-section">
+            <div className="pd-section-header">
               <ShieldIcon />
-              <div>
-                <h5>Reliable</h5>
-                <p>Validated methods and robust UI.</p>
-              </div>
+              <h2>Introduction</h2>
             </div>
-            <div className="pd-why-item">
+            <div className="pd-card">
+              <p>Opioids, derived from the poppy plant, are substances that interact with brain opioid receptors, providing analgesic and sedative properties. Commonly used for pain treatment, they also help maintain opioid dependency through medications like buprenorphine and methadone. Opioids are also used for non-medical purposes due to the euphoria after ingestion. However, their pharmacological effects can make breathing difficult and lead to fatal overdoses.</p>
+              
+              <p>Opioids do, however, have some hazards, including abuse, dependency, and overdose fatalities. The opioid crisis has become a global health emergency requiring innovative detection and intervention strategies.</p>
+            </div>
+          </div>
+
+          {/* Global Scenario */}
+          <div className="pd-section">
+            <div className="pd-section-header">
               <ChartIcon />
-              <div>
-                <h5>Contextual</h5>
-                <p>Global maps and country detail.</p>
+              <h2>Global Scenario</h2>
+            </div>
+            <div className="pd-card">
+              <p>The opioid crisis unfolded in three waves: prescription opioids, heroin, and synthetic opioids. After OxyContin's FDA approval in 1995, prescriptions and overdose deaths surged, leading many users to switch to heroin by the early 2010s. By 2013, heroin-related overdose deaths had risen sharply, with most users starting from prescription misuse.</p>
+              
+              <p>The third wave is driven by synthetic opioids like fentanyl, now responsible for over 80% of overdose deaths and more than 150 American deaths daily, contributing significantly to the decline in U.S. life expectancy between 2014 and 2017.</p>
+              
+              <div className="image-placeholder">
+                <img src="/api/placeholder/600/300" alt="Three waves of opioid overdose deaths" />
+                <p className="image-caption">Fig. 1: Three waves of opioid overdose deaths</p>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* DBTL Methodology Section */}
-        <div className="dbtl-intro">
-          <p>Each DBTL cycle builds upon lessons learned from previous iterations, incorporating both computational insights and experimental validation to achieve optimal aptamer performance for synthetic opioid detection.</p>
-        </div>
-
-        {/* DBTL Cycle 1: Initial In Silico Design */}
-        <div className="dbtl-cycle">
-          <div className="dbtl-header">
-            <TargetIcon />
-            <h2>DBTL Cycle 1: Initial In Silico Design</h2>
-          </div>
-          
-          <div className="dbtl-grid">
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><DesignIcon /></span>
-                <h3>Design</h3>
-              </div>
-              <p>Comprehensive literature review of aptamer sequences targeting fentanyl, oxycodone, tramadol, and methadone. Multiple sequence alignment revealed conserved and variable regions. Secondary structure predictions identified stem-loop motifs and stability patterns.</p>
+          {/* Indian Scenario */}
+          <div className="pd-section">
+            <div className="pd-section-header">
+              <TargetIcon />
+              <h2>Indian Scenario</h2>
             </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><TestIcon /></span>
-                <h3>Test</h3>
-              </div>
-              <p>Docking results enabled selection of the most promising sequence as lead candidate for novel aptamer design with potential opioid-binding specificity.</p>
-              <button className="dbtl-preview-btn">Preview</button>
-            </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><BuildIcon /></span>
-                <h3>Build</h3>
-              </div>
-              <p>Molecular docking studies using ZDock protocol in BIOVIA Discovery Studio. Simulations provided insights into structural stability and binding affinity of aptamer-opioid interactions.</p>
-            </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><LearnIcon /></span>
-                <h3>Learn</h3>
-              </div>
-              <p>Many predicted interactions were unfavorable due to rigid molecule treatment, causing steric clashes. This highlighted the need for more advanced simulation strategies with ligand flexibility.</p>
+            <div className="pd-card">
+              <p>India's opioid prevalence is three times the global average, with 2.1% of the population using opioids. However, the data is less accurate in LMICs like India, where it is impossible to determine the exact number of overdose deaths caused by opioids. According to the 2019 report, Mizoram and Nagaland are the states most impacted by opioid use disorders, while Uttar Pradesh has the highest rate. India's prevalence of opioid usage is still lower than that of the United States.</p>
+              
+              <p>However, opioid consumption patterns differed by demographic and geographic characteristics have always differed in India. Synthetic opioids are more widespread in rural regions, as compared to heroin, was the most often used illicit opioid in urban areas. Numerous studies have shown that the abuse of prescription opioids, especially tramadol and cough syrups containing codeine, is becoming a greater issue.</p>
             </div>
           </div>
 
-          <div className="dbtl-challenge">
-            <h4>Key Challenge Identified:</h4>
-            <p>The ZDock algorithm treated opioids as rigid molecules, neglecting ligand flexibility and contributing to steric clashes that reduced binding prediction accuracy.</p>
-          </div>
-        </div>
-
-        {/* DBTL Cycle 1: Iteration with LibDock */}
-        <div className="dbtl-cycle">
-          <div className="dbtl-header">
-            <LightningIcon />
-            <h2>DBTL Cycle 1: Iteration with LibDock</h2>
-          </div>
-          
-          <div className="dbtl-grid">
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><DesignIcon /></span>
-                <h3>Design</h3>
-              </div>
-              <p>To overcome steric clashes and unfavorable interactions, various docking protocols were evaluated for improved flexibility and accuracy.</p>
+          {/* Current Detection Methods */}
+          <div className="pd-section">
+            <div className="pd-section-header">
+              <MicroscopeIcon />
+              <h2>Current Detection Methods</h2>
             </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><TestIcon /></span>
-                <h3>Test</h3>
+            
+            <div className="pd-grid">
+              <div className="pd-card">
+                <h3>1. Liquid Chromatography – Tandem Mass Spectrometry</h3>
+                <p>Liquid chromatography allows quantitative analysis of synthetic opioids with coalescence to tandem Mass Spectrometry. For quantitative opioid detection, LC-MS/MS is the gold standard. These techniques yield detection limits as low as 1–10 ng/mL in urine and 0.25–2.5 ng/mL in serum. With quantification limits of 0.5 ng/mg, detection limits for hair analysis can range from 0.05 to 0.1 ng/mg.</p>
               </div>
-              <p>Molecular docking carried out using LibDock protocol with binding spheres defined based on structural data from secondary structure analysis.</p>
-            </div>
 
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><BuildIcon /></span>
-                <h3>Build</h3>
+              <div className="pd-card">
+                <h3>2. Gas Chromatography – Mass Spectrometry</h3>
+                <p>GC-MS/MS methods provide detection limits of 0.02-0.20 ng/mg for fentanyl compounds in hair samples, with quantification limits between 0.08-0.20 ng/mg. For oral fluid analysis, combined solid-phase extraction with LC-MS/MS achieves detection limits of 5 ng/mL and quantification limits of 10 ng/mL for synthetic opioids including U-47700, AH-7921, and MT-45.</p>
               </div>
-              <p>LibDock protocol was implemented to dock aptamer sequences against target opioids. Loop regions from secondary structures defined binding spheres, as these regions are crucial for aptamer-target interactions.</p>
-            </div>
 
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><LearnIcon /></span>
-                <h3>Learn</h3>
-              </div>
-              <p>Torsional angles played pivotal roles in DNA aptamer interactions. Steric clashes were resolved, molecules interacted favorably showing stronger interactions and higher target affinity. Potential aptamer was successfully identified.</p>
-            </div>
-          </div>
-
-          <div className="dbtl-improvement">
-            <h4>Protocol Improvement:</h4>
-            <p>The transition from ZDock to LibDock protocol successfully resolved structural conflicts and improved binding predictions through enhanced molecular flexibility modeling.</p>
-          </div>
-        </div>
-
-        {/* DBTL Cycle 2: Point Mutation Optimization */}
-        <div className="dbtl-cycle">
-          <div className="dbtl-header">
-            <MolecularIcon />
-            <h2>DBTL Cycle 2: Point Mutation Optimization</h2>
-          </div>
-          
-          <div className="dbtl-grid">
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><DesignIcon /></span>
-                <h3>Design</h3>
-              </div>
-              <p>Aptamer sequences targeting synthetic opioids (fentanyl, methadone, oxycodone, tramadol) were curated from literature. Secondary structure analysis and molecular docking identified candidate sequences with highest affinity and structural stability.</p>
-            </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><TestIcon /></span>
-                <h3>Test</h3>
-              </div>
-              <p>Each mutated aptamer variant underwent rigorous evaluation through molecular docking and secondary structure prediction to quantify impact on binding affinity and conformational stability.</p>
-            </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><BuildIcon /></span>
-                <h3>Build</h3>
-              </div>
-              <p>Site-specific point mutations guided by affinity heat maps from docking results. Nucleotide positions with strong binding interactions were selectively mutated to generate variants aimed at enhancing binding characteristics.</p>
-            </div>
-
-            <div className="dbtl-card">
-              <div className="dbtl-card-header">
-                <span className="dbtl-icon"><LearnIcon /></span>
-                <h3>Learn</h3>
-              </div>
-              <p>Point mutations caused notable alterations in aptamer stability (ΔG increased up to 3-fold, diminishing binding). However, select mutations yielded 2-3x binding affinity increase while moderately elevating ΔG (~2x), suggesting optimal stability-affinity balance.</p>
-            </div>
-          </div>
-
-          <div className="dbtl-metrics">
-            <div className="dbtl-metric-card">
-              <h4>Performance Metrics</h4>
-              <div className="metric-buttons">
-                <span className="metric-btn primary">Binding Affinity: <strong>2-3x Improvement</strong></span>
-                <span className="metric-btn secondary">Folding Energy: <strong>~2x ΔG Increase</strong></span>
+              <div className="pd-card">
+                <h3>3. FDA Approved Commercial Products</h3>
+                <p>Point-of-Care Urine Testing has recently expanded with FDA clearance of the first over-the-counter fentanyl urine test. The All test Fentanyl Urine Test Cassette was cleared by FDA in October 2023, representing the first OTC test for preliminary fentanyl detection in urine. This test provides results within 5 minutes using three drops of fresh urine and includes pre-addressed mailing for confirmation testing.</p>
               </div>
             </div>
 
-            <div className="dbtl-metric-card">
-              <h4>Advanced Analysis</h4>
-              <p>Enhanced variants underwent comparative post-docking analyses against original sequences. Molecular dynamics simulations assessed thermodynamic stability and binding kinetics in explicit aqueous environments.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Engineering Achievements Summary */}
-        <div className="dbtl-achievements">
-          <div className="dbtl-header">
-            <CheckIcon />
-            <h2>Engineering Achievements Summary</h2>
-          </div>
-          
-          <div className="achievement-metrics">
-            <div className="achievement-card">
-              <span className="achievement-number">3</span>
-              <span className="achievement-label">DBTL Cycles Completed</span>
-            </div>
-            <div className="achievement-card">
-              <span className="achievement-number">2-3x</span>
-              <span className="achievement-label">Binding Affinity Improvement</span>
-            </div>
-            <div className="achievement-card">
-              <span className="achievement-number">5+</span>
-              <span className="achievement-label">Target Opioids Addressed</span>
-            </div>
-          </div>
-
-          <div className="achievement-details">
-            <h4>Key Engineering Accomplishments</h4>
-            <div className="achievement-columns">
-              <div className="achievement-column">
-                <ul>
-                  <li>Resolved steric clash issues through protocol optimization</li>
-                  <li>Maintained structural stability while enhancing performance</li>
-                  <li>Implemented molecular dynamics validation</li>
-                </ul>
-              </div>
-              <div className="achievement-column">
-                <ul>
-                  <li>Achieved significant binding affinity improvements</li>
-                  <li>Developed systematic mutation strategy</li>
-                  <li>Created reproducible DBTL methodology</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Future Engineering Directions */}
-        <div className="dbtl-future">
-          <div className="dbtl-header">
-            <ArrowUpIcon />
-            <h2>Future Engineering Directions</h2>
-          </div>
-          
-          <p>Future DBTL cycles will focus on system integration, real-world validation, and scalability. We plan to implement machine learning-guided design optimization and expand to emerging synthetic opioids.</p>
-          
-          <div className="future-columns">
-            <div className="future-column">
-              <h4>Next Phase Priorities</h4>
+            <div className="pd-card">
+              <h3>Emergency Department Screening Protocols</h3>
+              <p>Emergency departments have developed standardized screening protocols specifically for opioid detection. The Clinical Opioid Withdrawal Scale (COWS) is widely used, with most protocols recommending buprenorphine initiation for COWS scores of 8 or greater. No specific laboratory tests are required before initiating treatment.</p>
+              
+              <p>Emergency departments typically employ two-tier testing approaches:</p>
               <ul>
-                <li>Integration with FRET-based detection system</li>
-                <li>Clinical sample validation studies</li>
-                <li>Field deployment optimization</li>
-                <li>Cost-effectiveness analysis</li>
-              </ul>
-            </div>
-            <div className="future-column">
-              <h4>Advanced Technologies</h4>
-              <ul>
-                <li>Machine learning-guided aptamer design</li>
-                <li>High-throughput virtual screening</li>
-                <li>Ensemble docking methodologies</li>
-                <li>Automated DBTL pipeline development</li>
+                <li><strong>First-line screening</strong> uses immunoassays with cut-off levels of 300-2000 ng/mL for opiates. However, traditional opiate immunoassays often fail to detect fentanyl due to structural differences from morphine.</li>
+                <li><strong>Confirmatory testing</strong> employs LC-MS/MS or GC-MS methods with detection limits typically 20-50 ng/mL in clinical practice, though capable of 5 ng/mL sensitivity. Turnaround time is 1-3 days for confirmation results.</li>
               </ul>
             </div>
           </div>
-        </div>
+
+          {/* Limitations */}
+          <div className="pd-section">
+            <div className="pd-section-header">
+              <AlertIcon />
+              <h2>Limitations: The Birth of Opio-Rx</h2>
+            </div>
+            <div className="pd-card">
+              <p>Liquid Chromatography–Tandem Mass Spectrometry (LC–MS/MS) and Gas Chromatography–Mass Spectrometry (GC–MS) are currently regarded as the gold-standard methods for opioid detection due to their high sensitivity and specificity. However, these techniques come with significant drawbacks that restrict their applicability in real-time or point-of-care testing.</p>
+              
+              <p>Both LC–MS and GC–MS require expensive instrumentation, highly controlled laboratory environments, and trained professionals to operate and interpret results. Moreover, the turnaround time for each sample can be as long as 2–3 days, which makes these approaches impractical in settings where rapid and accurate on-site analysis is critical, such as emergency rooms, rehabilitation centers, or law enforcement field investigations.</p>
+              
+              <p>Conventional immunoassays, which use antibodies as the primary recognition element, offer a more accessible alternative but suffer from notable limitations. Antibodies, due to their comparatively large molecular size and complex tertiary structure, can be less stable under varying environmental conditions, leading to reduced shelf-life and performance inconsistencies. Their batch-to-batch variability in production adds further uncertainty to assay reliability. More importantly, immunoassays are prone to higher rates of false positives, particularly in the case of structurally similar opioid analogs.</p>
+            </div>
+          </div>
+
+          {/* Project Outline */}
+          <div className="pd-section">
+            <div className="pd-section-header">
+              <ClockIcon />
+              <h2>Project Outline</h2>
+            </div>
+            
+            <div className="pd-card">
+              <h3>A. In Silico Aptamer Design</h3>
+              
+              <div className="image-placeholder">
+                <img src="/api/placeholder/600/400" alt="In silico aptamer design workflow" />
+                <p className="image-caption">Fig. 2: In silico aptamer design workflow</p>
+              </div>
+
+              <h4>Primary Sequence Analysis:</h4>
+              <p>The primary sequence was obtained from the literature. Multiple sequence alignment was performed using the CLUSTAL OMEGA web server. This helped to identify the structurally conserved regions and primer regions in the eight sequences.</p>
+
+              <h4>Secondary Structure Prediction:</h4>
+              <p>The DNA fold algorithm of the mFold Web server was used to generate the secondary structure of the aptamer sequences. The key parameters of the mFold Web server were used: 1 M Na+ and 0 Mg2+ M were used as ionic conditions, while the folding temperature was used at 37°C.</p>
+
+              <h4>Tertiary Structure Prediction:</h4>
+              <p>The 3DRNA/DNA web server was used to predict the tertiary structure of the eight aptamer sequences using the dot bracket structure obtained in the Vienna format from mFold. The dot bracket annotation displays the whole chain as a single string, with matching parentheses indicating the positions of paired nucleotides and dots indicating the positions of unpaired nucleotides.</p>
+
+              <h4>Molecular Docking: Biovia Discovery Studio</h4>
+              <p>Biovia Discovery Studio's LibDock protocol was used to perform molecular docking of the three-dimensional aptamer structures against the target opioid, fentanyl. LibDock is a high-throughput algorithm that comprises the polar and apolar features as "hotspots." It is a hotspot-based docking tool that uses hotspot regions in ligand molecules and uses them to guide the docking into the receptor binding sites.</p>
+
+              <h4>Truncation Approach:</h4>
+              <p>Truncation of aptamers entails systematically shortening the nucleotide sequence of an aptamer to identify the minimal sequence required for effective target binding. The truncation process is required for both functional and economical reasons. A shorter sequence yields the conformational change property of aptamers, boosts efficiency, and requires less reduction costs.</p>
+
+              <h4>Point Mutation Approach:</h4>
+              <p>The potential aptamer sequence from the eight sequences was subjected to point mutation based on heat map generated after analysing ligand poses of all ligand conformation against the potential aptamer sequence. Strong interacting residues were then identified and were chosen as anchor residues to conduct mutations further.</p>
+
+              <div className="image-placeholder">
+                <img src="/api/placeholder/600/300" alt="Heat-maps generated showing various conformations of fentanyl" />
+                <p className="image-caption">Fig. 3: Heat-maps generated showing various conformations of fentanyl in its loop regions</p>
+              </div>
+
+              <h4>MD Simulations:</h4>
+              <p>Molecular dynamics (MD) simulations were performed on both the novel aptamer sequence and its docked complex for 150 ns to evaluate their dynamic stability, conformational flexibility, and interaction persistence under physiologically relevant conditions. Trajectory analyses included root-mean-square deviation (RMSD), root-mean-square fluctuation (RMSF), and radius of gyration (Rg) to assess compactness and folding integrity throughout the simulation.</p>
+            </div>
+
+            <div className="pd-card">
+              <h3>B. Förster Resonance Energy Transfer Principles</h3>
+              
+              <div className="image-placeholder">
+                <img src="/api/placeholder/600/300" alt="FRET: rGO + FAM labelled aptamer" />
+                <p className="image-caption">Fig. 4: FRET: rGO + FAM aptamer pair</p>
+              </div>
+
+              <p>The biosensor leverages Förster Resonance Energy Transfer (FRET) as the core transduction mechanism for acetyl fentanyl detection. FRET is a photophysical process involving non-radiative energy transfer from an excited donor fluorophore to an acceptor molecule, resulting in donor fluorescence quenching.</p>
+
+              <h4>FAM Fluorophore Properties:</h4>
+              <p>6-Carboxyfluorescein (FAM) serves as the donor fluorophore with excitation maximum at 490-495 nm and emission maximum at 515-520 nm. FAM exhibits high quantum yield, pH-sensitive fluorescence (optimal at pH 7.5-8.5), and covalent conjugation capability to aptamer termini through carboxyl functional groups.</p>
+
+              <h4>Reduced Graphene Oxide (rGO):</h4>
+              <p>rGO's extensive π-conjugated system and high surface area facilitate efficient energy transfer through multiple mechanisms including FRET, electron transfer, and direct contact quenching. The material's planar structure promotes strong π-π stacking interactions with nucleotide bases, enabling highly efficient quenching when aptamers are adsorbed.</p>
+
+              <h4>Fluorescence Recovery:</h4>
+              <p>Fluorescence recovery in aptamer-based FRET sensors is intrinsically linked to the unique secondary and tertiary structures of the aptamer and the conformational dynamics that occur upon target binding. Upon introduction of the target molecule, aptamers undergo structural rearrangements that drive fluorescence recovery, increasing the donor–acceptor distance beyond the Förster radius.</p>
+
+              <h4>Gold Nanoparticles + FAM Aptamer:</h4>
+              <p>The working principle of a FRET-based aptamer sensor using AuNP (gold nanoparticles) as the acceptor and FAM-labeled aptamers as donors parallels the mechanism established for rGO-based systems. The AuNP acts as a potent energy acceptor and fluorescence quencher due to its strong surface plasmon resonance (SPR) absorption in the visible spectrum.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -407,5 +244,3 @@ const ProjectDescription = () => {
 }
 
 export default ProjectDescription
-
-

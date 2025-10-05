@@ -1,10 +1,61 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Header = ({ onNavigate }) => {
+  const [isProjectDropdownOpen, setIsProjectDropdownOpen] = useState(false)
+  const [isEngineeringDropdownOpen, setIsEngineeringDropdownOpen] = useState(false)
+  const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false)
+  const dropdownRef = useRef(null)
+  const engineeringDropdownRef = useRef(null)
+
   const handleClick = (e, page) => {
     e.preventDefault()
     onNavigate(page)
+    setIsProjectDropdownOpen(false)
+    setIsEngineeringDropdownOpen(false)
+    setIsResultsDropdownOpen(false)
   }
+
+  const toggleProjectDropdown = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsProjectDropdownOpen(!isProjectDropdownOpen)
+    setIsEngineeringDropdownOpen(false)
+    setIsResultsDropdownOpen(false)
+  }
+
+  const toggleEngineeringDropdown = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsEngineeringDropdownOpen(!isEngineeringDropdownOpen)
+    setIsResultsDropdownOpen(false)
+  }
+
+  const toggleResultsDropdown = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsResultsDropdownOpen(!isResultsDropdownOpen)
+    setIsEngineeringDropdownOpen(false)
+  }
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsProjectDropdownOpen(false)
+        setIsEngineeringDropdownOpen(false)
+      }
+    }
+
+    if (isProjectDropdownOpen || isEngineeringDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isProjectDropdownOpen, isEngineeringDropdownOpen])
 
   return (
     <nav className="navbar">
@@ -15,13 +66,59 @@ const Header = ({ onNavigate }) => {
         </div>
         <div className="nav-menu">
           <a href="#" onClick={(e) => handleClick(e, 'home')}>Home</a>
-          <a href="#" onClick={(e) => handleClick(e, 'project')}>Project</a>
-          <a href="#" onClick={(e) => handleClick(e, 'igem')}>iGEM Poster</a>
-          <a href="#" onClick={(e) => handleClick(e, 'dashboard')}>Dashboard</a>
-          <a href="#" onClick={(e) => handleClick(e, 'detection')}>Detection</a>
-          <a href="#" onClick={(e) => handleClick(e, 'analytics')}>Analytics</a>
-          <a href="#" onClick={(e) => handleClick(e, 'patients')}>Patients</a>
-          <a href="#" onClick={(e) => handleClick(e, 'settings')}>Settings</a>
+          <div className="nav-dropdown" ref={dropdownRef}>
+            <a 
+              href="#" 
+              onClick={toggleProjectDropdown} 
+              className={`nav-dropdown-toggle ${isProjectDropdownOpen ? 'active' : ''}`}
+            >
+              Project
+              <svg className="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            {isProjectDropdownOpen && (
+              <div className="nav-dropdown-menu">
+                <a href="#" onClick={(e) => handleClick(e, 'project')}>
+                  <span>Project Description</span>
+                </a>
+                <a 
+                  href="#" 
+                  className={`nav-dropdown-item ${isEngineeringDropdownOpen ? 'active' : ''}`}
+                  onClick={toggleEngineeringDropdown}
+                >
+                  <span>Engineering-DBTL Cycles</span>
+                  <svg className="dropdown-arrow" width="8" height="6" viewBox="0 0 8 6" fill="none">
+                    <path d="M1 1.5L4 4.5L7 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+                {isEngineeringDropdownOpen && (
+                  <>
+                    <a href="#" onClick={(e) => handleClick(e, 'drylab')} className="nav-dropdown-sub-item">
+                      <span>Dry Lab</span>
+                    </a>
+                    <a href="#" onClick={(e) => handleClick(e, 'wetlab')} className="nav-dropdown-sub-item">
+                      <span>Wet Lab</span>
+                    </a>
+                  </>
+                )}
+                <a href="#" onClick={toggleResultsDropdown} className={`nav-dropdown-item ${isResultsDropdownOpen ? 'active' : ''}`}>
+                  <span>Results</span>
+                  <svg className="dropdown-arrow" width="8" height="6" viewBox="0 0 8 6" fill="none">
+                    <path d="M1 1.5L4 4.5L7 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+                {isResultsDropdownOpen && (
+                  <a href="#" onClick={(e) => handleClick(e, 'insilico')} className="nav-dropdown-sub-item">
+                    <span>In Silico</span>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+          <a href="#" onClick={(e) => handleClick(e, 'lab')}>Lab</a>
+          <a href="#" onClick={(e) => handleClick(e, 'humanpractices')}>Human Practices</a>
+          <a href="#" onClick={(e) => handleClick(e, 'team')}>Team</a>
         </div>
       </div>
     </nav>

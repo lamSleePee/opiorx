@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
-import DashboardPage from './pages/DashboardPage'
-import AnalyticsPage from './pages/AnalyticsPage'
-import DetectionPage from './pages/DetectionPage'
 import ProjectDescription from './pages/ProjectDescription'
-import IGEMPosterPage from './pages/IGEMPosterPage'
+import DryLabPage from './pages/DryLabPage'
+import WetLabPage from './pages/WetLabPage'
+import InSilicoPage from './pages/InSilicoPage'
 import './App.css'
 
 function App() {
@@ -13,28 +12,33 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'dashboard':
-        return <DashboardPage />
-      case 'analytics':
-        return <AnalyticsPage />
-      case 'detection':
-        return <DetectionPage />
       case 'project':
         return <ProjectDescription />
-      case 'igem':
-        return <IGEMPosterPage />
-      case 'patients':
-  return (
-          <div className="page-header">
-            <h1>Patients</h1>
-            <p>Patient management coming soon...</p>
-          </div>
-        )
-      case 'settings':
+        case 'drylab':
+          return <DryLabPage />
+        case 'wetlab':
+          return <WetLabPage />
+        case 'insilico':
+          return <InSilicoPage />
+      case 'lab':
         return (
           <div className="page-header">
-            <h1>Settings</h1>
-            <p>Settings panel coming soon...</p>
+            <h1>Lab</h1>
+            <p>Laboratory information and protocols coming soon...</p>
+          </div>
+        )
+      case 'humanpractices':
+        return (
+          <div className="page-header">
+            <h1>Human Practices</h1>
+            <p>Human practices and outreach activities coming soon...</p>
+          </div>
+        )
+      case 'team':
+        return (
+          <div className="page-header">
+            <h1>Team</h1>
+            <p>Meet our team members coming soon...</p>
           </div>
         )
       default:
