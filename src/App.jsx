@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import ProjectDescription from './pages/ProjectDescription'
 import DryLabPage from './pages/DryLabPage'
 import WetLabPage from './pages/WetLabPage'
+import TeamPage from './pages/TeamPage'
 import DryLabResultsPage from './pages/DryLabResultsPage'
 import './App.css'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
@@ -38,12 +39,7 @@ function App() {
       case 'entrepreneurship':
         return <EntrepreneurshipPage />
       case 'team':
-        return (
-          <div className="page-header">
-            <h1>Team</h1>
-            <p>Meet our team members coming soon...</p>
-          </div>
-        )
+        return <TeamPage />
       default:
         return <HomePage onNavigate={handleNavigation} />
     }
