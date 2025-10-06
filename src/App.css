@@ -4218,6 +4218,54 @@ body {
   line-height: 1.3;
 }
 
+/* Tabs for DBTL cycles */
+.dbtl-tabs {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dbtl-tablist {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dbtl-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  color: #0f172a;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dbtl-tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(8, 145, 178, 0.35);
+}
+
+.dbtl-tab.active {
+  color: #0891b2;
+  border-color: rgba(8, 145, 178, 0.5);
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.15);
+}
+
+.dbtl-tab svg {
+  width: 18px;
+  height: 18px;
+}
+
+.dbtl-tabpanel {
+  margin-top: 0.5rem;
+}
+
 .dbtl-grid {
   display: grid;
   gap: 2rem;

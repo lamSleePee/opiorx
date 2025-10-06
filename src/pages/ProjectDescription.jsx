@@ -89,36 +89,7 @@ const ProjectDescription = () => {
             </div>
           </div>
 
-          {/* Global Scenario */}
-          <div className="pd-section">
-            <div className="pd-section-header">
-              <ChartIcon />
-              <h2>Global Scenario</h2>
-            </div>
-            <div className="pd-card">
-              <p>The opioid crisis unfolded in three waves: prescription opioids, heroin, and synthetic opioids. After OxyContin's FDA approval in 1995, prescriptions and overdose deaths surged, leading many users to switch to heroin by the early 2010s. By 2013, heroin-related overdose deaths had risen sharply, with most users starting from prescription misuse.</p>
-              
-              <p>The third wave is driven by synthetic opioids like fentanyl, now responsible for over 80% of overdose deaths and more than 150 American deaths daily, contributing significantly to the decline in U.S. life expectancy between 2014 and 2017.</p>
-              
-              <div className="image-placeholder">
-                <img src="/api/placeholder/600/300" alt="Three waves of opioid overdose deaths" />
-                <p className="image-caption">Fig. 1: Three waves of opioid overdose deaths</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Indian Scenario */}
-          <div className="pd-section">
-            <div className="pd-section-header">
-              <TargetIcon />
-              <h2>Indian Scenario</h2>
-            </div>
-            <div className="pd-card">
-              <p>India's opioid prevalence is three times the global average, with 2.1% of the population using opioids. However, the data is less accurate in LMICs like India, where it is impossible to determine the exact number of overdose deaths caused by opioids. According to the 2019 report, Mizoram and Nagaland are the states most impacted by opioid use disorders, while Uttar Pradesh has the highest rate. India's prevalence of opioid usage is still lower than that of the United States.</p>
-              
-              <p>However, opioid consumption patterns differed by demographic and geographic characteristics have always differed in India. Synthetic opioids are more widespread in rural regions, as compared to heroin, was the most often used illicit opioid in urban areas. Numerous studies have shown that the abuse of prescription opioids, especially tramadol and cough syrups containing codeine, is becoming a greater issue.</p>
-            </div>
-          </div>
+          
 
           {/* Current Detection Methods */}
           <div className="pd-section">
