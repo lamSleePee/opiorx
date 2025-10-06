@@ -4,6 +4,7 @@ const Header = ({ onNavigate }) => {
   const [isProjectDropdownOpen, setIsProjectDropdownOpen] = useState(false)
   const [isEngineeringDropdownOpen, setIsEngineeringDropdownOpen] = useState(false)
   const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false)
+  const [isEngagementDropdownOpen, setIsEngagementDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
   const engineeringDropdownRef = useRef(null)
 
@@ -37,12 +38,22 @@ const Header = ({ onNavigate }) => {
     setIsEngineeringDropdownOpen(false)
   }
 
+  const toggleEngagementDropdown = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsEngagementDropdownOpen(!isEngagementDropdownOpen)
+    setIsProjectDropdownOpen(false)
+    setIsEngineeringDropdownOpen(false)
+    setIsResultsDropdownOpen(false)
+  }
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsProjectDropdownOpen(false)
         setIsEngineeringDropdownOpen(false)
+        setIsEngagementDropdownOpen(false)
       }
     }
 
@@ -109,15 +120,41 @@ const Header = ({ onNavigate }) => {
                   </svg>
                 </a>
                 {isResultsDropdownOpen && (
-                  <a href="#" onClick={(e) => handleClick(e, 'insilico')} className="nav-dropdown-sub-item">
-                    <span>In Silico</span>
-                  </a>
+                  <>
+                    <a href="#" onClick={(e) => handleClick(e, 'project')} className="nav-dropdown-sub-item">
+                      <span>In Silico</span>
+                    </a>
+                    <a href="#" onClick={(e) => handleClick(e, 'drylabresults')} className="nav-dropdown-sub-item">
+                      <span>Dry Lab Results</span>
+                    </a>
+                  </>
                 )}
               </div>
             )}
           </div>
           <a href="#" onClick={(e) => handleClick(e, 'lab')}>Lab</a>
-          <a href="#" onClick={(e) => handleClick(e, 'humanpractices')}>Human Practices</a>
+          <div className="nav-dropdown" ref={dropdownRef}>
+            <a 
+              href="#" 
+              onClick={toggleEngagementDropdown} 
+              className={`nav-dropdown-toggle ${isEngagementDropdownOpen ? 'active' : ''}`}
+            >
+              Engagement
+              <svg className="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            {isEngagementDropdownOpen && (
+              <div className="nav-dropdown-menu">
+                <a href="#" onClick={(e) => handleClick(e, 'humanpractices')}>
+                  <span>Human Practices</span>
+                </a>
+                <a href="#" onClick={(e) => handleClick(e, 'entrepreneurship')}>
+                  <span>Entrepreneurship</span>
+                </a>
+              </div>
+            )}
+          </div>
           <a href="#" onClick={(e) => handleClick(e, 'team')}>Team</a>
         </div>
       </div>

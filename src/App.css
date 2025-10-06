@@ -1,3 +1,97 @@
+.hero-pitch {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 6rem 0 3rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.hero-pitch-container { width: 100%; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 4rem); text-align: center; }
+.hero-title { font-size: clamp(2.2rem, 6vw, 4.5rem); color: #0891b2; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 1rem 0; }
+.hero-subtitle { color: #64748b; max-width: 920px; margin: 0 auto 2rem; font-size: clamp(1rem, 2vw, 1.25rem); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 980px; margin: 0.5rem auto 1.5rem; }
+.hero-stat-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.hero-stat-value { color: #0891b2; font-weight: 800; font-size: clamp(2rem, 6vw, 3rem); line-height: 1; }
+.hero-stat-hint { color: #0891b2; font-weight: 700; }
+.hero-stat-label { color: #94a3b8; margin-top: .5rem; }
+.hero-cta { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+.btn { padding: .85rem 1.2rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all .2s ease; }
+.btn-primary { background: linear-gradient(135deg, #0891b2, #0e7490); color: #fff; border: 1px solid transparent; }
+.btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn-outline { background: #fff; color: #0891b2; border: 1px solid #0891b2; }
+.btn-outline:hover { background: rgba(14,165,169,.06); }
+.breakthrough-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 0;
+  color: #1f2937;
+}
+.breakthrough-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+}
+.breakthrough-header h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+.breakthrough-header p {
+  text-align: center;
+  color: #64748b;
+  margin: 0 0 2rem 0;
+}
+.breakthrough-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.bi-card {
+  perspective: 1200px;
+  height: 340px; /* lock height to prevent layout shift */
+}
+.bi-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2,.6,.2,1);
+  height: 100%;
+}
+.bi-card:hover .bi-card-inner {
+  transform: rotateY(180deg);
+}
+.bi-card-front, .bi-card-back {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 2rem;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  inset: 0; /* stack on top of each other */
+}
+.bi-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(8,145,178,0.08), rgba(2,132,199,0.08));
+}
+.bi-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 30%, rgba(8,145,178,0.15), rgba(14,165,233,0.05));
+  margin-bottom: 1rem;
+}
+.bi-card-front h3 { color: #0f172a; margin: .5rem 0 0.5rem; font-weight: 600; }
+.bi-card-front p { color: #64748b; }
+.bi-card-back h4 { color: #0f172a; margin: 0 0 1rem; }
+.bi-card-back li { color: #475569; margin: .5rem 0; }
+
+@media (max-width: 1024px) {
+  .breakthrough-grid { grid-template-columns: 1fr; }
+}
 /* Reset and base styles */
 * {
   margin: 0;
@@ -86,13 +180,45 @@ body {
 .death-counter-hero {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   color: #1f2937;
-  padding: 2rem 0;
-  min-height: 80vh;
+  padding: 1.25rem 0; /* a bit more breathing room */
+  min-height: 40vh; /* allow content to breathe */
   display: flex;
   align-items: center;
   border-bottom: 1px solid #e5e7eb;
   position: relative;
   overflow: hidden;
+}
+
+/* Insights replacement hero (image based) */
+.insights-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem 0 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.insights-hero-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+}
+.insights-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  border: 1px solid rgba(8,145,178,0.18);
+}
+.insights-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+}
+.insights-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient( circle at 20% 10%, rgba(8,145,178,0.12), transparent 40% ),
+              radial-gradient( circle at 80% 90%, rgba(16,185,129,0.12), transparent 40% );
+  pointer-events: none;
 }
 
 .death-counter-hero::before {
@@ -108,14 +234,15 @@ body {
 
 .death-counter-container {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   padding: 0 clamp(1rem, 4vw, 4rem);
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
   position: relative;
   z-index: 1;
+  max-width: 960px; /* wider so elements aren't cramped */
 }
 
 .countdown-timer {
@@ -123,21 +250,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 1.25rem;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
   border: 1px solid rgba(8, 145, 178, 0.2);
   position: relative;
-  min-height: 300px;
+  min-height: 200px;
 }
 
 .countdown-number {
-  font-size: clamp(8rem, 15vw, 12rem);
+  font-size: clamp(3rem, 6vw, 4.8rem);
   font-weight: 900;
   color: #0891b2;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
   animation: countdownPulse 1s ease-in-out;
 }
@@ -158,18 +285,18 @@ body {
 }
 
 .countdown-label {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
   font-weight: 600;
   color: #475569;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .countdown-progress {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
@@ -200,31 +327,31 @@ body {
 }
 
 .death-counter-title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 800;
-  margin-bottom: 2rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
   line-height: 1.1;
   color: #0f172a;
   letter-spacing: -0.02em;
 }
 
 .death-counter-number {
-  margin-bottom: 2rem;
-  text-align: center;
-  padding: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding: 1rem 1.25rem;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(8, 145, 178, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(8, 145, 178, 0.2);
 }
 
 .death-count {
   display: block;
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  font-weight: 800;
   color: #0891b2;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   text-shadow: 0 2px 4px rgba(8, 145, 178, 0.2);
   animation: countUp 0.5s ease-out;
 }
@@ -242,7 +369,7 @@ body {
 
 .death-label {
   display: block;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
   font-weight: 600;
   color: #475569;
   text-transform: uppercase;
@@ -250,25 +377,25 @@ body {
 }
 
 .death-counter-description {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  margin-bottom: 3rem;
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  margin-bottom: 1.25rem;
   color: #475569;
   line-height: 1.7;
-  max-width: 100%;
+  max-width: 800px; /* readable measure */
 }
 
 .death-counter-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .death-counter-stats .stat-item {
-  text-align: center;
-  padding: 1.5rem;
+  text-align: left;
+  padding: 0.8rem 1rem;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(8, 145, 178, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -280,19 +407,19 @@ body {
 
 .death-counter-stats .stat-number {
   display: block;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #0891b2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .death-counter-stats .stat-text {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 /* Global Drug Abuse Statistics Section */

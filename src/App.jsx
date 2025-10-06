@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage'
 import ProjectDescription from './pages/ProjectDescription'
 import DryLabPage from './pages/DryLabPage'
 import WetLabPage from './pages/WetLabPage'
-import InSilicoPage from './pages/InSilicoPage'
+import DryLabResultsPage from './pages/DryLabResultsPage'
 import './App.css'
 
 function App() {
@@ -18,20 +18,27 @@ function App() {
           return <DryLabPage />
         case 'wetlab':
           return <WetLabPage />
-        case 'insilico':
-          return <InSilicoPage />
       case 'lab':
-        return (
+  return (
           <div className="page-header">
             <h1>Lab</h1>
             <p>Laboratory information and protocols coming soon...</p>
           </div>
         )
+      case 'drylabresults':
+        return <DryLabResultsPage />
       case 'humanpractices':
         return (
           <div className="page-header">
             <h1>Human Practices</h1>
-            <p>Human practices and outreach activities coming soon...</p>
+            <p>Activities and stakeholder engagement coming soon...</p>
+          </div>
+        )
+      case 'entrepreneurship':
+        return (
+          <div className="page-header">
+            <h1>Entrepreneurship</h1>
+            <p>Business model and translational strategy coming soon...</p>
           </div>
         )
       case 'team':

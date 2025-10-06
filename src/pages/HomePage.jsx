@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../components/layout/Header'
 import ScrollText from '../components/sections/ScrollText'
-import DeathCounter from '../components/sections/DeathCounter'
+// import DeathCounter from '../components/sections/DeathCounter'
+import InsightsHero from '../components/sections/InsightsHero'
+import HeroPitch from '../components/sections/HeroPitch'
 import WorldMap from '../components/charts/WorldMap'
 import OpioidTrendsChart from '../components/charts/OpioidTrendsChart'
 import GlobalStats from '../components/sections/GlobalStats'
 import TechnologyHero from '../components/sections/TechnologyHero'
-import MetricsOverview from '../components/sections/MetricsOverview'
 import PatientCharts from '../components/charts/PatientCharts'
 import Features from '../components/sections/Features'
 import Stats from '../components/sections/Stats'
 import TestingMethods from '../components/sections/TestingMethods'
+import BreakthroughInnovations from '../components/sections/BreakthroughInnovations'
 import { generatePatientData } from '../data/constants'
 
 const HomePage = ({ onNavigate }) => {
@@ -28,14 +29,14 @@ const HomePage = ({ onNavigate }) => {
   return (
     <div className="home-page">
       <ScrollText />
-      <Header onNavigate={onNavigate} />
-      <DeathCounter />
+      {/* <DeathCounter /> */}
+      <HeroPitch />
       <WorldMap />
       <OpioidTrendsChart />
-      <TestingMethods />
       <GlobalStats />
+      <TestingMethods />
+      <BreakthroughInnovations />
       <TechnologyHero />
-      <MetricsOverview />
       <PatientCharts patientData={patientData} />
       <Features />
       <Stats />

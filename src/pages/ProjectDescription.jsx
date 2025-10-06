@@ -53,8 +53,8 @@ const ProjectDescription = () => {
   return (
     <div className="project-description-page">
       <div className="page-header">
-        <h1>Opio-Rx: Rapid, Non-Invasive Real-Time Detection of Synthetic Opioids</h1>
-        <p>Revolutionary aptamer-based multiplex lateral flow diagnostic for synthetic opioid detection</p>
+        <h1>Opio‑Rx: rapid, non‑invasive real‑time detection of synthetic opioids</h1>
+        <p>Clinically elegant pipeline: computational aptamers + FRET optics + AI readout</p>
       </div>
       
       <div className="project-description-content">
@@ -67,12 +67,8 @@ const ProjectDescription = () => {
               <h2>Abstract</h2>
             </div>
             <div className="pd-card">
-              <h3>Opio-Rx: Rapid, Non-Invasive Real-Time Detection of Synthetic Opioids</h3>
-              <p>The escalating global opioid crisis, defined by widespread misuse, dependence, and overdose fatalities, demands urgent innovation in detection strategies. Current diagnostic solutions, rely on slow and costly laboratory assays, remain inaccessible at the point of need, delaying timely interventions.</p>
-              
-              <p>Opio-Rx directly addresses this gap by presenting an aptamer-based multiplex lateral flow diagnostic for the rapid, non-invasive, and quantitative detection of synthetic opioids — including fentanyl, oxycodone, tramadol, methadone, and codeine — in salivary samples. By leveraging advanced computational design, we generate highly specific aptamers, overcoming the time and cost burdens of conventional SELEX. These aptamers are validated in vitro and then harnessed for optical detection through a FRET-based framework, enabling sensitive and quantitative opioid measurement.</p>
-              
-              <p>To empower end-users, Opio-Rx integrates with an AI-powered mobile application, capable of processing the fluorescence signals from the lateral flow device and instantly providing digital concentration readouts. This unified pipeline — computationally designed aptamers, FRET-based diagnostics, and AI-enabled analysis — positions Opio-Rx as a powerful, scalable tool for frontline intervention in the opioid crisis.</p>
+              <p>The escalating global opioid crisis demands innovation. Current diagnostics are slow, expensive and inaccessible at the point of need. Opio‑Rx delivers an aptamer‑based multiplex saliva test for synthetic opioids (fentanyl, oxycodone, tramadol, methadone, codeine) with quantitative FRET optics and an AI mobile reader.</p>
+              <p>Computationally designed aptamers replace protracted SELEX, then validate in vitro and integrate into a FRET framework for sensitive, quantitative readout. The companion app processes fluorescence and displays instant concentrations — a scalable frontline tool.</p>
             </div>
           </div>
 
@@ -80,18 +76,16 @@ const ProjectDescription = () => {
           <div className="pd-section">
             <div className="pd-section-header">
               <ShieldIcon />
-              <h2>Introduction</h2>
+              <h2>Introduction / Problem</h2>
             </div>
             <div className="pd-card">
-              <p>Opioids, derived from the poppy plant, are substances that interact with brain opioid receptors, providing analgesic and sedative properties. Commonly used for pain treatment, they also help maintain opioid dependency through medications like buprenorphine and methadone. Opioids are also used for non-medical purposes due to the euphoria after ingestion. However, their pharmacological effects can make breathing difficult and lead to fatal overdoses.</p>
-              
-              <p>Opioids do, however, have some hazards, including abuse, dependency, and overdose fatalities. The opioid crisis has become a global health emergency requiring innovative detection and intervention strategies.</p>
+              <p>Opioids are essential therapeutics but carry substantial risk: dependence and respiratory depression leading to fatal overdose. The crisis requires rapid, quantitative detection at the point of need.</p>
             </div>
           </div>
 
           
 
-          {/* Current Detection Methods */}
+      {/* Current Detection Methods */}
           <div className="pd-section">
             <div className="pd-section-header">
               <MicroscopeIcon />
@@ -127,18 +121,14 @@ const ProjectDescription = () => {
             </div>
           </div>
 
-          {/* Limitations */}
+          {/* Limitations → Birth of Opio‑Rx */}
           <div className="pd-section">
             <div className="pd-section-header">
               <AlertIcon />
-              <h2>Limitations: The Birth of Opio-Rx</h2>
+              <h2>Limitations: The birth of Opio‑Rx</h2>
             </div>
             <div className="pd-card">
-              <p>Liquid Chromatography–Tandem Mass Spectrometry (LC–MS/MS) and Gas Chromatography–Mass Spectrometry (GC–MS) are currently regarded as the gold-standard methods for opioid detection due to their high sensitivity and specificity. However, these techniques come with significant drawbacks that restrict their applicability in real-time or point-of-care testing.</p>
-              
-              <p>Both LC–MS and GC–MS require expensive instrumentation, highly controlled laboratory environments, and trained professionals to operate and interpret results. Moreover, the turnaround time for each sample can be as long as 2–3 days, which makes these approaches impractical in settings where rapid and accurate on-site analysis is critical, such as emergency rooms, rehabilitation centers, or law enforcement field investigations.</p>
-              
-              <p>Conventional immunoassays, which use antibodies as the primary recognition element, offer a more accessible alternative but suffer from notable limitations. Antibodies, due to their comparatively large molecular size and complex tertiary structure, can be less stable under varying environmental conditions, leading to reduced shelf-life and performance inconsistencies. Their batch-to-batch variability in production adds further uncertainty to assay reliability. More importantly, immunoassays are prone to higher rates of false positives, particularly in the case of structurally similar opioid analogs.</p>
+              <p>LC/GC‑MS require costly instruments, controlled labs and trained staff with 2–3 day turnaround — unsuitable for urgent POC use. Immunoassays face stability, batch variability and analog cross‑reactivity, and are usually qualitative — insufficient when dosage decisions need concentration.</p>
             </div>
           </div>
 
@@ -150,7 +140,7 @@ const ProjectDescription = () => {
             </div>
             
             <div className="pd-card">
-              <h3>A. In Silico Aptamer Design</h3>
+              <h3>A. In silico aptamer design</h3>
               
               <div className="image-placeholder">
                 <img src="/api/placeholder/600/400" alt="In silico aptamer design workflow" />
@@ -185,7 +175,7 @@ const ProjectDescription = () => {
             </div>
 
             <div className="pd-card">
-              <h3>B. Förster Resonance Energy Transfer Principles</h3>
+              <h3>B. Förster Resonance Energy Transfer principles</h3>
               
               <div className="image-placeholder">
                 <img src="/api/placeholder/600/300" alt="FRET: rGO + FAM labelled aptamer" />
@@ -208,6 +198,48 @@ const ProjectDescription = () => {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* In Silico Aptamer Design (moved from standalone page) */}
+      <div className="pd-section">
+        <div className="pd-section-header">
+          <MicroscopeIcon />
+          <h2>In Silico Aptamer Design</h2>
+        </div>
+        <div className="pd-card">
+          <h3>Design Workflow</h3>
+          <p>Our computational approach to aptamer design combines sequence analysis, structure prediction, molecular docking, and optimization techniques to develop highly specific aptamers for synthetic opioid detection.</p>
+          <ul className="pd-list">
+            <li><strong>1. Primary Sequence Analysis:</strong> Literature-based sequence collection and multiple sequence alignment</li>
+            <li><strong>2. Structure Prediction:</strong> Secondary structures from mFold and tertiary models via 3DRNA/DNA</li>
+            <li><strong>3. Molecular Docking:</strong> LibDock-based interaction analysis with target opioids</li>
+            <li><strong>4. Optimization:</strong> Truncation and point mutation to enhance affinity</li>
+            <li><strong>5. Validation:</strong> MD simulations to confirm dynamic stability</li>
+          </ul>
+        </div>
+
+        <div className="pd-grid">
+          <div className="pd-card">
+            <h3>Primary Sequence Analysis</h3>
+            <p>Eight aptamer sequences were curated from literature sources focusing on synthetic opioids. Multiple sequence alignment identified conserved regions and primer sites, informing downstream modeling.</p>
+          </div>
+          <div className="pd-card">
+            <h3>Secondary & Tertiary Structure</h3>
+            <p>mFold generated dot‑bracket secondary structures using 1 M Na+, 0 Mg2+ at 37°C. 3DRNA/DNA converted these into 3D models for docking.</p>
+          </div>
+          <div className="pd-card">
+            <h3>Docking with LibDock</h3>
+            <p>Hotspot‑guided docking evaluated polar/apolar complementarity. Binding sites were defined around loop regions observed in secondary structures.</p>
+          </div>
+          <div className="pd-card">
+            <h3>Truncation & Point Mutation</h3>
+            <p>Systematic 5’/3’ truncations and targeted mutations improved affinity while monitoring folding stability and GC content thresholds.</p>
+          </div>
+          <div className="pd-card">
+            <h3>MD Simulations & Metrics</h3>
+            <p>150 ns simulations assessed RMSD, RMSF, and Rg. Stable plateaus and interface RMSF minima indicated robust target engagement.</p>
+          </div>
         </div>
       </div>
     </div>
