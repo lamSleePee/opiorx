@@ -5,8 +5,8 @@ const Header = ({ onNavigate }) => {
   const [isEngineeringDropdownOpen, setIsEngineeringDropdownOpen] = useState(false)
   const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false)
   const [isEngagementDropdownOpen, setIsEngagementDropdownOpen] = useState(false)
-  const dropdownRef = useRef(null)
-  const engineeringDropdownRef = useRef(null)
+  const projectDropdownRef = useRef(null)
+  const engagementDropdownRef = useRef(null)
 
   const handleClick = (e, page) => {
     e.preventDefault()
@@ -14,6 +14,7 @@ const Header = ({ onNavigate }) => {
     setIsProjectDropdownOpen(false)
     setIsEngineeringDropdownOpen(false)
     setIsResultsDropdownOpen(false)
+    setIsEngagementDropdownOpen(false)
   }
 
   const toggleProjectDropdown = (e) => {
@@ -22,6 +23,7 @@ const Header = ({ onNavigate }) => {
     setIsProjectDropdownOpen(!isProjectDropdownOpen)
     setIsEngineeringDropdownOpen(false)
     setIsResultsDropdownOpen(false)
+    setIsEngagementDropdownOpen(false)
   }
 
   const toggleEngineeringDropdown = (e) => {
@@ -47,17 +49,21 @@ const Header = ({ onNavigate }) => {
     setIsResultsDropdownOpen(false)
   }
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      const clickedOutsideProject = projectDropdownRef.current && !projectDropdownRef.current.contains(event.target)
+      const clickedOutsideEngagement = engagementDropdownRef.current && !engagementDropdownRef.current.contains(event.target)
+
+      if (clickedOutsideProject && clickedOutsideEngagement) {
         setIsProjectDropdownOpen(false)
         setIsEngineeringDropdownOpen(false)
         setIsEngagementDropdownOpen(false)
+        setIsResultsDropdownOpen(false)
       }
     }
 
-    if (isProjectDropdownOpen || isEngineeringDropdownOpen) {
+    if (isProjectDropdownOpen || isEngineeringDropdownOpen || isEngagementDropdownOpen || isResultsDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside)
       document.addEventListener('touchstart', handleClickOutside)
     }
@@ -66,7 +72,7 @@ const Header = ({ onNavigate }) => {
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('touchstart', handleClickOutside)
     }
-  }, [isProjectDropdownOpen, isEngineeringDropdownOpen])
+  }, [isProjectDropdownOpen, isEngineeringDropdownOpen, isEngagementDropdownOpen, isResultsDropdownOpen])
 
   return (
     <nav className="navbar">
@@ -77,7 +83,7 @@ const Header = ({ onNavigate }) => {
         </div>
         <div className="nav-menu">
           <a href="#" onClick={(e) => handleClick(e, 'home')}>Home</a>
-          <div className="nav-dropdown" ref={dropdownRef}>
+          <div className="nav-dropdown" ref={projectDropdownRef}>
             <a 
               href="#" 
               onClick={toggleProjectDropdown} 
@@ -133,7 +139,7 @@ const Header = ({ onNavigate }) => {
             )}
           </div>
           <a href="#" onClick={(e) => handleClick(e, 'lab')}>Lab</a>
-          <div className="nav-dropdown" ref={dropdownRef}>
+          <div className="nav-dropdown" ref={engagementDropdownRef}>
             <a 
               href="#" 
               onClick={toggleEngagementDropdown} 

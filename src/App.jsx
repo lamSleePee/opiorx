@@ -6,6 +6,7 @@ import DryLabPage from './pages/DryLabPage'
 import WetLabPage from './pages/WetLabPage'
 import DryLabResultsPage from './pages/DryLabResultsPage'
 import './App.css'
+import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -35,12 +36,7 @@ function App() {
           </div>
         )
       case 'entrepreneurship':
-        return (
-          <div className="page-header">
-            <h1>Entrepreneurship</h1>
-            <p>Business model and translational strategy coming soon...</p>
-          </div>
-        )
+        return <EntrepreneurshipPage />
       case 'team':
         return (
           <div className="page-header">
