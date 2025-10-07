@@ -97,7 +97,32 @@ const NotebooksPage = () => {
           )}
           {active === 'wet' && (
             <>
-              <GanttChart src="/wet-lab-chart.xlsx" title="Wet Lab – Gantt Chart" view="bar" />
+              <GanttChart
+                title="Wet Lab – Gantt Chart"
+                view="bar"
+                data={[
+                  { Task: 'Gold Nanoparticle Synthesis', Start: '2025-02-05', End: '2025-02-06', Group: 'Synthesis' },
+                  { Task: 'GO Suspension Preparation', Start: '2025-07-05', End: '2025-07-05', Group: 'GO' },
+                  { Task: 'GO Dilution', Start: '2025-07-09', End: '2025-07-09', Group: 'GO' },
+                  { Task: 'FITC Stock Preparation', Start: '2025-07-13', End: '2025-07-13', Group: 'Reagents' },
+                  { Task: 'FRET Mechanism Study', Start: '2025-07-17', End: '2025-07-17', Group: 'FRET' },
+                  { Task: 'GO–FITC Assay', Start: '2025-07-21', End: '2025-07-21', Group: 'Assay' },
+                  { Task: 'GO Aggregation', Start: '2025-07-25', End: '2025-07-25', Group: 'GO' },
+                  { Task: 'BSA & PBS Preparation', Start: '2025-07-29', End: '2025-07-29', Group: 'Buffers' },
+                  { Task: 'Reduced GO Preparation', Start: '2025-08-02', End: '2025-08-02', Group: 'GO' },
+                  { Task: 'rGO–FITC Quenching', Start: '2025-08-06', End: '2025-08-06', Group: 'FRET' },
+                  { Task: 'Aptamer Preparation', Start: '2025-08-10', End: '2025-08-10', Group: 'Aptamer' },
+                  { Task: 'Fentanyl Stock Preparation', Start: '2025-08-14', End: '2025-08-14', Group: 'Reagents' },
+                  { Task: 'UV–Vis Analysis', Start: '2025-08-18', End: '2025-08-18', Group: 'Analysis' },
+                  { Task: 'BSA + GO Aggregation', Start: '2025-08-22', End: '2025-08-22', Group: 'GO' },
+                  { Task: 'Order‑of‑Addition Study', Start: '2025-08-26', End: '2025-08-26', Group: 'Study' },
+                  { Task: 'rGO Quenching (FAM–Aptamer)', Start: '2025-08-30', End: '2025-08-30', Group: 'FRET' },
+                  { Task: 'Fluorescence Optimization', Start: '2025-09-03', End: '2025-09-03', Group: 'Optimization' },
+                  { Task: 'FRET Assay (rGO)', Start: '2025-09-07', End: '2025-09-07', Group: 'Assay' },
+                  { Task: 'FRET Assay (GO)', Start: '2025-09-11', End: '2025-09-11', Group: 'Assay' },
+                  { Task: 'FRET Assay (AuNP)', Start: '2025-09-15', End: '2025-09-15', Group: 'Assay' },
+                ]}
+              />
               <DocViewer src="/wet-lab.pdf" title="Wet Lab Notebook" />
             </>
           )}

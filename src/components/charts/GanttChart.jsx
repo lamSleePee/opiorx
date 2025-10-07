@@ -146,9 +146,9 @@ export default function GanttChart({ src, title, data, compact = true, view = 't
   }
 
   // sizing (compact mode reduces overall visual scale)
-  const rowHeight = compact ? 24 : 32
+  const rowHeight = compact ? 30 : 36
   const barHeight = compact ? 14 : 20
-  const labelFont = compact ? '0.95rem' : '1rem'
+  const labelFont = compact ? '0.8rem' : '0.95rem'
 
   // Utility: build months between min and max for nicer header/grid
   const months = (() => {
@@ -168,7 +168,7 @@ export default function GanttChart({ src, title, data, compact = true, view = 't
     <div className="pd-card" style={{ overflowX: 'auto' }}>
       <h3>{title}</h3>
       {/* Grid: 2 columns (labels | chart), 2 rows (header | body) */}
-      <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gridTemplateRows: 'auto 1fr', columnGap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gridTemplateRows: 'auto 1fr', columnGap: '1rem' }}>
         {/* Left header spacer */}
         <div style={{ gridColumn: 1, gridRow: 1 }} />
         {/* Right header */}
@@ -211,7 +211,7 @@ export default function GanttChart({ src, title, data, compact = true, view = 't
         <div style={{ gridColumn: 1, gridRow: 2 }}>
           <div style={{ display:'grid', gridTemplateRows: `repeat(${tasks.length}, ${rowHeight}px)`, rowGap: 0 }}>
             {tasks.map((t, i) => (
-              <div key={i} style={{ display:'flex', alignItems:'center', height: rowHeight, color:'#0f172a', fontWeight:600, fontSize: '0.85rem', lineHeight:1.2 }}>{t.task}</div>
+              <div key={i} style={{ display:'flex', alignItems:'center', height: rowHeight, color:'#0f172a', fontWeight:600, fontSize: labelFont, lineHeight:1.15, whiteSpace:'normal', wordBreak:'break-word' }}>{t.task}</div>
             ))}
           </div>
         </div>

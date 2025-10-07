@@ -9,6 +9,7 @@ import DryLabResultsPage from './pages/DryLabResultsPage'
 import './App.css'
 import NotebooksPage from './pages/NotebooksPage'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
+import SafetyPage from './pages/SafetyPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -29,12 +30,7 @@ function App() {
           </div>
         )
       case 'labsafety':
-        return (
-          <div className="page-header">
-            <h1>Lab Safety</h1>
-            <p>Standard safety guidelines, PPE requirements, and emergency procedures.</p>
-          </div>
-        )
+        return <SafetyPage />
       case 'labprotocols':
         return (
           <div className="page-header">

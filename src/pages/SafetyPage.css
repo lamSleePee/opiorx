@@ -1,0 +1,677 @@
+/* Safety Page Styles */
+
+.safety-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.safety-hero {
+  position: relative;
+  padding: 96px 24px;
+  overflow: hidden;
+}
+
+.safety-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.safety-hero-decoration {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.safety-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  animation: safety-pulse 4s ease-in-out infinite;
+}
+
+.safety-hero-blob-1 {
+  top: 80px;
+  left: 80px;
+  width: 288px;
+  height: 288px;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.safety-hero-blob-2 {
+  bottom: 80px;
+  right: 80px;
+  width: 384px;
+  height: 384px;
+  background: rgba(16, 185, 129, 0.15);
+  animation-delay: 1s;
+}
+
+.safety-hero-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.safety-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #047857;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.safety-badge-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.safety-hero-title {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+  line-height: 1.1;
+}
+
+.safety-hero-subtitle {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #1e40af;
+}
+
+.safety-hero-description {
+  font-size: 20px;
+  color: #475569;
+  max-width: 896px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Container */
+.safety-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Sections */
+.safety-section {
+  width: 100%;
+}
+
+/* Timeline Section */
+.safety-timeline-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.safety-timeline-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.safety-timeline-subtitle {
+  color: #64748b;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.safety-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.safety-timeline-item {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  position: relative;
+}
+
+.safety-timeline-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.safety-timeline-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.safety-timeline-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.safety-timeline-header-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.safety-timeline-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.safety-date-icon {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+}
+
+.safety-date-text {
+  font-weight: 600;
+  color: #475569;
+  font-size: 14px;
+}
+
+.safety-timeline-target {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.safety-target-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.safety-target-text {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.safety-timeline-task {
+  flex: 1;
+}
+
+.safety-task-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.safety-timeline-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.safety-safety-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 6px;
+}
+
+.safety-safety-icon {
+  width: 14px;
+  height: 14px;
+  color: #047857;
+}
+
+.safety-safety-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #047857;
+}
+
+.safety-progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+}
+
+.safety-progress-icon {
+  width: 14px;
+  height: 14px;
+  color: #1e40af;
+}
+
+.safety-progress-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e40af;
+}
+
+/* Guidelines Section */
+.safety-guidelines-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.safety-guidelines-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.safety-guidelines-subtitle {
+  color: #64748b;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.safety-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.safety-guideline-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.safety-guideline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.safety-guideline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  margin-bottom: 16px;
+}
+
+.safety-guideline-icon-svg {
+  width: 28px;
+  height: 28px;
+  color: #3b82f6;
+}
+
+.safety-guideline-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.safety-guideline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.safety-guideline-list li {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.safety-guideline-list li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Risk Assessment Section */
+.safety-risk-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.safety-risk-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.safety-risk-subtitle {
+  color: #64748b;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.safety-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.safety-risk-category {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.safety-risk-category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.safety-risk-category-icon {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+}
+
+.safety-risk-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.safety-risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.safety-risk-level {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.safety-risk-low {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.safety-risk-medium {
+  background: rgba(234, 179, 8, 0.1);
+  color: #ca8a04;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.safety-risk-high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.safety-risk-content {
+  flex: 1;
+}
+
+.safety-risk-item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.safety-risk-item-description {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Compliance Section */
+.safety-compliance-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #10b981;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.safety-compliance-header {
+  padding: 32px 32px 0;
+  text-align: center;
+}
+
+.safety-compliance-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.safety-compliance-icon {
+  width: 32px;
+  height: 32px;
+  color: #10b981;
+}
+
+.safety-compliance-subtitle {
+  color: #64748b;
+  max-width: 768px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.safety-compliance-content {
+  padding: 32px;
+}
+
+.safety-compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.safety-compliance-item {
+  text-align: center;
+  padding: 24px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.safety-compliance-item-icon {
+  width: 48px;
+  height: 48px;
+  color: #10b981;
+  margin: 0 auto 16px;
+}
+
+.safety-compliance-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.safety-compliance-item-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Color Classes */
+.safety-blue-bg { background: #ffffff; }
+.safety-blue-border { border-color: #3b82f6; }
+.safety-blue-text { color: #1e40af; }
+.safety-blue-accent { color: #1d4ed8; }
+
+.safety-red-bg { background: #ffffff; }
+.safety-red-border { border-color: #ef4444; }
+.safety-red-text { color: #dc2626; }
+.safety-red-accent { color: #ef4444; }
+
+.safety-orange-bg { background: #ffffff; }
+.safety-orange-border { border-color: #f97316; }
+.safety-orange-text { color: #ea580c; }
+.safety-orange-accent { color: #f97316; }
+
+.safety-purple-bg { background: #ffffff; }
+.safety-purple-border { border-color: #a855f7; }
+.safety-purple-text { color: #7c3aed; }
+.safety-purple-accent { color: #8b5cf6; }
+
+.safety-green-bg { background: #ffffff; }
+.safety-green-border { border-color: #22c55e; }
+.safety-green-text { color: #16a34a; }
+.safety-green-accent { color: #22c55e; }
+
+.safety-cyan-bg { background: #ffffff; }
+.safety-cyan-border { border-color: #06b6d4; }
+.safety-cyan-text { color: #0891b2; }
+.safety-cyan-accent { color: #06b6d4; }
+
+.safety-emerald-bg { background: #ffffff; }
+.safety-emerald-border { border-color: #10b981; }
+.safety-emerald-text { color: #047857; }
+.safety-emerald-accent { color: #059669; }
+
+/* Animations */
+@keyframes safety-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .safety-hero {
+    padding: 64px 16px;
+  }
+  
+  .safety-hero-title {
+    font-size: 40px;
+  }
+  
+  .safety-hero-subtitle {
+    font-size: 24px;
+  }
+  
+  .safety-hero-description {
+    font-size: 18px;
+  }
+  
+  .safety-container {
+    padding: 32px 16px;
+    gap: 48px;
+  }
+  
+  .safety-timeline-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .safety-timeline-marker {
+    align-self: center;
+  }
+  
+  .safety-timeline-header-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .safety-guidelines-grid,
+  .safety-risk-grid,
+  .safety-compliance-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .safety-timeline-title,
+  .safety-guidelines-title,
+  .safety-risk-title {
+    font-size: 28px;
+  }
+  
+  .safety-compliance-title {
+    font-size: 24px;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
