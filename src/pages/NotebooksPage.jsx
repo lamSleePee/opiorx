@@ -48,7 +48,7 @@ const NotebooksPage = () => {
           </div>
 
           {active === 'dry' && (
-            <DocViewer src="/dry-lab.docx" title="Dry Lab Notebook" />
+            <DocViewer src="/dry-lab.pdf" title="Dry Lab Notebook" />
           )}
           {active === 'wet' && (
             <DocViewer src="/wet-lab.pdf" title="Wet Lab Notebook" />
