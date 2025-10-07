@@ -46,8 +46,9 @@ const ScrollText = () => {
       style={{
         position: "relative",
         width: "100%",
-        height: "200vh",
-        minHeight: "100vh",
+        maxWidth: "100vw",
+        height: "auto",
+        minHeight: "120vh",
         paddingBottom: 0,
         background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
         display: "flex",
@@ -55,6 +56,9 @@ const ScrollText = () => {
         alignItems: "center",
         color: "#000000",
         fontFamily: "'Helvetica Neue', sans-serif",
+        overflowX: "hidden",
+        overflowY: "hidden",
+        boxSizing: "border-box",
       }}
     >
       <h1
@@ -111,7 +115,7 @@ const ScrollText = () => {
           fontSize: "10em",
           fontWeight: 700,
           marginTop: "15vh",
-          marginBottom: 0,
+          marginBottom: "20vh",
           textAlign: "center",
           transformOrigin: "center center",
         }}

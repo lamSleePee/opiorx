@@ -176,6 +176,20 @@
 .dlr-sub { color:#0f172a; font-size:1.2rem; font-weight:700; margin:.5rem 0; }
 .dlr-para { max-width:800px; margin:0 auto; color:#64748b; }
 
+/* Dry Lab Results – data tables */
+.dlr-table-wrap { width:100%; overflow:auto; border-radius:12px; border:1px solid #e5e7eb; background:#ffffff; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.dlr-table { width:100%; border-collapse:separate; border-spacing:0; min-width:720px; }
+.dlr-table thead th { position:sticky; top:0; background:linear-gradient(135deg,#f1f5f9 0%, #e2e8f0 100%); color:#0f172a; font-weight:700; text-align:left; padding:.85rem 1rem; border-bottom:1px solid #e5e7eb; }
+.dlr-table tbody td { padding:.75rem 1rem; color:#475569; border-bottom:1px solid #eef2f7; }
+.dlr-table tbody tr:nth-child(odd) { background:#fafcff; }
+.dlr-table tbody tr:hover { background:#f0f9ff; }
+.dlr-table th:first-child, .dlr-table td:first-child { border-right:1px solid #eef2f7; font-weight:600; color:#0f172a; white-space:nowrap; }
+.dlr-table th, .dlr-table td { vertical-align:middle; }
+
+@media (max-width: 768px) {
+  .dlr-table { min-width:640px; }
+}
+
 @media (max-width: 960px) {
   .dlr-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .dlr-opioids { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -401,6 +415,11 @@ body {
   background: radial-gradient( circle at 20% 10%, rgba(8,145,178,0.12), transparent 40% ),
               radial-gradient( circle at 80% 90%, rgba(16,185,129,0.12), transparent 40% );
   pointer-events: none;
+}
+
+/* Prevent horizontal scroll on home page (e.g., animated ScrollText) */
+.home-page {
+  overflow-x: hidden;
 }
 
 .death-counter-hero::before {

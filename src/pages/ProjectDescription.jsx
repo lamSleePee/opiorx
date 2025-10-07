@@ -139,40 +139,7 @@ const ProjectDescription = () => {
               <h2>Project Outline</h2>
             </div>
             
-            <div className="pd-card">
-              <h3>A. In silico aptamer design</h3>
-              
-              <div className="image-placeholder">
-                <img src="/api/placeholder/600/400" alt="In silico aptamer design workflow" />
-                <p className="image-caption">Fig. 2: In silico aptamer design workflow</p>
-              </div>
-
-              <h4>Primary Sequence Analysis:</h4>
-              <p>The primary sequence was obtained from the literature. Multiple sequence alignment was performed using the CLUSTAL OMEGA web server. This helped to identify the structurally conserved regions and primer regions in the eight sequences.</p>
-
-              <h4>Secondary Structure Prediction:</h4>
-              <p>The DNA fold algorithm of the mFold Web server was used to generate the secondary structure of the aptamer sequences. The key parameters of the mFold Web server were used: 1 M Na+ and 0 Mg2+ M were used as ionic conditions, while the folding temperature was used at 37°C.</p>
-
-              <h4>Tertiary Structure Prediction:</h4>
-              <p>The 3DRNA/DNA web server was used to predict the tertiary structure of the eight aptamer sequences using the dot bracket structure obtained in the Vienna format from mFold. The dot bracket annotation displays the whole chain as a single string, with matching parentheses indicating the positions of paired nucleotides and dots indicating the positions of unpaired nucleotides.</p>
-
-              <h4>Molecular Docking: Biovia Discovery Studio</h4>
-              <p>Biovia Discovery Studio's LibDock protocol was used to perform molecular docking of the three-dimensional aptamer structures against the target opioid, fentanyl. LibDock is a high-throughput algorithm that comprises the polar and apolar features as "hotspots." It is a hotspot-based docking tool that uses hotspot regions in ligand molecules and uses them to guide the docking into the receptor binding sites.</p>
-
-              <h4>Truncation Approach:</h4>
-              <p>Truncation of aptamers entails systematically shortening the nucleotide sequence of an aptamer to identify the minimal sequence required for effective target binding. The truncation process is required for both functional and economical reasons. A shorter sequence yields the conformational change property of aptamers, boosts efficiency, and requires less reduction costs.</p>
-
-              <h4>Point Mutation Approach:</h4>
-              <p>The potential aptamer sequence from the eight sequences was subjected to point mutation based on heat map generated after analysing ligand poses of all ligand conformation against the potential aptamer sequence. Strong interacting residues were then identified and were chosen as anchor residues to conduct mutations further.</p>
-
-              <div className="image-placeholder">
-                <img src="/api/placeholder/600/300" alt="Heat-maps generated showing various conformations of fentanyl" />
-                <p className="image-caption">Fig. 3: Heat-maps generated showing various conformations of fentanyl in its loop regions</p>
-              </div>
-
-              <h4>MD Simulations:</h4>
-              <p>Molecular dynamics (MD) simulations were performed on both the novel aptamer sequence and its docked complex for 150 ns to evaluate their dynamic stability, conformational flexibility, and interaction persistence under physiologically relevant conditions. Trajectory analyses included root-mean-square deviation (RMSD), root-mean-square fluctuation (RMSF), and radius of gyration (Rg) to assess compactness and folding integrity throughout the simulation.</p>
-            </div>
+            {/* A. In silico aptamer design — removed as requested */}
 
             <div className="pd-card">
               <h3>B. Förster Resonance Energy Transfer principles</h3>
@@ -239,6 +206,10 @@ const ProjectDescription = () => {
           <div className="pd-card">
             <h3>MD Simulations & Metrics</h3>
             <p>150 ns simulations assessed RMSD, RMSF, and Rg. Stable plateaus and interface RMSF minima indicated robust target engagement.</p>
+          </div>
+          <div className="pd-card">
+            <h3><em>in‑vitro</em> Validation</h3>
+            <p>Aptamer sequences are validated <em>in‑vitro</em> to test their specificity and affinity.</p>
           </div>
         </div>
       </div>

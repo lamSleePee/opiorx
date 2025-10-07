@@ -7,6 +7,7 @@ import WetLabPage from './pages/WetLabPage'
 import TeamPage from './pages/TeamPage'
 import DryLabResultsPage from './pages/DryLabResultsPage'
 import './App.css'
+import NotebooksPage from './pages/NotebooksPage'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 
 function App() {
@@ -27,8 +28,24 @@ function App() {
             <p>Laboratory information and protocols coming soon...</p>
           </div>
         )
+      case 'labsafety':
+        return (
+          <div className="page-header">
+            <h1>Lab Safety</h1>
+            <p>Standard safety guidelines, PPE requirements, and emergency procedures.</p>
+          </div>
+        )
+      case 'labprotocols':
+        return (
+          <div className="page-header">
+            <h1>Lab Protocols</h1>
+            <p>Step-by-step experimental protocols will be published here.</p>
+          </div>
+        )
       case 'drylabresults':
         return <DryLabResultsPage />
+      case 'notebooks':
+        return <NotebooksPage />
       case 'humanpractices':
         return (
           <div className="page-header">

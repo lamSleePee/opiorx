@@ -81,31 +81,39 @@ const Stat = ({label, value}) => (
   </div>
 )
 
-const Table = ({rows, columns}) => (
-  <div className="dlr-table-wrap">
-    <table className="dlr-table">
-      <thead>
-        <tr>
-          {columns.map((c) => <th key={c}>{c}</th>)}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((r, i) => (
-          <tr key={i}>
-            {columns.map((c) => <td key={c}>{number(r[c])}</td>)}
+const Table = ({rows, columns}) => {
+  const getValue = (row, column) => {
+    if (column === 'Hydrogen Bond') return row.h
+    if (column === 'C-H Bond') return row.ch
+    return row[column]
+  }
+  
+  return (
+    <div className="dlr-table-wrap">
+      <table className="dlr-table">
+        <thead>
+          <tr>
+            {columns.map((c) => <th key={c}>{c}</th>)}
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)
+        </thead>
+        <tbody>
+          {rows.map((r, i) => (
+            <tr key={i}>
+              {columns.map((c) => <td key={c}>{number(getValue(r, c))}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
 
 const DryLabResultsPage = () => {
   const [opioid, setOpioid] = useState('fentanyl')
   const [tab, setTab] = useState('comparison')
   const d = useMemo(() => DATA[opioid], [opioid])
 
-  const columns = ['loop','libdock','potential','electro','vdw','total','h','ch']
+  const columns = ['loop','libdock','potential','electro','vdw','total','Hydrogen Bond','C-H Bond']
 
   return (
     <div className="dlr-page">
@@ -250,32 +258,34 @@ const DryLabResultsPage = () => {
           )}
         </div>
 
-        {/* Simulations */}
-        <div className="dlr-card">
-          <div className="dlr-card-head"><h2>Molecular Dynamics Simulation Results</h2></div>
-          <div className="dlr-grid2">
-            <div className="dlr-panel">
-              <h3>RMSD Plot Analysis</h3>
-              <div className="dlr-code">{SIM.rmsdEq}</div>
-              <ul className="dlr-kv">
-                <li><span>Slope</span><b>0.0021 nm/ns</b></li>
-                <li><span>Initial RMSD</span><b>&lt; 0.5 nm</b></li>
-                <li><span>Stabilized RMSD</span><b>~ 1.0 nm</b></li>
-              </ul>
-              <div className="dlr-note blue"><p>{SIM.rmsdDesc}</p></div>
-            </div>
-            <div className="dlr-panel">
-              <h3>RMSF Plot Analysis</h3>
-              <div className="dlr-badges">{SIM.peaks.map(p => <span key={p} className="dlr-badge red">Residue {p}</span>)}</div>
-              <div className="dlr-kv single"><span>Stable Regions</span><b>~ {SIM.trough} nm</b></div>
-              <div className="dlr-note purple"><p>{SIM.rmsfDesc}</p></div>
-              <div className="dlr-grid2 small">
-                <div className="dlr-chip-card red"><b>Flexible Regions</b><span>Binding adaptation</span></div>
-                <div className="dlr-chip-card green"><b>Rigid Regions</b><span>Structural stability</span></div>
+        {/* Simulations (Fentanyl only) */}
+        {opioid === 'fentanyl' && (
+          <div className="dlr-card">
+            <div className="dlr-card-head"><h2>Molecular Dynamics Simulation Results</h2></div>
+            <div className="dlr-grid2">
+              <div className="dlr-panel">
+                <h3>RMSD Plot Analysis</h3>
+                <div className="dlr-code">{SIM.rmsdEq}</div>
+                <ul className="dlr-kv">
+                  <li><span>Slope</span><b>0.0021 nm/ns</b></li>
+                  <li><span>Initial RMSD</span><b>&lt; 0.5 nm</b></li>
+                  <li><span>Stabilized RMSD</span><b>~ 1.0 nm</b></li>
+                </ul>
+                <div className="dlr-note blue"><p>{SIM.rmsdDesc}</p></div>
+              </div>
+              <div className="dlr-panel">
+                <h3>RMSF Plot Analysis</h3>
+                <div className="dlr-badges">{SIM.peaks.map(p => <span key={p} className="dlr-badge red">Residue {p}</span>)}</div>
+                <div className="dlr-kv single"><span>Stable Regions</span><b>~ {SIM.trough} nm</b></div>
+                <div className="dlr-note purple"><p>{SIM.rmsfDesc}</p></div>
+                <div className="dlr-grid2 small">
+                  <div className="dlr-chip-card red"><b>Flexible Regions</b><span>Binding adaptation</span></div>
+                  <div className="dlr-chip-card green"><b>Rigid Regions</b><span>Structural stability</span></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Summary */}
         <div className="dlr-card">
