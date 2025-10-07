@@ -44,6 +44,34 @@ function App() {
         )
       case 'drylabresults':
         return <DryLabResultsPage />
+      case 'contrib-overview':
+        return (
+          <div className="page-header">
+            <h1>Contribution – Overview</h1>
+            <p>Summary of our contributions to methods, documentation, community resources, and tooling.</p>
+          </div>
+        )
+      case 'contrib-parts':
+        return (
+          <div className="page-header">
+            <h1>Contribution – Parts</h1>
+            <p>List of biological parts and computational assets we contributed.</p>
+          </div>
+        )
+      case 'contrib-entre-notebook':
+        return (
+          <div className="page-header">
+            <h1>Entrepreneurship Notebook</h1>
+            <p>Market studies, validation experiments, and business learnings compiled for iGEM.</p>
+          </div>
+        )
+      case 'contrib-igem-community':
+        return (
+          <div className="page-header">
+            <h1>iGEM Community</h1>
+            <p>Outreach, collaborations, and community resources shared with other teams.</p>
+          </div>
+        )
       case 'notebooks':
         return <NotebooksPage />
       case 'humanpractices':
