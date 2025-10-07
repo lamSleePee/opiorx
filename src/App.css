@@ -192,7 +192,6 @@
 .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 980px; margin: 0.5rem auto 1.5rem; }
 .hero-stat-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
 .hero-stat-value { color: #0891b2; font-weight: 800; font-size: clamp(2rem, 6vw, 3rem); line-height: 1; }
-.hero-stat-hint { color: #0891b2; font-weight: 700; }
 .hero-stat-label { color: #94a3b8; margin-top: .5rem; }
 .hero-cta { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
 .btn { padding: .85rem 1.2rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all .2s ease; }
@@ -1275,11 +1274,41 @@ body {
   border-top: 1px solid #e5e7eb;
   padding-top: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-social a {
+  color: #64748b;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(100, 116, 139, 0.1);
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: #0891b2;
+  background: rgba(8, 145, 178, 0.1);
+  transform: translateY(-2px);
 }
 
 .footer-bottom p {
   color: #94a3b8;
   font-size: 0.875rem;
+  margin: 0;
 }
 
 /* Responsive Design */

@@ -7,9 +7,9 @@ import WorldMap from '../components/charts/WorldMap'
 import OpioidTrendsChart from '../components/charts/OpioidTrendsChart'
 import GlobalStats from '../components/sections/GlobalStats'
 import TechnologyHero from '../components/sections/TechnologyHero'
-import PatientCharts from '../components/charts/PatientCharts'
+// import PatientCharts from '../components/charts/PatientCharts'
 import Features from '../components/sections/Features'
-import Stats from '../components/sections/Stats'
+// import Stats from '../components/sections/Stats'
 import TestingMethods from '../components/sections/TestingMethods'
 import BreakthroughInnovations from '../components/sections/BreakthroughInnovations'
 import { generatePatientData } from '../data/constants'
@@ -37,9 +37,9 @@ const HomePage = ({ onNavigate }) => {
       <TestingMethods />
       <BreakthroughInnovations />
       <TechnologyHero />
-      <PatientCharts patientData={patientData} />
+      {/* <PatientCharts patientData={patientData} /> */}
       <Features />
-      <Stats />
+      {/* <Stats /> */}
     </div>
   )
 }

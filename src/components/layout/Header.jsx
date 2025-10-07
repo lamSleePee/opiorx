@@ -79,7 +79,7 @@ const Header = ({ onNavigate }) => {
       <div className="nav-container">
         <div className="nav-logo">
           <h1>OpioRX</h1>
-          <span className="tagline">Saliva-Based Opioid Detection</span>
+          <span className="tagline">Real Time Non Invasive Detection of Opioids</span>
         </div>
         <div className="nav-menu">
           <a href="#" onClick={(e) => handleClick(e, 'home')}>Home</a>
