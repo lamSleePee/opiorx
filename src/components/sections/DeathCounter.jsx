@@ -25,7 +25,18 @@ const DeathCounter = () => {
   }, [])
 
   return (
-    <section className="death-counter-hero">
+    <section 
+      className="death-counter-hero" 
+      style={{ 
+        position:'relative',
+        backgroundImage: `url('https://mayflowerrecovery.com/wp-content/uploads/2024/10/dangers-of-fentanyl.webp')`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        isolation:'isolate'
+      }}
+    >
+      {/* dark overlay for readability */}
+      <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55))', zIndex:0 }} />
       <div className="death-counter-container">
         <div className="countdown-timer">
           <div className="countdown-number">{countdown}</div>

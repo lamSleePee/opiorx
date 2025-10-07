@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ScrollText from '../components/sections/ScrollText'
-// import DeathCounter from '../components/sections/DeathCounter'
+import DeathCounter from '../components/sections/DeathCounter'
 import InsightsHero from '../components/sections/InsightsHero'
 import HeroPitch from '../components/sections/HeroPitch'
 import WorldMap from '../components/charts/WorldMap'
@@ -29,7 +29,7 @@ const HomePage = ({ onNavigate }) => {
   return (
     <div className="home-page">
       <ScrollText />
-      {/* <DeathCounter /> */}
+      <DeathCounter />
       <HeroPitch />
       <WorldMap />
       <OpioidTrendsChart />

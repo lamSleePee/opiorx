@@ -373,17 +373,7 @@ body {
 }
 
 /* Death Counter Hero Section */
-.death-counter-hero {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #1f2937;
-  padding: 1.25rem 0; /* a bit more breathing room */
-  min-height: 40vh; /* allow content to breathe */
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #e5e7eb;
-  position: relative;
-  overflow: hidden;
-}
+.death-counter-hero { color:#fff; padding:4rem 0; min-height:65vh; display:flex; align-items:center; position:relative; overflow:hidden; }
 
 /* Insights replacement hero (image based) */
 .insights-hero {
@@ -433,42 +423,11 @@ body {
   z-index: 0;
 }
 
-.death-counter-container {
-  width: 100%;
-  margin: 0 auto 0 0;
-  padding: 0 clamp(1rem, 4vw, 4rem);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  align-items: start;
-  position: relative;
-  z-index: 1;
-  max-width: 960px; /* wider so elements aren't cramped */
-}
+.death-counter-container { width:100%; margin:0 auto; padding:0 clamp(1rem,4vw,4rem); display:grid; grid-template-columns:1.2fr 1.8fr; gap:2rem; align-items:center; position:relative; z-index:1; max-width:1200px; }
 
-.countdown-timer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(8, 145, 178, 0.2);
-  position: relative;
-  min-height: 200px;
-}
+.countdown-timer { display:grid; grid-template-rows:auto auto auto; justify-items:start; gap:.5rem; background:transparent; border:none; box-shadow:none; }
 
-.countdown-number {
-  font-size: clamp(3rem, 6vw, 4.8rem);
-  font-weight: 900;
-  color: #0891b2;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
-  animation: countdownPulse 1s ease-in-out;
-}
+.countdown-number { font-size:clamp(5rem,14vw,10rem); font-weight:900; color:#fff; line-height:1; text-shadow:0 10px 28px rgba(0,0,0,.6); animation:countdownPulse 1s ease-in-out; }
 
 @keyframes countdownPulse {
   0% {
@@ -485,32 +444,11 @@ body {
   }
 }
 
-.countdown-label {
-  font-size: clamp(0.8rem, 1.4vw, 1rem);
-  font-weight: 600;
-  color: #475569;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
+.countdown-label { font-size:.9rem; font-weight:700; color:rgba(255,255,255,.9); text-transform:uppercase; letter-spacing:.12em; }
 
-.countdown-progress {
-  width: 100%;
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
+.countdown-progress { width:260px; height:6px; background:rgba(255,255,255,.25); border-radius:4px; overflow:hidden; }
 
-.countdown-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #0891b2, #0e7490);
-  border-radius: 4px;
-  transition: width 1s linear;
-  position: relative;
-}
+.countdown-bar { height:100%; background:rgba(255,255,255,.9); border-radius:4px; transition:width 1s linear; }
 
 .countdown-bar::after {
   content: '';
@@ -523,39 +461,13 @@ body {
   box-shadow: 0 0 8px rgba(8, 145, 178, 0.5);
 }
 
-.death-counter-content {
-  text-align: left;
-}
+.death-counter-content { color:#fff; }
 
-.death-counter-title {
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-  line-height: 1.1;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-}
+.death-counter-title { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:#fff; opacity:.98; margin:0 0 .75rem 0; letter-spacing:-0.01em; }
 
-.death-counter-number {
-  margin-bottom: 1rem;
-  text-align: left;
-  padding: 1rem 1.25rem;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(8, 145, 178, 0.2);
-}
+.death-counter-number { margin:.5rem 0 1rem; padding:0; background:transparent; border:0; box-shadow:none; }
 
-.death-count {
-  display: block;
-  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
-  font-weight: 800;
-  color: #0891b2;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-  text-shadow: 0 2px 4px rgba(8, 145, 178, 0.2);
-  animation: countUp 0.5s ease-out;
-}
+.death-count { display:block; font-size:clamp(2rem,4.5vw,3rem); font-weight:800; color:#fff; text-shadow:0 8px 20px rgba(0,0,0,.5); }
 
 @keyframes countUp {
   0% {
@@ -568,22 +480,9 @@ body {
   }
 }
 
-.death-label {
-  display: block;
-  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
-  font-weight: 600;
-  color: #475569;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+.death-label { display:block; font-size:clamp(0.75rem,1.4vw,0.9rem); font-weight:600; color:rgba(255,255,255,.85); text-transform:uppercase; letter-spacing:.1em; }
 
-.death-counter-description {
-  font-size: clamp(0.9rem, 1.6vw, 1rem);
-  margin-bottom: 1.25rem;
-  color: #475569;
-  line-height: 1.7;
-  max-width: 800px; /* readable measure */
-}
+.death-counter-description { font-size:clamp(1rem,1.8vw,1.2rem); margin-bottom:1.5rem; color:rgba(255,255,255,.9); line-height:1.8; max-width:840px; font-weight:600; }
 
 .death-counter-stats {
   display: grid;
@@ -591,15 +490,17 @@ body {
   gap: 1rem;
 }
 
-.death-counter-stats .stat-item {
-  text-align: left;
-  padding: 0.8rem 1rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(8, 145, 178, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.death-counter-stats .stat-item { text-align:left; padding:.8rem 1rem; background:rgba(255,255,255,.08); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.12); border:1px solid rgba(255,255,255,.18); transition: transform .2s ease, box-shadow .2s ease; color:#fff; }
+.death-counter-stats .stat-number { color:#fff; }
+.death-counter-stats .stat-text { color:rgba(255,255,255,.85); }
+
+/* Ensure any teal/turquoise accents in this section are overridden to white */
+.death-counter-hero .stat-number,
+.death-counter-hero .countdown-number,
+.death-counter-hero .death-count {
+  color: #ffffff !important;
 }
+.death-counter-hero .countdown-bar::after { background: #ffffff; }
 
 .death-counter-stats .stat-item:hover {
   transform: translateY(-2px);
@@ -892,10 +793,20 @@ body {
   margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 4rem);
   display: grid;
-  grid-template-columns: 3fr 1fr; /* video 75%, text 25% */
+  grid-template-columns: 3fr 2fr; /* video + inline counter */
   gap: clamp(2rem, 6vw, 6rem);
   align-items: center;
 }
+.death-inline { display:grid; grid-template-columns: 1fr 1.4fr; gap:1.5rem; align-items:center; color:#0f172a; }
+.death-inline-left { display:grid; gap:.5rem; justify-items:start; }
+.death-inline-right { color:#0f172a; }
+.death-inline-title { font-weight:800; font-size: clamp(1.2rem,2.2vw,1.8rem); margin:0 0 .25rem 0; }
+.death-inline-count { font-weight:900; font-size: clamp(1.8rem,3vw,2.4rem); }
+.death-inline-sub { text-transform:uppercase; letter-spacing:.12em; font-weight:700; opacity:.8; margin-bottom:.5rem; }
+.death-inline-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:.5rem; }
+.death-inline-card { background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; padding:.6rem .8rem; text-align:left; }
+.death-inline-card b { display:block; font-size:1rem; color:#0891b2; }
+.death-inline-card span { display:block; font-size:.7rem; text-transform:uppercase; color:#64748b; }
 
 .hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
