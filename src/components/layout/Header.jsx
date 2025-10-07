@@ -6,6 +6,7 @@ const Header = ({ onNavigate }) => {
   const [isResultsDropdownOpen, setIsResultsDropdownOpen] = useState(false)
   const [isEngagementDropdownOpen, setIsEngagementDropdownOpen] = useState(false)
   const [isLabDropdownOpen, setIsLabDropdownOpen] = useState(false)
+  const [isEntrepreneurshipDropdownOpen, setIsEntrepreneurshipDropdownOpen] = useState(false)
   const projectDropdownRef = useRef(null)
   const engagementDropdownRef = useRef(null)
   const labDropdownRef = useRef(null)
@@ -18,6 +19,7 @@ const Header = ({ onNavigate }) => {
     setIsResultsDropdownOpen(false)
     setIsEngagementDropdownOpen(false)
     setIsLabDropdownOpen(false)
+    setIsEntrepreneurshipDropdownOpen(false)
   }
 
   const toggleProjectDropdown = (e) => {
@@ -28,6 +30,7 @@ const Header = ({ onNavigate }) => {
     setIsResultsDropdownOpen(false)
     setIsEngagementDropdownOpen(false)
     setIsLabDropdownOpen(false)
+    setIsEntrepreneurshipDropdownOpen(false)
   }
 
   const [isContributionDropdownOpen, setIsContributionDropdownOpen] = useState(false)
@@ -76,6 +79,18 @@ const Header = ({ onNavigate }) => {
     setIsEngineeringDropdownOpen(false)
     setIsResultsDropdownOpen(false)
     setIsEngagementDropdownOpen(false)
+    setIsEntrepreneurshipDropdownOpen(false)
+  }
+
+  const toggleEntrepreneurshipDropdown = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsEntrepreneurshipDropdownOpen(!isEntrepreneurshipDropdownOpen)
+    setIsProjectDropdownOpen(false)
+    setIsEngineeringDropdownOpen(false)
+    setIsResultsDropdownOpen(false)
+    setIsEngagementDropdownOpen(false)
+    setIsLabDropdownOpen(false)
   }
 
   // Close dropdowns when clicking outside
@@ -91,10 +106,11 @@ const Header = ({ onNavigate }) => {
         setIsEngagementDropdownOpen(false)
         setIsResultsDropdownOpen(false)
         setIsLabDropdownOpen(false)
+        setIsEntrepreneurshipDropdownOpen(false)
       }
     }
 
-    if (isProjectDropdownOpen || isEngineeringDropdownOpen || isEngagementDropdownOpen || isResultsDropdownOpen || isLabDropdownOpen) {
+    if (isProjectDropdownOpen || isEngineeringDropdownOpen || isEngagementDropdownOpen || isResultsDropdownOpen || isLabDropdownOpen || isEntrepreneurshipDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside)
       document.addEventListener('touchstart', handleClickOutside)
     }
@@ -103,7 +119,7 @@ const Header = ({ onNavigate }) => {
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('touchstart', handleClickOutside)
     }
-  }, [isProjectDropdownOpen, isEngineeringDropdownOpen, isEngagementDropdownOpen, isResultsDropdownOpen, isLabDropdownOpen])
+  }, [isProjectDropdownOpen, isEngineeringDropdownOpen, isEngagementDropdownOpen, isResultsDropdownOpen, isLabDropdownOpen, isEntrepreneurshipDropdownOpen])
 
   return (
     <nav className="navbar">
@@ -181,8 +197,8 @@ const Header = ({ onNavigate }) => {
                 </a>
                 {isResultsDropdownOpen && (
                   <>
-                    <a href="#" onClick={(e) => handleClick(e, 'project')} className="nav-dropdown-sub-item">
-                      <span>In Silico</span>
+                    <a href="#" onClick={(e) => handleClick(e, 'wetlabresults')} className="nav-dropdown-sub-item">
+                      <span>Wet Lab Results</span>
                     </a>
                     <a href="#" onClick={(e) => handleClick(e, 'drylabresults')} className="nav-dropdown-sub-item">
                       <span>Dry Lab Results</span>
@@ -233,9 +249,29 @@ const Header = ({ onNavigate }) => {
                 <a href="#" onClick={(e) => handleClick(e, 'humanpractices')}>
                   <span>Human Practices</span>
                 </a>
-                <a href="#" onClick={(e) => handleClick(e, 'entrepreneurship')}>
+                <a 
+                  href="#" 
+                  className={`nav-dropdown-item ${isEntrepreneurshipDropdownOpen ? 'active' : ''}`}
+                  onClick={toggleEntrepreneurshipDropdown}
+                >
                   <span>Entrepreneurship</span>
+                  <svg className="dropdown-arrow" width="8" height="6" viewBox="0 0 8 6" fill="none">
+                    <path d="M1 1.5L4 4.5L7 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </a>
+                {isEntrepreneurshipDropdownOpen && (
+                  <>
+                    <a href="#" onClick={(e) => handleClick(e, 'entrepreneurship')} className="nav-dropdown-sub-item">
+                      <span>Overview</span>
+                    </a>
+                    <a href="#" onClick={(e) => handleClick(e, 'business-analysis')} className="nav-dropdown-sub-item">
+                      <span>Business Analysis</span>
+                    </a>
+                    <a href="#" onClick={(e) => handleClick(e, 'pitch-deck')} className="nav-dropdown-sub-item">
+                      <span>Pitch Deck</span>
+                    </a>
+                  </>
+                )}
               </div>
             )}
           </div>

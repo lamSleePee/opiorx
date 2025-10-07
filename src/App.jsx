@@ -6,10 +6,12 @@ import DryLabPage from './pages/DryLabPage'
 import WetLabPage from './pages/WetLabPage'
 import TeamPage from './pages/TeamPage'
 import DryLabResultsPage from './pages/DryLabResultsPage'
+import WetLabResultsPage from './pages/WetLabResultsPage'
 import './App.css'
 import NotebooksPage from './pages/NotebooksPage'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 import SafetyPage from './pages/SafetyPage'
+import { BusinessAnalysisPage } from './pages/BusinessAnalysisPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -40,6 +42,8 @@ function App() {
         )
       case 'drylabresults':
         return <DryLabResultsPage />
+      case 'wetlabresults':
+        return <WetLabResultsPage />
       case 'contrib-overview':
         return (
           <div className="page-header">
@@ -79,6 +83,8 @@ function App() {
         )
       case 'entrepreneurship':
         return <EntrepreneurshipPage />
+      case 'business-analysis':
+        return <BusinessAnalysisPage />
       case 'team':
         return <TeamPage />
       default:

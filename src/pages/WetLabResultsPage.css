@@ -1,0 +1,1154 @@
+/* WetLab Results Page Styles */
+
+.wetlab-results-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.wetlab-hero {
+  position: relative;
+  padding: 96px 24px;
+  overflow: hidden;
+}
+
+.wetlab-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.wetlab-hero-decoration {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.wetlab-hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  animation: wetlab-pulse 4s ease-in-out infinite;
+}
+
+.wetlab-hero-blob-1 {
+  top: 80px;
+  left: 80px;
+  width: 288px;
+  height: 288px;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.wetlab-hero-blob-2 {
+  bottom: 80px;
+  right: 80px;
+  width: 384px;
+  height: 384px;
+  background: rgba(16, 185, 129, 0.15);
+  animation-delay: 1s;
+}
+
+.wetlab-hero-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.wetlab-navigation {
+  margin-bottom: 32px;
+}
+
+.wetlab-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wetlab-back-button:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.wetlab-back-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.wetlab-hero-text {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.wetlab-hero-title {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+  line-height: 1.1;
+}
+
+.wetlab-hero-description {
+  font-size: 20px;
+  color: #475569;
+  max-width: 896px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Quick Navigation */
+.wetlab-quick-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.wetlab-nav-item {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wetlab-nav-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.wetlab-nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+.wetlab-nav-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Container */
+.wetlab-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Sections */
+.wetlab-section {
+  width: 100%;
+}
+
+/* Cards */
+.wetlab-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.wetlab-card-header {
+  padding: 32px 32px 0;
+}
+
+.wetlab-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-card-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.wetlab-card-subtitle {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.wetlab-card-content {
+  padding: 32px;
+}
+
+/* Experiment Sections */
+.wetlab-experiment-section {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid;
+  margin-bottom: 24px;
+}
+
+.wetlab-experiment-blue {
+  background: #f1f5f9;
+  border-color: #3b82f6;
+}
+
+.wetlab-experiment-cyan {
+  background: #f0f9ff;
+  border-color: #06b6d4;
+}
+
+.wetlab-experiment-emerald {
+  background: #f0fdf4;
+  border-color: #10b981;
+}
+
+.wetlab-experiment-purple {
+  background: #faf5ff;
+  border-color: #a855f7;
+}
+
+.wetlab-experiment-orange {
+  background: #fff7ed;
+  border-color: #f97316;
+}
+
+.wetlab-experiment-gray {
+  background: #f8fafc;
+  border-color: #64748b;
+}
+
+.wetlab-experiment-conclusion {
+  background: #f0fdf4;
+  border-color: #10b981;
+}
+
+.wetlab-experiment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.wetlab-experiment-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.wetlab-experiment-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Badges */
+.wetlab-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wetlab-badge-blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1e40af;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.wetlab-badge-cyan {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.wetlab-badge-gold {
+  background: rgba(234, 179, 8, 0.1);
+  color: #ca8a04;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.wetlab-badge-rgo {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Grid Layouts */
+.wetlab-experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+}
+
+/* Data Sections */
+.wetlab-data-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-data-point {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.wetlab-data-blue {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.wetlab-data-cyan {
+  background: rgba(6, 182, 212, 0.05);
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.wetlab-data-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wetlab-data-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.wetlab-dot-blue {
+  background: #3b82f6;
+}
+
+.wetlab-dot-cyan {
+  background: #06b6d4;
+}
+
+.wetlab-data-concentration {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.wetlab-data-values {
+  text-align: right;
+}
+
+.wetlab-data-intensity {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.wetlab-data-cyan .wetlab-data-intensity {
+  color: #0891b2;
+}
+
+.wetlab-data-reduction {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Observations */
+.wetlab-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-observations-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-observations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-observation {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-observation-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.wetlab-icon-emerald {
+  color: #10b981;
+}
+
+.wetlab-icon-red {
+  color: #ef4444;
+}
+
+.wetlab-icon-blue {
+  color: #3b82f6;
+}
+
+.wetlab-icon-orange {
+  color: #f97316;
+}
+
+.wetlab-icon-purple {
+  color: #a855f7;
+}
+
+.wetlab-icon-cyan {
+  color: #06b6d4;
+}
+
+.wetlab-icon-gray {
+  color: #64748b;
+}
+
+/* Concentration Effects */
+.wetlab-concentration-effects {
+  background: rgba(6, 182, 212, 0.05);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.wetlab-concentration-title {
+  font-weight: 600;
+  color: #0891b2;
+  margin-bottom: 16px;
+}
+
+.wetlab-concentration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-concentration-content p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Chart Sections */
+.wetlab-chart-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-chart-container {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.wetlab-chart-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.wetlab-chart-caption {
+  font-size: 12px;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+}
+
+.wetlab-chart-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-chart-title {
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 16px;
+}
+
+.wetlab-chart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-chart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-chart-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.wetlab-technical-significance {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.wetlab-significance-title {
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: 8px;
+}
+
+.wetlab-significance-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Kinetic Data */
+.wetlab-kinetic-data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wetlab-kinetic-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.wetlab-kinetic-center {
+  text-align: center;
+}
+
+.wetlab-kinetic-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.wetlab-kinetic-time {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.wetlab-kinetic-value {
+  text-align: center;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.wetlab-kinetic-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-kinetic-title {
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 16px;
+}
+
+.wetlab-kinetic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-kinetic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-kinetic-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* rGO Observations */
+.wetlab-rgo-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-rgo-title {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 16px;
+}
+
+.wetlab-rgo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-rgo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-rgo-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.wetlab-rgo-analysis {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(147, 51, 234, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.wetlab-rgo-analysis-title {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 8px;
+}
+
+.wetlab-rgo-analysis-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Fentanyl Analysis */
+.wetlab-fentanyl-analysis {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wetlab-fentanyl-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-fentanyl-title {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 16px;
+}
+
+.wetlab-fentanyl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-fentanyl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-fentanyl-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.wetlab-performance-metrics {
+  padding: 16px;
+  background: rgba(147, 51, 234, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.wetlab-performance-title {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 16px;
+}
+
+.wetlab-performance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.wetlab-performance-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wetlab-performance-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.wetlab-performance-value {
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.wetlab-mechanism-insights {
+  padding: 16px;
+  background: rgba(147, 51, 234, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.wetlab-mechanism-title {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 8px;
+}
+
+.wetlab-mechanism-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Concentration Grid */
+.wetlab-concentration-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.wetlab-concentration-item {
+  text-align: center;
+  padding: 16px;
+  background: rgba(6, 182, 212, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.wetlab-concentration-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #06b6d4;
+  margin-bottom: 4px;
+}
+
+.wetlab-concentration-intensity {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.wetlab-concentration-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.wetlab-concentration-summary {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(6, 182, 212, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.wetlab-concentration-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Comparison Data */
+.wetlab-comparison-data {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-comparison-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-comparison-item {
+  padding: 16px;
+  background: rgba(249, 115, 22, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.wetlab-comparison-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.wetlab-comparison-system {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.wetlab-comparison-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wetlab-comparison-values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.wetlab-comparison-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wetlab-comparison-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.wetlab-comparison-number {
+  font-weight: 700;
+  color: #f97316;
+}
+
+.wetlab-comparison-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-comparison-obs-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-comparison-obs {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-comparison-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Buffer Conditions */
+.wetlab-buffer-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-buffer-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-buffer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.wetlab-buffer-item {
+  padding: 12px;
+  background: rgba(100, 116, 139, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  text-align: center;
+}
+
+.wetlab-buffer-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.wetlab-buffer-type {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.wetlab-buffer-findings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wetlab-buffer-findings-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.wetlab-buffer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wetlab-buffer-finding {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wetlab-buffer-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Conclusion Grid */
+.wetlab-conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.wetlab-conclusion-item {
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.wetlab-conclusion-emerald {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.wetlab-conclusion-blue {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.wetlab-conclusion-purple {
+  background: rgba(147, 51, 234, 0.05);
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+.wetlab-conclusion-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.wetlab-conclusion-icon-emerald {
+  background: #10b981;
+}
+
+.wetlab-conclusion-icon-blue {
+  background: #3b82f6;
+}
+
+.wetlab-conclusion-icon-purple {
+  background: #a855f7;
+}
+
+.wetlab-conclusion-icon-svg {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+.wetlab-conclusion-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.wetlab-conclusion-emerald .wetlab-conclusion-title {
+  color: #047857;
+}
+
+.wetlab-conclusion-blue .wetlab-conclusion-title {
+  color: #1e40af;
+}
+
+.wetlab-conclusion-purple .wetlab-conclusion-title {
+  color: #7c3aed;
+}
+
+.wetlab-conclusion-text {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Color Classes */
+.wetlab-blue-bg { background: #ffffff; }
+.wetlab-blue-border { border-color: #3b82f6; }
+.wetlab-blue-text { color: #1e40af; }
+.wetlab-blue-accent { color: #1d4ed8; }
+
+.wetlab-emerald-bg { background: #ffffff; }
+.wetlab-emerald-border { border-color: #10b981; }
+.wetlab-emerald-text { color: #047857; }
+.wetlab-emerald-accent { color: #059669; }
+
+.wetlab-purple-bg { background: #ffffff; }
+.wetlab-purple-border { border-color: #a855f7; }
+.wetlab-purple-text { color: #7c3aed; }
+.wetlab-purple-accent { color: #8b5cf6; }
+
+.wetlab-orange-bg { background: #ffffff; }
+.wetlab-orange-border { border-color: #f97316; }
+.wetlab-orange-text { color: #ea580c; }
+.wetlab-orange-accent { color: #f97316; }
+
+.wetlab-cyan-bg { background: #ffffff; }
+.wetlab-cyan-border { border-color: #06b6d4; }
+.wetlab-cyan-text { color: #0891b2; }
+.wetlab-cyan-accent { color: #06b6d4; }
+
+/* Animations */
+@keyframes wetlab-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wetlab-hero {
+    padding: 64px 16px;
+  }
+  
+  .wetlab-hero-title {
+    font-size: 40px;
+  }
+  
+  .wetlab-hero-description {
+    font-size: 18px;
+  }
+  
+  .wetlab-container {
+    padding: 32px 16px;
+    gap: 48px;
+  }
+  
+  .wetlab-quick-nav {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .wetlab-experiment-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .wetlab-concentration-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .wetlab-conclusion-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .wetlab-performance-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .wetlab-buffer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .wetlab-card-title {
+    font-size: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .wetlab-kinetic-header,
+  .wetlab-kinetic-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  
+  .wetlab-kinetic-center {
+    text-align: left;
+  }
+  
+  .wetlab-kinetic-value {
+    text-align: left;
+  }
+}
