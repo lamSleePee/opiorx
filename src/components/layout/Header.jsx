@@ -34,17 +34,6 @@ const Header = ({ onNavigate }) => {
     setIsEntrepreneurshipDropdownOpen(false)
   }
 
-  const [isContributionDropdownOpen, setIsContributionDropdownOpen] = useState(false)
-
-  const toggleContributionDropdown = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setIsContributionDropdownOpen(!isContributionDropdownOpen)
-    setIsEngineeringDropdownOpen(false)
-    setIsResultsDropdownOpen(false)
-    setIsLabDropdownOpen(false)
-    setIsEngagementDropdownOpen(false)
-  }
 
   const toggleEngineeringDropdown = (e) => {
     e.preventDefault()
@@ -148,29 +137,9 @@ const Header = ({ onNavigate }) => {
                 <a href="#" onClick={(e) => handleClick(e, 'project')}>
                   <span>Project Description</span>
                 </a>
-                <a 
-                  href="#" 
-                  className={`nav-dropdown-item ${isContributionDropdownOpen ? 'active' : ''}`}
-                  onClick={toggleContributionDropdown}
-                >
+                <a href="#" onClick={(e) => handleClick(e, 'contribution')}>
                   <span>Contribution</span>
                 </a>
-                {isContributionDropdownOpen && (
-                  <>
-                    <a href="#" onClick={(e) => handleClick(e, 'contrib-overview')} className="nav-dropdown-sub-item">
-                      <span>Overview</span>
-                    </a>
-                    <a href="#" onClick={(e) => handleClick(e, 'contrib-parts')} className="nav-dropdown-sub-item">
-                      <span>Parts</span>
-                    </a>
-                    <a href="#" onClick={(e) => handleClick(e, 'contrib-entre-notebook')} className="nav-dropdown-sub-item">
-                      <span>Entrepreneurship Notebook</span>
-                    </a>
-                    <a href="#" onClick={(e) => handleClick(e, 'contrib-igem-community')} className="nav-dropdown-sub-item">
-                      <span>iGEM Community</span>
-                    </a>
-                  </>
-                )}
                 <a 
                   href="#" 
                   className={`nav-dropdown-item ${isEngineeringDropdownOpen ? 'active' : ''}`}

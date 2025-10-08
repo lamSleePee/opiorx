@@ -13,6 +13,7 @@ import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 import SafetyPage from './pages/SafetyPage'
 import { BusinessAnalysisPage } from './pages/BusinessAnalysisPage'
 import PitchDeckPage from './pages/PitchDeckPage'
+import ContributionPage from './pages/ContributionPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -73,6 +74,8 @@ function App() {
             <p>Outreach, collaborations, and community resources shared with other teams.</p>
           </div>
         )
+      case 'contribution':
+        return <ContributionPage />
       case 'notebooks':
         return <NotebooksPage />
       case 'humanpractices':

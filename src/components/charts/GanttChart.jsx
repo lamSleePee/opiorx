@@ -196,12 +196,32 @@ export default function GanttChart({ src, title, data, compact = true, view = 't
                 })()}
               </div>
               {/* Months row */}
-              <div style={{ display: 'flex', border: '1px solid #e5e7eb', borderRadius: 6, overflow: 'hidden', marginTop: 4 }}>
-                {months.map((m, idx) => (
-                  <div key={idx} style={{ flex: 1, textAlign: 'center', padding: '4px 0', fontWeight: 600, color: '#475569', background: idx%2? '#f1f5f9':'#ffffff', borderRight: idx<months.length-1? '1px solid #e5e7eb':'none' }}>
-                    {m.toLocaleString(undefined, { month: 'short' })}
-                  </div>
-                ))}
+              <div style={{ position: 'relative', display: 'flex', border: '1px solid #e5e7eb', borderRadius: 6, overflow: 'hidden', marginTop: 4, height: '32px' }}>
+                {months.map((m, idx) => {
+                  const monthStart = new Date(m.getFullYear(), m.getMonth(), 1)
+                  const monthEnd = new Date(m.getFullYear(), m.getMonth()+1, 0)
+                  const left = (daysBetween(min, monthStart) / totalDays) * 100
+                  const right = (daysBetween(min, monthEnd) / totalDays) * 100
+                  const width = Math.max(0, right - left)
+                  return (
+                    <div key={idx} style={{ 
+                      position: 'absolute', 
+                      left: `${left}%`, 
+                      width: `${width}%`,
+                      textAlign: 'center', 
+                      padding: '4px 0', 
+                      fontWeight: 600, 
+                      color: '#475569', 
+                      background: idx%2? '#f1f5f9':'#ffffff',
+                      borderRight: idx<months.length-1? '1px solid #e5e7eb':'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      {m.toLocaleString(undefined, { month: 'short' })}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )}
