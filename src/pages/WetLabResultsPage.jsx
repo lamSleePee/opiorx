@@ -132,7 +132,7 @@ export default function WetLabResultsPage() {
         </div>
         
         <div className="wetlab-hero-content">
-          <div className="wetlab-navigation">
+          {/* <div className="wetlab-navigation">
             <button 
               onClick={handleNavigateBack}
               className="wetlab-back-button"
@@ -140,7 +140,7 @@ export default function WetLabResultsPage() {
               <ArrowLeft className="wetlab-back-icon" />
               Back to Wet Lab
             </button>
-          </div>
+          </div> */}
           
           <div className="wetlab-hero-text">
             <h1 className="wetlab-hero-title">
@@ -275,7 +275,7 @@ export default function WetLabResultsPage() {
                   <div className="wetlab-chart-section">
                     <div className="wetlab-chart-container">
                       <img 
-                        src="https://via.placeholder.com/600x400/ffffff/1e293b?text=FITC+GO+Chart"
+                        src="/images/wetlab-results/img1.jpeg"
                         alt="FITC + GO Fluorescence Intensity Chart"
                         className="wetlab-chart-image"
                       />
@@ -393,7 +393,7 @@ export default function WetLabResultsPage() {
                   <div className="wetlab-chart-section">
                     <div className="wetlab-chart-container">
                       <img 
-                        src="https://via.placeholder.com/600x400/ffffff/1e293b?text=rGO+Quenching+Chart"
+                        src="/images/wetlab-results/img2.jpeg"
                         alt="rGO Quenching Percentage Over Time"
                         className="wetlab-chart-image"
                       />
@@ -461,7 +461,7 @@ export default function WetLabResultsPage() {
                   <div className="wetlab-chart-section">
                     <div className="wetlab-chart-container">
                       <img 
-                        src="https://via.placeholder.com/600x400/ffffff/1e293b?text=Fentanyl+Detection+Chart"
+                        src="/images/wetlab-results/img3.jpeg"
                         alt="Fentanyl Detection at Different Concentrations"
                         className="wetlab-chart-image"
                       />

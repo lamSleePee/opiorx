@@ -69,6 +69,23 @@ const ProjectDescription = () => {
               <p>The escalating global opioid crisis, defined by widespread misuse, dependence, and overdose fatalities, demands urgent innovation in detection strategies. Current diagnostic solutions, rely on slow and costly laboratory assays, remain inaccessible at the point of need, delaying timely interventions.</p>
               <p>Opio-Rx directly addresses this gap by presenting an aptamer-based multiplex lateral flow diagnostic for the rapid, non-invasive, and quantitative detection of synthetic opioids — including fentanyl, oxycodone, tramadol, methadone, and codeine — in salivary samples. By leveraging advanced computational design, we generate highly specific aptamers, overcoming the time and cost burdens of conventional SELEX. These aptamers are validated in vitro and then harnessed for optical detection through a FRET-based framework, enabling sensitive and quantitative opioid measurement.</p>
               <p>To empower end-users, Opio-Rx integrates with an AI-powered mobile application, capable of processing the fluorescence signals from the lateral flow device and instantly providing digital concentration readouts. This unified pipeline — computationally designed aptamers, FRET-based diagnostics, and AI-enabled analysis — positions Opio-Rx as a powerful, scalable tool for frontline intervention in the opioid crisis.</p>
+              
+              <div className="pd-image-container">
+                <img 
+                  src="/images/project-description/img0.png"
+                  alt="Opio-Rx Abstract Overview"
+                  className="pd-image"
+                  style={{
+                    width: '100%',
+                    maxWidth: '800px',
+                    maxHeight: '500px',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                    margin: '0 auto'
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -80,6 +97,7 @@ const ProjectDescription = () => {
             </div>
             <div className="pd-card">
               <p>Opioids, derived from the poppy plant, are substances that interact with brain opioid receptors, providing analgesic and sedative properties. Commonly used for pain treatment, they also help maintain opioid dependency through medications like buprenorphine and methadone. Opioids are also used for non-medical purposes due to the euphoria after ingestion. However, their pharmacological effects can make breathing difficult and lead to fatal overdoses. (Opioid overdose n.d.) Opioids do, however, have some hazards, including abuse, dependency, and overdose fatalities.(Jayawardana et al. 2021; Opioid overdose n.d.)</p>
+              
             </div>
           </div>
 
@@ -167,8 +185,21 @@ const ProjectDescription = () => {
             <div className="pd-card">
               <h3>A. In silico aptamer design</h3>
               
-              <div className="image-placeholder">
-                <p className="image-caption">Fig 2: in silico aptamer design workflow</p>
+              <div className="pd-image-container">
+                <img 
+                  src="/images/project-description/img1.png"
+                  alt="In Silico Aptamer Design Overview"
+                  className="pd-image"
+                  style={{
+                    width: '100%',
+                    maxWidth: '800px',
+                    maxHeight: '500px',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                    margin: '0 auto'
+                  }}
+                />
               </div>
 
               <h4>Primary Sequence Analysis:</h4>
@@ -197,7 +228,21 @@ const ProjectDescription = () => {
               </ul>
 
               <h4>2.6 Point Mutation Approach:</h4>
-              <div className="image-placeholder">
+              <div className="pd-image-container">
+                <img 
+                  src="/images/project-description/2.jpeg"
+                  alt="Heat Map Analysis - Fentanyl Conformations"
+                  className="pd-image"
+                  style={{
+                    width: '100%',
+                    maxWidth: '800px',
+                    maxHeight: '500px',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                    margin: '0 auto'
+                  }}
+                />
                 <p className="image-caption">Fig.3: Heat-maps generated showing various conformations of fentanyl in its loop regions.</p>
               </div>
               <p>The potential aptamer sequence from the eight sequence was subjected to point mutation based on heat map generated after analysing ligand poses of all ligand conformation against the potential aptamer sequence. Strong interacting residues were then identified and were chosen as anchor residues to conduct our mutations further. As depicted in Fig. 4 the heat map generated distinguishes different ligand conformations of fentanyl against FEN 8 based on their energy. In this case, red represents a stronger interaction and stability, while blue represents the least energy and therefore a least favourable energetically stable conformation. Therefore, position 29 showed the most energetically favourable conformation of multiple ligand conformations of fentanyl. This means that multiple poses in which fentanyl interacts with FEN8, are energetically stable. Hence, the positions were chosen as an anchor residue and mutations were carried out on the 29th position.</p>
@@ -214,10 +259,22 @@ const ProjectDescription = () => {
             <div className="pd-card">
               <h3>Förster Resonance Energy Transfer Principles</h3>
               <p>The biosensor leverages Förster Resonance Energy Transfer (FRET) as the core transduction mechanism for acetyl fentanyl detection. FRET is a photophysical process involving non-radiative energy transfer from an excited donor fluorophore to an acceptor molecule, resulting in donor fluorescence quenching. This phenomenon requires three critical conditions: spectral overlap between donor emission and acceptor absorption spectra, close proximity between molecules (typically 1–10 nm), and favorable molecular orientation (Prabakaran et al., 2022).</p>
-
-              <h4>FRET: Förster Resonance Energy Transfer: rGO + FAM labelled aptamer</h4>
-              <div className="image-placeholder">
-                <p className="image-caption">Fig4: FRET: rGO+ FAM aptamer pair</p>
+              
+              <div className="pd-image-container">
+                <img 
+                  src="/images/project-description/img3.png"
+                  alt="FRET Mechanism Diagram"
+                  className="pd-image"
+                  style={{
+                    width: '100%',
+                    maxWidth: '1000px',
+                    maxHeight: '600px',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                    margin: '0 auto'
+                  }}
+                />
               </div>
 
               <p>Förster Resonance Energy Transfer (FRET) represents a quantum mechanical phenomenon involving non-radiative energy transfer between chromophores through dipole-dipole coupling (Verma et al., 2023). FRET requires three critical conditions: (1) donor-acceptor distance within 1-10 nm, (2) spectral overlap between donor emission and acceptor absorption, and (3) favorable dipole orientation (Verma et al., 2023; Didenko, 2001). FRET efficiency follows an inverse sixth-power relationship with distance:</p>
