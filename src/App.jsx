@@ -14,6 +14,7 @@ import SafetyPage from './pages/SafetyPage'
 import { BusinessAnalysisPage } from './pages/BusinessAnalysisPage'
 import PitchDeckPage from './pages/PitchDeckPage'
 import ContributionPage from './pages/ContributionPage'
+import ProtocolsPage from './pages/ProtocolsPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -36,12 +37,7 @@ function App() {
       case 'labsafety':
         return <SafetyPage />
       case 'labprotocols':
-        return (
-          <div className="page-header">
-            <h1>Lab Protocols</h1>
-            <p>Step-by-step experimental protocols will be published here.</p>
-          </div>
-        )
+        return <ProtocolsPage />
       case 'drylabresults':
         return <DryLabResultsPage />
       case 'wetlabresults':

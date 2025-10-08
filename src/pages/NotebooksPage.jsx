@@ -71,7 +71,7 @@ const NotebooksPage = () => {
           {active === 'dry' && (
             <>
               <GanttChart
-                title="Dry Lab – Gantt Chart"
+                title="Dry Lab – Timeline"
                 data={[
                   { Task: 'Literature review', Start: '2025-01-01', End: '2025-01-10', Group: 'Planning' },
                   { Task: 'Collect FEN1–FEN8 sequences', Start: '2025-01-11', End: '2025-01-20', Group: 'Fentanyl (Original)' },
@@ -98,7 +98,7 @@ const NotebooksPage = () => {
           {active === 'wet' && (
             <>
               <GanttChart
-                title="Wet Lab – Gantt Chart"
+                title="Wet Lab – Timeline"
                 view="bar"
                 data={[
                   { Task: 'Gold Nanoparticle Synthesis', Start: '2025-02-05', End: '2025-02-06', Group: 'Synthesis' },
