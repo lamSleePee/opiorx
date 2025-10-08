@@ -843,3 +843,113 @@
     padding: 16px;
   }
 }
+
+
+/* Business Model Canvas */
+.ent-business-model {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.ent-business-model-header {
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.ent-business-model-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ent-business-model-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: ent-float 6s ease-in-out infinite;
+}
+
+.ent-business-model-blob-1 {
+  width: 200px;
+  height: 200px;
+  background: #3b82f6;
+  top: -50px;
+  right: -50px;
+  animation-delay: 0s;
+}
+
+.ent-business-model-blob-2 {
+  width: 150px;
+  height: 150px;
+  background: #10b981;
+  bottom: -30px;
+  left: -30px;
+  animation-delay: 3s;
+}
+
+.ent-business-model-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ent-business-model-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ent-business-model-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.ent-business-model-description {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.ent-business-model-image {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ent-business-model-image-inner {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ent-business-model-image-inner:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design for Business Model Canvas */
+@media (max-width: 768px) {
+  .ent-business-model-title {
+    font-size: 1.5rem;
+  }
+  
+  .ent-business-model-header {
+    padding: 1.5rem;
+  }
+  
+  .ent-business-model-content {
+    margin-bottom: 1.5rem;
+  }
+}

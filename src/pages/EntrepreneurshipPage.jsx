@@ -264,7 +264,7 @@ export default function EntrepreneurshipPage() {
                   
                   <div className="ent-solution-image">
                     <img 
-                      src="https://via.placeholder.com/800x400/1e293b/ffffff?text=OPIO-RX:+From+Unmet+Needs+to+Solution"
+                      src="/images/entrepreneurship/entreimg1.png"
                       alt="OPIO-RX: From Unmet Needs to Solution - Addressing synthetic opioid overdose crisis with rapid, multiplex saliva biosensor technology"
                       className="ent-image"
                     />
@@ -328,7 +328,7 @@ export default function EntrepreneurshipPage() {
                   
                   <div className="ent-market-image">
                     <img 
-                      src="https://via.placeholder.com/800x400/1e293b/ffffff?text=Market+Size+Analysis:+PAM+($41.2B),+TAM+($8.5B),+SAM+($1.2B),+SOM+($100M)"
+                      src="/images/entrepreneurship/entreimg2.png"
                       alt="Market Size Analysis: PAM ($41.2B), TAM ($8.5B), SAM ($1.2B), SOM ($100M) for OPIO-RX opioid detection technology"
                       className="ent-image"
                     />
@@ -362,6 +362,34 @@ export default function EntrepreneurshipPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Business Model Canvas */}
+                <div className="ent-business-model">
+                  <div className="ent-business-model-header">
+                    <div className="ent-business-model-decoration">
+                      <div className="ent-business-model-blob ent-business-model-blob-1"></div>
+                      <div className="ent-business-model-blob ent-business-model-blob-2"></div>
+                    </div>
+                    
+                    <div className="ent-business-model-content">
+                      <div className="ent-business-model-text">
+                        <h3 className="ent-business-model-title">Business Model Canvas</h3>
+                        <p className="ent-business-model-description">
+                          Comprehensive framework mapping out key business components including value propositions, 
+                          customer segments, revenue streams, and strategic partnerships for OPIO-RX's market entry.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="ent-business-model-image">
+                      <img 
+                        src="/images/entrepreneurship/entreimg4.png"
+                        alt="Business Model Canvas for OPIO-RX: Comprehensive framework mapping value propositions, customer segments, revenue streams, and strategic partnerships"
+                        className="ent-image ent-business-model-image-inner"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -391,7 +419,7 @@ export default function EntrepreneurshipPage() {
                   
                   <div className="ent-swot-image">
                     <img 
-                      src="https://via.placeholder.com/800x400/ffffff/1e293b?text=SWOT+Analysis+for+OPIO-RX"
+                      src="/images/entrepreneurship/entreimg3.png"
                       alt="SWOT Analysis for OPIO-RX: Strengths include high opioid-specific accuracy and immediate results; Weaknesses include high initial cost and regulatory approval process; Opportunities include urgent market need and government funding; Threats include strong competition and insurance reimbursement challenges"
                       className="ent-image ent-swot-image-inner"
                     />
