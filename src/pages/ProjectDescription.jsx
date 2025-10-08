@@ -185,21 +185,39 @@ const ProjectDescription = () => {
             <div className="pd-card">
               <h3>A. In silico aptamer design</h3>
               
-              <div className="pd-image-container">
-                <img 
-                  src="/images/project-description/img1.png"
-                  alt="In Silico Aptamer Design Overview"
-                  className="pd-image"
-                  style={{
-                    width: '100%',
-                    maxWidth: '800px',
-                    maxHeight: '500px',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    display: 'block',
-                    margin: '0 auto'
-                  }}
-                />
+              <div className="pd-images-container">
+                <div className="pd-image-container">
+                  <img 
+                    src="/images/project-description/img1.png"
+                    alt="In Silico Aptamer Design Overview"
+                    className="pd-image"
+                    style={{
+                      width: '100%',
+                      maxWidth: '400px',
+                      maxHeight: '500px',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      display: 'block',
+                      margin: '0 auto'
+                    }}
+                  />
+                </div>
+                <div className="pd-image-container">
+                  <img 
+                    src="/images/project-description/img1-1.png"
+                    alt="In Silico Aptamer Design Details"
+                    className="pd-image"
+                    style={{
+                      width: '100%',
+                      maxWidth: '400px',
+                      maxHeight: '500px',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      display: 'block',
+                      margin: '0 auto'
+                    }}
+                  />
+                </div>
               </div>
 
               <h4>Primary Sequence Analysis:</h4>

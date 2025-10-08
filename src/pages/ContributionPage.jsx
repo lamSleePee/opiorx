@@ -1,7 +1,66 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { Download, ExternalLink, FileText } from 'lucide-react'
 import './ContributionPage.css'
 
 const ContributionPage = () => {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (iframe) {
+      const handleLoad = () => {
+        const loadingElement = document.querySelector('.contribution-pdf-loading');
+        if (loadingElement) {
+          loadingElement.style.display = 'none';
+        }
+      };
+
+      const handleError = () => {
+        const fallbackElement = document.querySelector('.contribution-fallback');
+        const containerElement = document.querySelector('.contribution-pdf-viewer-container');
+        if (fallbackElement && containerElement) {
+          fallbackElement.style.display = 'flex';
+          containerElement.style.display = 'none';
+        }
+      };
+
+      // Timeout fallback - if PDF doesn't load in 10 seconds, show fallback
+      const timeout = setTimeout(() => {
+        const loadingElement = document.querySelector('.contribution-pdf-loading');
+        const fallbackElement = document.querySelector('.contribution-fallback');
+        const containerElement = document.querySelector('.contribution-pdf-viewer-container');
+        
+        if (loadingElement && fallbackElement && containerElement) {
+          loadingElement.style.display = 'none';
+          fallbackElement.style.display = 'flex';
+          containerElement.style.display = 'none';
+        }
+      }, 10000);
+
+      iframe.addEventListener('load', handleLoad);
+      iframe.addEventListener('error', handleError);
+
+      return () => {
+        clearTimeout(timeout);
+        iframe.removeEventListener('load', handleLoad);
+        iframe.removeEventListener('error', handleError);
+      };
+    }
+  }, []);
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/contriEdu.pdf';
+    link.download = 'contriEdu.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleOpenInNewTab = () => {
+    window.open('/contriEdu.pdf', '_blank');
+  };
+
   return (
     <div className="contribution-page">
       <div className="contribution-container">
@@ -362,6 +421,66 @@ const ContributionPage = () => {
                   Together, these parameters confirm that the selected mutants exhibit the strongest binding affinity 
                   and specificity toward codeine.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PDF Viewer Section */}
+        <section className="contribution-section contribution-pdf-section">
+          <div className="contribution-card">
+            <h2 className="contribution-section-title">Education & Outreach Documentation</h2>
+            <p className="contribution-pdf-description">
+              View our comprehensive documentation of education and outreach activities, including workshops, 
+              seminars, and community engagement initiatives.
+            </p>
+            
+            <div className="contribution-pdf-actions">
+              <button 
+                className="contribution-btn contribution-btn-primary"
+                onClick={handleDownload}
+              >
+                <Download className="contribution-btn-icon" />
+                Download PDF
+              </button>
+              <button 
+                className="contribution-btn contribution-btn-secondary"
+                onClick={handleOpenInNewTab}
+              >
+                <ExternalLink className="contribution-btn-icon" />
+                Open in New Tab
+              </button>
+            </div>
+
+            <div className="contribution-pdf-container">
+              <div className="contribution-pdf-viewer-container">
+                <iframe
+                  ref={iframeRef}
+                  src="/contriEdu.pdf#toolbar=1&navpanes=1&scrollbar=1&view=FitH"
+                  className="contribution-pdf-viewer"
+                  title="Contribution Education PDF"
+                />
+                <div className="contribution-pdf-loading">
+                  <div className="contribution-loading-spinner"></div>
+                  <p>Loading PDF...</p>
+                </div>
+              </div>
+              
+              <div className="contribution-fallback" style={{display: 'none'}}>
+                <div className="contribution-fallback-content">
+                  <FileText className="contribution-fallback-icon" />
+                  <h4 className="contribution-fallback-title">PDF Viewer Not Available</h4>
+                  <p className="contribution-fallback-description">
+                    Your browser doesn't support PDF viewing. Please download the document to view it.
+                  </p>
+                  <button 
+                    className="contribution-btn contribution-btn-primary"
+                    onClick={handleDownload}
+                  >
+                    <Download className="contribution-btn-icon" />
+                    Download Document
+                  </button>
+                </div>
               </div>
             </div>
           </div>
