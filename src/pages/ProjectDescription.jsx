@@ -84,7 +84,7 @@ const ProjectDescription = () => {
           </div>
 
           {/* Indian Scenario */}
-          <div className="pd-section">
+          {/* <div className="pd-section">
             <div className="pd-section-header">
               <ChartIcon />
               <h2>Indian Scenario</h2>
@@ -93,10 +93,10 @@ const ProjectDescription = () => {
               <p>India's opioid prevalence is three times the global average, with 2.1% of the population using opioids. However, the data is less accurate in LMICs like India, where it is impossible to determine the exact number of overdose deaths caused by opioids. According to the 2019 report, Mizoram and Nagaland are the states most impacted by opioid use disorders, while Uttar Pradesh has the highest rate. India's prevalence of opioid usage is still lower than that of the United States.</p>
               <p>However, opioid consumption patterns differed by demographic and geographic characteristics have always differed in India. Synthetic opioids are more widespread in rural regions, as compared to heroin, was the most often used illicit opioid in urban areas. Numerous studies have shown that the abuse of prescription opioids, especially tramadol and cough syrups containing codeine, is becoming a greater issue. (Bhawalkar et al. 2024)</p>
             </div>
-          </div>
+          </div> */}
 
           {/* Global Scenario */}
-          <div className="pd-section">
+          {/* <div className="pd-section">
             <div className="pd-section-header">
               <ChartIcon />
               <h2>Global Scenario</h2>
@@ -108,10 +108,10 @@ const ProjectDescription = () => {
                 <p className="image-caption">Fig. 1 Three waves of opioid overdose deaths(Understanding the Opioid Overdose Epidemic | Overdose Prevention | CDC n.d.)</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Current Detection Methods */}
-          <div className="pd-section">
+          {/* <div className="pd-section">
             <div className="pd-section-header">
               <MicroscopeIcon />
               <h2>Current detection methods</h2>
@@ -142,7 +142,7 @@ const ProjectDescription = () => {
               <p>First-line screening uses immunoassays with cut-off levels of 300-2000 ng/mL for opiates. However, traditional opiate immunoassays often fail to detect fentanyl due to structural differences from morphine. Hospitals increasingly require fentanyl-specific immunoassays for comprehensive synthetic opioid screening.</p>
               <p>Confirmatory testing employs LC-MS/MS or GC-MS methods with detection limits typically 20-50 ng/mL in clinical practice, though capable of 5 ng/mL sensitivity. Turnaround time is 1-3 days for confirmation results.</p>
             </div>
-          </div>
+          </div> */}
 
           {/* Limitations → Birth of Opio‑Rx */}
           <div className="pd-section">

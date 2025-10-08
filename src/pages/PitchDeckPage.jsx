@@ -18,11 +18,8 @@ export default function PitchDeckPage() {
     }
   };
 
-  // Path to your PowerPoint file in the public folder
-  const pptPath = '/pitch-deck.pptx';
-  
-  // Using Microsoft Office Online viewer
-  const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(window.location.origin + pptPath)}`;
+  // Path to your PDF file in the public folder
+  const pdfPath = '/Entrepreneurship.pdf';
 
   return (
     <div className="pitch-deck-page">
@@ -49,13 +46,13 @@ export default function PitchDeckPage() {
           </div>
           <div className="pitch-deck-actions">
             <a 
-              href={pptPath} 
+              href={pdfPath} 
               download 
               className="pitch-deck-btn pitch-deck-btn-download"
               title="Download Presentation"
             >
               <Download className="pitch-deck-btn-icon" />
-              Download PPT
+              Download PDF
             </a>
             <button 
               onClick={toggleFullscreen}
@@ -68,16 +65,16 @@ export default function PitchDeckPage() {
           </div>
         </div>
 
-        {/* PowerPoint Viewer */}
+        {/* PDF Viewer */}
         <div className="pitch-deck-viewer-wrapper" id="ppt-viewer">
           <iframe
-            src={viewerUrl}
+            src={`${pdfPath}#toolbar=1&navpanes=1&scrollbar=1`}
             className="pitch-deck-viewer"
             frameBorder="0"
             title="Pitch Deck Presentation"
             allowFullScreen
           >
-            <p>Your browser does not support iframes. Please <a href={pptPath} download>download the presentation</a> to view it.</p>
+            <p>Your browser does not support iframes. Please <a href={pdfPath} download>download the presentation</a> to view it.</p>
           </iframe>
           
           {/* Fallback message */}
@@ -90,7 +87,7 @@ export default function PitchDeckPage() {
               <li>Downloading the file directly</li>
               <li>Opening in a different browser</li>
             </ul>
-            <a href={pptPath} download className="pitch-deck-btn pitch-deck-btn-download">
+            <a href={pdfPath} download className="pitch-deck-btn pitch-deck-btn-download">
               <Download className="pitch-deck-btn-icon" />
               Download Presentation
             </a>
