@@ -5010,3 +5010,179 @@ body {
     padding: 1.5rem;
   }
 }
+
+/* Scientific Diagram Styles */
+.scientific-diagram {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.diagram-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.diagram-left,
+.diagram-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aptamer-structure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aptamer-chain {
+  width: 80px;
+  height: 20px;
+  background: #1e40af;
+  border-radius: 10px;
+  position: relative;
+}
+
+.aptamer-chain::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  width: 60px;
+  height: 30px;
+  background: #1e40af;
+  border-radius: 15px;
+}
+
+.aptamer-label {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.gray-sphere {
+  width: 12px;
+  height: 12px;
+  background: #6b7280;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+.opioid-molecule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pink-sphere {
+  width: 24px;
+  height: 24px;
+  background: #ec4899;
+  border-radius: 50%;
+}
+
+.opioid-label {
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.interaction-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.diagram-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-left: 20px solid #374151;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.aptamer-coiled {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aptamer-chain-coiled {
+  width: 60px;
+  height: 40px;
+  background: #1e40af;
+  border-radius: 20px;
+  position: relative;
+}
+
+.aptamer-chain-coiled::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #1e40af;
+  border-radius: 25px;
+}
+
+.green-sphere {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.distance-bracket {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bracket-line {
+  width: 2px;
+  height: 30px;
+  background: #374151;
+  margin: 0 auto;
+}
+
+.distance-text {
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.turn-on-text {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.conformational-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}

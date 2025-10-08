@@ -19,23 +19,37 @@ const TechnologyHero = () => {
           </video>
         </div>
         <div className="hero-content">
-          {/* Embed the DeathCounter layout (countdown + stats) beside the video */}
-          <div className="death-inline">
-            <div className="death-inline-left">
-              <div className="countdown-number" style={{margin:0}}>10</div>
-              <div className="countdown-label">seconds until next death</div>
-              <div className="countdown-progress">
-                <div className="countdown-bar" style={{width:'100%'}}/>
+          {/* Scientific diagram showing aptamer-opioid interaction */}
+          <div className="scientific-diagram">
+            <div className="diagram-container">
+              <div className="diagram-left">
+                <div className="aptamer-structure">
+                  <div className="aptamer-chain"></div>
+                  <div className="aptamer-label">Aptamer</div>
+                  <div className="gray-sphere"></div>
+                </div>
+                <div className="opioid-molecule">
+                  <div className="pink-sphere"></div>
+                  <div className="opioid-label">synthetic opioid</div>
+                </div>
+                <div className="interaction-text">Aptamer interacts with the synthetic opioid.</div>
               </div>
-            </div>
-            <div className="death-inline-right">
-              <h2 className="death-inline-title">Every 10 seconds, another life is lost</h2>
-              <div className="death-inline-count">3,179,855</div>
-              <div className="death-inline-sub">deaths from drug abuse</div>
-              <div className="death-inline-grid">
-                <div className="death-inline-card"><b>1</b><span>death every 10 seconds</span></div>
-                <div className="death-inline-card"><b>8,640</b><span>deaths per day</span></div>
-                <div className="death-inline-card"><b>3.1M</b><span>deaths per year</span></div>
+              
+              <div className="diagram-arrow">
+                <div className="arrow-right"></div>
+              </div>
+              
+              <div className="diagram-right">
+                <div className="aptamer-coiled">
+                  <div className="aptamer-chain-coiled"></div>
+                  <div className="green-sphere"></div>
+                  <div className="distance-bracket">
+                    <div className="bracket-line"></div>
+                    <div className="distance-text">&gt;10 nm</div>
+                  </div>
+                </div>
+                <div className="turn-on-text">Turn On state</div>
+                <div className="conformational-text">Conformational change in the aptamer structure causes regain in fluorescence.</div>
               </div>
             </div>
           </div>
