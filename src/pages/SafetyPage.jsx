@@ -1,454 +1,264 @@
 import React from 'react';
 import { 
-  Calendar,
-  FlaskConical,
-  Dna,
-  Microscope,
-  TestTube,
-  FileText,
-  Search,
-  Target,
-  Zap,
   Shield,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  BookOpen,
-  Beaker,
-  Atom
+  FileText,
+  AlertTriangle,
+  Lock,
+  Container,
+  FlaskConical,
+  Microscope,
+  Trash2,
+  Users,
+  BookOpen
 } from 'lucide-react';
 import './SafetyPage.css';
 
 export default function SafetyPage() {
-  const experiments = [
-    {
-      date: "Jan 1, 2025",
-      task: "Literature review – collection of aptamer studies for opioids (Fentanyl, Oxycodone, Tramadol, Codeine, Methadone)",
-      target: "—",
-      icon: BookOpen,
-      color: "blue"
-    },
-    {
-      date: "Jan 15, 2025",
-      task: "Retrieval and curation of Fentanyl original aptamer sequences (FEN1–FEN8) from literature",
-      target: "Fentanyl (Original)",
-      icon: Dna,
-      color: "red"
-    },
-    {
-      date: "Feb 1, 2025",
-      task: "Secondary structure prediction using Mfold/RNAfold; analysis of stem–loop regions, GC%",
-      target: "Fentanyl (Original)",
-      icon: Microscope,
-      color: "red"
-    },
-    {
-      date: "Feb 15, 2025",
-      task: "Tertiary structure modelling and optimization using 3dRNA/DNA web server",
-      target: "Fentanyl (Original)",
-      icon: Atom,
-      color: "red"
-    },
-    {
-      date: "Mar 1, 2025",
-      task: "Docking setup and baseline docking (LibDock) for FEN1–FEN8",
-      target: "Fentanyl (Original)",
-      icon: Target,
-      color: "red"
-    },
-    {
-      date: "Mar 15, 2025",
-      task: "Docking analysis and thermodynamic interpretation (ΔG, LibDock scores, interaction mapping)",
-      target: "Fentanyl (Original)",
-      icon: Search,
-      color: "red"
-    },
-    {
-      date: "Mar 30, 2025",
-      task: "Truncation and point-mutation design for best Fentanyl aptamer (FEN8; residues 28–29 etc.)",
-      target: "Fentanyl (Mutant Design)",
-      icon: Zap,
-      color: "orange"
-    },
-    {
-      date: "Apr 15, 2025",
-      task: "Docking of mutated Fentanyl aptamers (FEN8_1–FEN8_15); thermodynamic and interaction comparison",
-      target: "Fentanyl (Mutated)",
-      icon: TestTube,
-      color: "orange"
-    },
-    {
-      date: "Apr 30, 2025",
-      task: "In-silico modification study — thiol/amine/biotin/FITC modifications at 5′/3′ ends; structural optimization, FRET-pair validation, docking setup",
-      target: "Modified Aptamers (primarily Fentanyl)",
-      icon: Beaker,
-      color: "purple"
-    },
-    {
-      date: "May 15, 2025",
-      task: "Retrieval and curation of Oxycodone original aptamer sequences (OM1–OM36)",
-      target: "Oxycodone (Original)",
-      icon: Dna,
-      color: "green"
-    },
-    {
-      date: "May 30, 2025",
-      task: "Secondary & tertiary structure prediction for Oxycodone aptamers; identification of lead OM16",
-      target: "Oxycodone (Original)",
-      icon: Microscope,
-      color: "green"
-    },
-    {
-      date: "Jun 15, 2025",
-      task: "Mutation and docking analysis of OM16 (mutants OM16_1–OM16_15)",
-      target: "Oxycodone (Mutated)",
-      icon: TestTube,
-      color: "green"
-    },
-    {
-      date: "Jun 30, 2025",
-      task: "Retrieval of Tramadol aptamer (TR_OG/APT39); secondary and tertiary structure modelling",
-      target: "Tramadol (Original)",
-      icon: Dna,
-      color: "cyan"
-    },
-    {
-      date: "Jul 15, 2025",
-      task: "Docking and mutation study of Tramadol (APT39; residues 40–41; TR1–TR15)",
-      target: "Tramadol (Mutated)",
-      icon: TestTube,
-      color: "cyan"
-    },
-    {
-      date: "Jul 30, 2025",
-      task: "Retrieval and structural prediction of Codeine aptamers (FC5, FC45)",
-      target: "Codeine (Original)",
-      icon: Dna,
-      color: "emerald"
-    },
-    {
-      date: "Aug 15, 2025",
-      task: "Docking, thermodynamics, and comparative analysis across all targets (ΔG, LibDock, heatmaps, interaction summaries); final documentation",
-      target: "Cross-target comparison",
-      icon: FileText,
-      color: "blue"
-    }
-  ];
-
-  const getColorClasses = (color) => {
-    const colorMap = {
-      blue: { bg: "safety-blue-bg", border: "safety-blue-border", text: "safety-blue-text", accent: "safety-blue-accent" },
-      red: { bg: "safety-red-bg", border: "safety-red-border", text: "safety-red-text", accent: "safety-red-accent" },
-      orange: { bg: "safety-orange-bg", border: "safety-orange-border", text: "safety-orange-text", accent: "safety-orange-accent" },
-      purple: { bg: "safety-purple-bg", border: "safety-purple-border", text: "safety-purple-text", accent: "safety-purple-accent" },
-      green: { bg: "safety-green-bg", border: "safety-green-border", text: "safety-green-text", accent: "safety-green-accent" },
-      cyan: { bg: "safety-cyan-bg", border: "safety-cyan-border", text: "safety-cyan-text", accent: "safety-cyan-accent" },
-      emerald: { bg: "safety-emerald-bg", border: "safety-emerald-border", text: "safety-emerald-text", accent: "safety-emerald-accent" }
-    };
-    return colorMap[color] || colorMap.blue;
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      day: 'numeric', 
-      year: 'numeric' 
-    });
-  };
-
   return (
     <div className="safety-page">
       {/* Hero Section */}
       <section className="safety-hero">
-        <div className="safety-hero-bg"></div>
-        <div className="safety-hero-decoration">
-          <div className="safety-hero-blob safety-hero-blob-1"></div>
-          <div className="safety-hero-blob safety-hero-blob-2"></div>
-        </div>
-        
         <div className="safety-hero-content">
           <div className="safety-badge">
             <Shield className="safety-badge-icon" />
-            Laboratory Safety & Protocols
+            Laboratory Safety & Compliance
           </div>
-          
-          <h1 className="safety-hero-title">
-            Safety Protocols
-          </h1>
-          <h2 className="safety-hero-subtitle">
-            Comprehensive Laboratory Safety Guidelines
-          </h2>
+          <h1 className="safety-hero-title">Safety</h1>
           <p className="safety-hero-description">
-            Detailed safety protocols, experimental procedures, and risk management 
-            strategies ensuring safe laboratory practices for opioid detection research
+            All work was conducted under BSL-2 standards with IBSC approval, using certified reference materials (CRMs), validated SOPs, engineering controls, and compliant waste management procedures.
+          </p>
+          <p className="safety-hero-description">
+            Nanomaterial handling (AuNPs, rGO), fluorescence instrumentation (VICTOR Nivo), and fentanyl-related workflows follow specific risk assessments, PPE, containment, and disposal protocols aligned with international guidance and institutional policies.
           </p>
         </div>
       </section>
 
       <div className="safety-container">
-        {/* Timeline Section */}
+        
+        {/* Section 1: Regulatory Compliance */}
         <section className="safety-section">
-          <div className="safety-timeline-header">
-            <h2 className="safety-timeline-title">
-              Experimental Timeline & Safety Protocols
-            </h2>
-            <p className="safety-timeline-subtitle">
-              Comprehensive schedule of laboratory experiments with associated safety measures 
-              and target molecule classifications for opioid detection research
-            </p>
+          <div className="safety-section-header">
+            <Lock className="safety-section-icon" />
+            <h2 className="safety-section-title">1) Regulatory Compliance for Acetyl Fentanyl CRM Use</h2>
           </div>
 
-          <div className="safety-timeline">
-            {experiments.map((experiment, index) => (
-              <div key={index} className={`safety-timeline-item ${getColorClasses(experiment.color).bg} ${getColorClasses(experiment.color).border}`}>
-                <div className="safety-timeline-marker">
-                  <experiment.icon className={`safety-timeline-icon ${getColorClasses(experiment.color).text}`} />
-                </div>
-                
-                <div className="safety-timeline-content">
-                  <div className="safety-timeline-header-item">
-                    <div className="safety-timeline-date">
-                      <Calendar className="safety-date-icon" />
-                      <span className="safety-date-text">{formatDate(experiment.date)}</span>
-                    </div>
-                    <div className={`safety-timeline-target ${getColorClasses(experiment.color).text}`}>
-                      <Target className="safety-target-icon" />
-                      <span className="safety-target-text">{experiment.target}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="safety-timeline-task">
-                    <h3 className="safety-task-title">
-                      {experiment.task}
-                    </h3>
-                  </div>
-                  
-                  <div className="safety-timeline-footer">
-                    <div className="safety-safety-badge">
-                      <Shield className="safety-safety-icon" />
-                      <span className="safety-safety-text">Safety Protocol Applied</span>
-                    </div>
-                    <div className="safety-progress-indicator">
-                      <CheckCircle className="safety-progress-icon" />
-                      <span className="safety-progress-text">Planned</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="safety-card">
+            <h3>Material identity and classification</h3>
+            <p>Acetyl fentanyl-13C6 solution, 50 μg/mL in methanol, 1 mL ampule, Cerilliant (Merck/Sigma-Aldrich) CRM with CoA and traceability. CRM-grade materials are designated for analytical use, with strict QA/QC and chain-of-custody documentation [— user-supplied].</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>License considerations</h3>
+            <p>Use as analytical calibration/validation standard in controlled laboratory assays does not constitute synthesis, distribution, or clinical application; CRMs are permitted for research under institutional oversight and without narcotics license when not diverted, in line with analytical toxicology/biosensor validation norms [— user-supplied]. Institutional policies and iGEM Working Safely guidance require risk assessment, facility suitability by risk group, and training.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Institutional approvals and governance</h3>
+            <p>Work reviewed and approved by IBSC; activities executed under BSL-2 laboratory standards, emergency preparedness, and documented training, as exemplified in iGEM safety pages and institutional biosafety manuals.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Chain-of-custody and access control</h3>
+            <p>Secure controlled storage (locked cabinet/fridge with access logs), issue-only-by-PI/authorized custodian, sign-in/out per vial, reconcile volumes post-run, immediate discrepancy reporting. Follow DEA-style "nonretrievable" destruction principles for residues when applicable.</p>
+            <p>Documentation retained: CoA, IBSC approval letters, training records, SDS for methanol and fentanyl analog CRM, usage logs, waste disposal records (e.g., Form 41 equivalents where required by local policy).</p>
           </div>
         </section>
 
-        {/* Safety Guidelines Section */}
+        {/* Section 2: Common SOPs */}
         <section className="safety-section">
-          <div className="safety-guidelines-header">
-            <h2 className="safety-guidelines-title">
-              Laboratory Safety Guidelines
-            </h2>
-            <p className="safety-guidelines-subtitle">
-              Essential safety protocols and procedures for handling opioid detection 
-              experiments and maintaining laboratory safety standards
-            </p>
+          <div className="safety-section-header">
+            <FileText className="safety-section-icon" />
+            <h2 className="safety-section-title">2) Common SOPs and Laboratory Practices (BSL-2)</h2>
           </div>
 
-          <div className="safety-guidelines-grid">
-            <div className="safety-guideline-card safety-guideline-ppe">
-              <div className="safety-guideline-icon">
-                <Shield className="safety-guideline-icon-svg" />
-              </div>
-              <h3 className="safety-guideline-title">Personal Protective Equipment</h3>
-              <ul className="safety-guideline-list">
-                <li>Lab coats and disposable gloves required at all times</li>
-                <li>Safety goggles for chemical handling procedures</li>
-                <li>Face shields for high-risk operations</li>
-                <li>Closed-toe shoes and long pants mandatory</li>
-              </ul>
-            </div>
+          <div className="safety-card">
+            <h3>Training, access, and supervision</h3>
+            <p>Mandatory onboarding covering biosafety, chemical hygiene, nanomaterial safety, waste segregation, emergency procedures, and equipment-specific training (centrifuges, spectrometers, BSCs) with competency sign-offs.</p>
+          </div>
 
-            <div className="safety-guideline-card safety-guideline-chemical">
-              <div className="safety-guideline-icon">
-                <FlaskConical className="safety-guideline-icon-svg" />
-              </div>
-              <h3 className="safety-guideline-title">Chemical Safety</h3>
-              <ul className="safety-guideline-list">
-                <li>Proper storage of opioid standards and reagents</li>
-                <li>Chemical compatibility assessment before mixing</li>
-                <li>Spill response procedures and cleanup protocols</li>
-                <li>Waste disposal according to regulatory guidelines</li>
-              </ul>
-            </div>
+          <div className="safety-card">
+            <h3>PPE and dress code</h3>
+            <p>Minimum: lab coat, nitrile gloves, safety glasses; add face shield/respirator where risk indicates. No open footwear. Tie back hair; avoid dangling accessories. No food/drinks/cosmetics in lab; dedicated chemical/nanomaterial fridges only.</p>
+          </div>
 
-            <div className="safety-guideline-card safety-guideline-equipment">
-              <div className="safety-guideline-icon">
-                <Microscope className="safety-guideline-icon-svg" />
-              </div>
-              <h3 className="safety-guideline-title">Equipment Safety</h3>
-              <ul className="safety-guideline-list">
-                <li>Regular calibration and maintenance schedules</li>
-                <li>Proper handling of analytical instruments</li>
-                <li>Emergency shutdown procedures for all equipment</li>
-                <li>Documentation of equipment usage and incidents</li>
-              </ul>
-            </div>
+          <div className="safety-card">
+            <h3>Engineering controls and safe work practices</h3>
+            <p>Perform aerosol/volatile or nanoparticle work in fume hoods or containment (BSC for bioaerosols); use HEPA-filtered local exhaust where indicated; never use clean benches for hazardous work directed toward worker.</p>
+            <p>Maintain clear egress, unobstructed eyewash/showers and fire extinguishers; buddy system after hours; emergency contacts posted near phone.</p>
+          </div>
 
-            <div className="safety-guideline-card safety-guideline-emergency">
-              <div className="safety-guideline-icon">
-                <Zap className="safety-guideline-icon-svg" />
-              </div>
-              <h3 className="safety-guideline-title">Emergency Procedures</h3>
-              <ul className="safety-guideline-list">
-                <li>Emergency contact numbers and evacuation routes</li>
-                <li>First aid procedures for chemical exposure</li>
-                <li>Fire safety and suppression equipment locations</li>
-                <li>Incident reporting and documentation protocols</li>
-              </ul>
-            </div>
+          <div className="safety-card">
+            <h3>Housekeeping and labeling</h3>
+            <p>Keep benches uncluttered; close containers; secondary containment for liquids; GHS labeling with contents, hazards, date; segregate incompatible chemicals.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Incident response</h3>
+            <p>Spills: evacuate if large/toxic; don appropriate PPE/respirator; contain with absorbents; for fentanyl contamination, prioritize chemical degradation or detergent-based removal under containment (see section 5).</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Documentation</h3>
+            <p>Hazard sheets posted; instrument logs maintained; audit trails enabled for regulated devices/software where applicable.</p>
           </div>
         </section>
 
-        {/* Risk Assessment Section */}
+        {/* Section 3: Nanomaterial Safety */}
         <section className="safety-section">
-          <div className="safety-risk-header">
-            <h2 className="safety-risk-title">
-              Risk Assessment & Mitigation
-            </h2>
-            <p className="safety-risk-subtitle">
-              Comprehensive risk evaluation and mitigation strategies for opioid 
-              detection research activities
-            </p>
+          <div className="safety-section-header">
+            <Container className="safety-section-icon" />
+            <h2 className="safety-section-title">3) Safety for Gold Nanoparticles (AuNPs) and Reduced Graphene Oxide (rGO)</h2>
           </div>
 
-          <div className="safety-risk-grid">
-            <div className="safety-risk-category">
-              <h3 className="safety-risk-category-title">
-                <Shield className="safety-risk-category-icon" />
-                Biological Risks
-              </h3>
-              <div className="safety-risk-items">
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-low">Low</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Aptamer Handling</h4>
-                    <p className="safety-risk-item-description">
-                      Synthetic DNA/RNA aptamers pose minimal biological risk with proper handling
-                    </p>
-                  </div>
-                </div>
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-medium">Medium</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Sample Contamination</h4>
-                    <p className="safety-risk-item-description">
-                      Risk of cross-contamination between opioid samples requires strict protocols
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="safety-risk-category">
-              <h3 className="safety-risk-category-title">
-                <FlaskConical className="safety-risk-category-icon" />
-                Chemical Risks
-              </h3>
-              <div className="safety-risk-items">
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-high">High</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Opioid Standards</h4>
-                    <p className="safety-risk-item-description">
-                      Highly controlled substances require special handling and documentation
-                    </p>
-                  </div>
-                </div>
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-medium">Medium</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Fluorescent Dyes</h4>
-                    <p className="safety-risk-item-description">
-                      FRET dyes may cause skin irritation and require protective measures
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="safety-risk-category">
-              <h3 className="safety-risk-category-title">
-                <Microscope className="safety-risk-category-icon" />
-                Equipment Risks
-              </h3>
-              <div className="safety-risk-items">
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-low">Low</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Optical Instruments</h4>
-                    <p className="safety-risk-item-description">
-                      Standard laboratory equipment with minimal operational risks
-                    </p>
-                  </div>
-                </div>
-                <div className="safety-risk-item">
-                  <div className="safety-risk-level safety-risk-medium">Medium</div>
-                  <div className="safety-risk-content">
-                    <h4 className="safety-risk-item-title">Laser Sources</h4>
-                    <p className="safety-risk-item-description">
-                      Fluorescence detection may involve laser sources requiring eye protection
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Compliance Section */}
-        <section className="safety-section">
-          <div className="safety-compliance-card">
-            <div className="safety-compliance-header">
-              <h2 className="safety-compliance-title">
-                <CheckCircle className="safety-compliance-icon" />
-                Regulatory Compliance & Documentation
-              </h2>
-              <p className="safety-compliance-subtitle">
-                Ensuring adherence to all applicable safety regulations and maintaining 
-                comprehensive documentation for laboratory activities
-              </p>
-            </div>
+          <div className="safety-subsection">
+            <h3 className="safety-subsection-title">A. Gold nanoparticles (AuNPs)</h3>
             
-            <div className="safety-compliance-content">
-              <div className="safety-compliance-grid">
-                <div className="safety-compliance-item">
-                  <FileText className="safety-compliance-item-icon" />
-                  <h3 className="safety-compliance-item-title">Documentation</h3>
-                  <p className="safety-compliance-item-text">
-                    Complete records of all experimental procedures, safety incidents, 
-                    and protocol modifications maintained for regulatory review
-                  </p>
-                </div>
-                
-                <div className="safety-compliance-item">
-                  <Shield className="safety-compliance-item-icon" />
-                  <h3 className="safety-compliance-item-title">Training</h3>
-                  <p className="safety-compliance-item-text">
-                    Regular safety training sessions for all laboratory personnel 
-                    covering opioid handling and emergency procedures
-                  </p>
-                </div>
-                
-                <div className="safety-compliance-item">
-                  <Clock className="safety-compliance-item-icon" />
-                  <h3 className="safety-compliance-item-title">Monitoring</h3>
-                  <p className="safety-compliance-item-text">
-                    Continuous monitoring of laboratory conditions and regular 
-                    safety audits to ensure compliance with established protocols
-                  </p>
-                </div>
-              </div>
+            <div className="safety-card">
+              <h4>Hazards overview</h4>
+              <p>Bulk gold is inert; nanoscale Au often exhibits low toxicity at ≥5 nm, but safety is surface chemistry-, size-, dose-, and matrix-dependent. Treat all nanoparticle work conservatively to avoid inhalation/dermal exposure.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Handling and storage</h4>
+              <p>Prefer aqueous suspensions to minimize aerosolization; store 4–25°C away from sunlight; avoid freeze–thaw for colloids; maintain clean dedicated pipettes and tips.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Controls and PPE</h4>
+              <p>Perform open transfers in fume hood or ventilated enclosure; avoid creating aerosols; use gloves, goggles, lab coat; consider N95/N100 for powder/dry residues and when dust may form; ensure local exhaust with HEPA filtration.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Spills and first aid</h4>
+              <p>Wet-wipe spills in hood; avoid dry sweeping; collect into sealed waste. For skin/eye contact, wash/rinse with water; seek medical attention if irritation persists.</p>
+            </div>
+          </div>
+
+          <div className="safety-subsection">
+            <h3 className="safety-subsection-title">B. Reduced graphene oxide (rGO)</h3>
+            
+            <div className="safety-card">
+              <h4>Hazards overview</h4>
+              <p>rGO powders/platelets pose inhalation and dermal risks; toxicity is dose-, size-, and reduction-dependent. Studies report ROS generation and cytotoxicity in vitro/in vivo at certain doses; adopt precautionary controls for airborne particles.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Handling hierarchy and controls</h4>
+              <p>Avoid powders; procure/use dispersions where possible. For powders or vigorous processing, use fume hood/glove box or closed systems; HEPA-filtered LEV; sealed containers; anti-static measures. Administrative controls: training, exposure minimization, labeling.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>PPE</h4>
+              <p>Lab coat, double nitrile gloves for extended work, goggles; consider disposable sleeves; N95/N100 respirator if dust risk; avoid skin contact; immediate washing after work.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Storage and labeling</h4>
+              <p>Clearly label rGO with nanomaterial hazard; store sealed, dry, secondary containment; segregate from oxidizers; maintain SDS on hand.</p>
+            </div>
+
+            <div className="safety-card">
+              <h4>Spills and decontamination</h4>
+              <p>Mist with water to suppress dust; wet-wipe with disposable towels; avoid compressed air; dispose as nanomaterial hazardous waste; do not drain-dispose.</p>
             </div>
           </div>
         </section>
+
+        {/* Section 4: Equipment Safety */}
+        <section className="safety-section">
+          <div className="safety-section-header">
+            <Microscope className="safety-section-icon" />
+            <h2 className="safety-section-title">4) Safety with Fluorescence Equipment: VICTOR Nivo Multimode Microplate Reader</h2>
+          </div>
+
+          <div className="safety-card">
+            <h3>Instrument risks and controls</h3>
+            <p>Primary risks: optical exposure (generally enclosed), mechanical motion of plate stages, spills, and electrical hazards. Use manufacturer's workflow-based software with Enhanced Security for audit trails when needed (21 CFR Part 11 contexts).</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Operating best practices</h3>
+            <p>Inspect plate seals; avoid overfilled wells; centrifuge plates if bubbles high; load within specified plate formats; never defeat interlocks; keep ventilation ports clear.</p>
+            <p>Place instrument on stable bench; maintain clearance for airflow; connect to conditioned power; use UPS if required by facility.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Spill response</h3>
+            <p>If biohazardous/corrosive/toxic material leaks, pause runs, don PPE, power down safely, and clean external surfaces with appropriate detergent/disinfectant under SOP; follow vendor guidance for internal spill response and service if contamination breaches internal compartments.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Software security and data integrity</h3>
+            <p>Enable Enhanced Security for user authentication, audit trails, electronic signatures, and procedural controls; maintain SOPs for validation, change control, and account management per 21 CFR Part 11 guidance.</p>
+          </div>
+        </section>
+
+        {/* Section 5: Disposal */}
+        <section className="safety-section">
+          <div className="safety-section-header">
+            <Trash2 className="safety-section-icon" />
+            <h2 className="safety-section-title">5) Proper Disposal: Any Material Used with Acetyl Fentanyl CRM</h2>
+          </div>
+
+          <div className="safety-card">
+            <h3>Core principle</h3>
+            <p>Controlled-substance residues and contaminated materials must be rendered non-retrievable and managed via approved destruction channels (e.g., reverse distributor, Rx Destroyer-type chemical neutralization, or EH&S-controlled incineration). Never drain-dispose or discard in regular trash.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Waste segregation and labeling</h3>
+            <p>Segregate methanol solvent waste (flammable) in labeled solvent waste cans; segregate fentanyl-contaminated disposables (tips, wipes, gloves, microplates) into sealed pharmaceutical/controlled-substance waste streams as per EH&S direction; sharps into puncture-resistant sharps containers; never overfill.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Destruction pathways</h3>
+            <p>Prefer reverse distributor or DEA-style destruction to non-retrievable state with witnessed logging; some programs allow in-lab sorbent-based neutralizing media with logging, then EH&S pickup for incineration; keep records (usage log and destruction form) per institutional retention.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Surface decontamination after CRM work</h3>
+            <p>Use detergent and water for physical removal with adequate contact time; collect all aqueous run-off as hazardous waste due to fentanyl stability. Where permitted, apply validated chemical degradation (e.g., activated peroxyacetic acid formulations shown to degrade fentanyl on PPE within minutes) to minimize residual fentanyl in waste; verify compatibility with surfaces and institutional approval.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>Transport and storage prior to disposal</h3>
+            <p>Store sealed waste in secondary containment, in locked cabinet with inventory reconciliation; minimize accumulation; document chain-of-custody; schedule timely EH&S pickup to TSDF for incineration.</p>
+            <p>Additional best practices and references to follow for disposal program design and documentation are available from EH&S guides, public health and EPA remediation guidance, and institutional policies.</p>
+          </div>
+        </section>
+
+        {/* Appendices */}
+        <section className="safety-section">
+          <div className="safety-section-header">
+            <BookOpen className="safety-section-icon" />
+            <h2 className="safety-section-title">Appendices and Cross-Cutting</h2>
+          </div>
+
+          <div className="safety-card">
+            <h3>Nanomaterial handling standards</h3>
+            <p>Use engineering controls (source enclosure, HEPA LEV), administrative training, PPE (N95/N100 when airborne risk), glove boxes/fume hoods for powder handling; do not use horizontal laminar flow benches for hazardous nanoparticle work; ensure ventilation monitoring and recordkeeping.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>AuNP SDS and handling</h3>
+            <p>Ventilated workstations; avoid aerosol/dust; first aid and containment procedures; storage guidance.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>rGO safety literature</h3>
+            <p>Reported cytotoxicity mechanisms reinforce precautionary approach; maintain exposure minimization and medical surveillance where applicable.</p>
+          </div>
+
+          <div className="safety-card">
+            <h3>iGEM and institutional safety expectations</h3>
+            <p>BSL-2 compliance, training, waste segregation, documented emergency readiness.</p>
+          </div>
+
+          <div className="safety-card">
+            <p className="safety-conclusion">This integrated safety framework—anchored in CRMs for analytical use, BSL-2 lab discipline, nanomaterial controls, instrument-specific precautions, and controlled-substance waste compliance—ensures regulatory alignment, risk reduction, and ethical stewardship throughout the described iGEM experiments.</p>
+          </div>
+        </section>
+
       </div>
     </div>
   );

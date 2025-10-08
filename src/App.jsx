@@ -12,6 +12,7 @@ import NotebooksPage from './pages/NotebooksPage'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 import SafetyPage from './pages/SafetyPage'
 import { BusinessAnalysisPage } from './pages/BusinessAnalysisPage'
+import PitchDeckPage from './pages/PitchDeckPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -85,6 +86,8 @@ function App() {
         return <EntrepreneurshipPage />
       case 'business-analysis':
         return <BusinessAnalysisPage />
+      case 'pitch-deck':
+        return <PitchDeckPage />
       case 'team':
         return <TeamPage />
       default:
