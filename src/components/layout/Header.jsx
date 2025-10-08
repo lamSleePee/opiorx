@@ -218,7 +218,7 @@ const Header = ({ onNavigate }) => {
             {isEngagementDropdownOpen && (
               <div className="nav-dropdown-menu">
                 <a href="#" onClick={(e) => handleClick(e, 'humanpractices')}>
-                  <span>Human Practices</span>
+                  <span>Integrated Human Practices</span>
                 </a>
                 <div ref={entrepreneurshipDropdownRef}>
                   <a 
@@ -245,6 +245,12 @@ const Header = ({ onNavigate }) => {
                     </>
                   )}
                 </div>
+                <a href="#" onClick={(e) => handleClick(e, 'education')}>
+                  <span>Education</span>
+                </a>
+                <a href="#" onClick={(e) => handleClick(e, 'artgallery')}>
+                  <span>Art Gallery</span>
+                </a>
               </div>
             )}
           </div>

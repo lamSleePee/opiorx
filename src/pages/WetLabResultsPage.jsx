@@ -191,19 +191,14 @@ export default function WetLabResultsPage() {
                 </div>
                 
                 <div className="wetlab-experiment-grid">
-                  <div className="wetlab-data-section">
-                    {fitcGoData1uM.map((point, index) => (
-                      <div key={index} className="wetlab-data-point wetlab-data-blue">
-                        <div className="wetlab-data-label">
-                          <div className="wetlab-data-dot wetlab-dot-blue"></div>
-                          <span className="wetlab-data-concentration">{point.concentration}</span>
-                        </div>
-                        <div className="wetlab-data-values">
-                          <div className="wetlab-data-intensity">{point.intensity.toLocaleString()}</div>
-                          <div className="wetlab-data-reduction">{point.label}</div>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="wetlab-chart-section">
+                    <div className="wetlab-chart-container">
+                      <img
+                        src="/images/wetlab-results/imgwlr1.jpg"
+                        alt="1 μM FITC – Dose-Response Quenching"
+                        className="wetlab-chart-image"
+                      />
+                    </div>
                   </div>
                   
                   <div className="wetlab-observations">
@@ -238,19 +233,14 @@ export default function WetLabResultsPage() {
                 </div>
                 
                 <div className="wetlab-experiment-grid">
-                  <div className="wetlab-data-section">
-                    {fitcGoData10uM.map((point, index) => (
-                      <div key={index} className="wetlab-data-point wetlab-data-cyan">
-                        <div className="wetlab-data-label">
-                          <div className="wetlab-data-dot wetlab-dot-cyan"></div>
-                          <span className="wetlab-data-concentration">{point.concentration}</span>
-                        </div>
-                        <div className="wetlab-data-values">
-                          <div className="wetlab-data-intensity">{point.intensity.toLocaleString()}</div>
-                          <div className="wetlab-data-reduction">{point.label}</div>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="wetlab-chart-section">
+                    <div className="wetlab-chart-container">
+                      <img
+                        src="/images/wetlab-results/imgwlr2.jpg"
+                        alt="10 μM FITC – High Concentration Study"
+                        className="wetlab-chart-image"
+                      />
+                    </div>
                   </div>
                   
                   <div className="wetlab-concentration-effects">
@@ -275,7 +265,7 @@ export default function WetLabResultsPage() {
                   <div className="wetlab-chart-section">
                     <div className="wetlab-chart-container">
                       <img 
-                        src="/images/wetlab-results/img1.jpeg"
+                        src="/images/wetlab-results/imgwlr3.jpg"
                         alt="FITC + GO Fluorescence Intensity Chart"
                         className="wetlab-chart-image"
                       />
@@ -341,21 +331,17 @@ export default function WetLabResultsPage() {
                 </div>
                 
                 <div className="wetlab-experiment-grid">
-                  <div className="wetlab-kinetic-data">
-                    <div className="wetlab-kinetic-header">
-                      <div>Time (min)</div>
-                      <div className="wetlab-kinetic-center">0.5 μg/ml</div>
-                      <div className="wetlab-kinetic-center">12 μg/ml</div>
-                      <div className="wetlab-kinetic-center">25 μg/ml</div>
+                  <div className="wetlab-chart-section">
+                    <div className="wetlab-chart-container">
+                      <img 
+                        src="/images/wetlab-results/imgwlr4.jpg"
+                        alt="Graphene Oxide (GO) Kinetic Study"
+                        className="wetlab-chart-image"
+                      />
                     </div>
-                    {goKineticData.map((point, index) => (
-                      <div key={index} className="wetlab-kinetic-row">
-                        <div className="wetlab-kinetic-time">{point.time}</div>
-                        <div className="wetlab-kinetic-value">{point.go05}</div>
-                        <div className="wetlab-kinetic-value">{point.go12}</div>
-                        <div className="wetlab-kinetic-value">{point.go25}</div>
-                      </div>
-                    ))}
+                    <p className="wetlab-chart-caption">
+                      Figure: GO Kinetic Study - Time-dependent fluorescence quenching
+                    </p>
                   </div>
                   
                   <div className="wetlab-kinetic-observations">
@@ -393,7 +379,7 @@ export default function WetLabResultsPage() {
                   <div className="wetlab-chart-section">
                     <div className="wetlab-chart-container">
                       <img 
-                        src="/images/wetlab-results/img2.jpeg"
+                        src="/images/wetlab-results/imgwlr5.jpg"
                         alt="rGO Quenching Percentage Over Time"
                         className="wetlab-chart-image"
                       />
@@ -578,28 +564,17 @@ export default function WetLabResultsPage() {
                 </div>
                 
                 <div className="wetlab-experiment-grid">
-                  <div className="wetlab-comparison-data">
-                    <h5 className="wetlab-comparison-title">Fluorescence Response Data:</h5>
-                    {paperBasedData.map((system, index) => (
-                      <div key={index} className="wetlab-comparison-item">
-                        <div className="wetlab-comparison-header">
-                          <span className="wetlab-comparison-system">{system.system}</span>
-                          <div className={`wetlab-comparison-badge ${system.system.includes('AuNP') ? 'wetlab-badge-gold' : 'wetlab-badge-rgo'}`}>
-                            {system.system.includes('AuNP') ? 'Gold NPs' : 'rGO'}
-                          </div>
-                        </div>
-                        <div className="wetlab-comparison-values">
-                          <div className="wetlab-comparison-time">
-                            <span className="wetlab-comparison-label">0 min:</span>
-                            <div className="wetlab-comparison-number">{system.time0}</div>
-                          </div>
-                          <div className="wetlab-comparison-time">
-                            <span className="wetlab-comparison-label">5 min:</span>
-                            <div className="wetlab-comparison-number">{system.time5}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="wetlab-chart-section">
+                    <div className="wetlab-chart-container">
+                      <img 
+                        src="/images/wetlab-results/imgwlr6.jpg"
+                        alt="Nanoparticle Quencher Comparison"
+                        className="wetlab-chart-image"
+                      />
+                    </div>
+                    <p className="wetlab-chart-caption">
+                      Figure: Nanoparticle Quencher Comparison - AuNP vs rGO performance
+                    </p>
                   </div>
                   
                   <div className="wetlab-comparison-observations">

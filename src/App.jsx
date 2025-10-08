@@ -87,6 +87,20 @@ function App() {
         return <BusinessAnalysisPage />
       case 'pitch-deck':
         return <PitchDeckPage />
+      case 'education':
+        return (
+          <div className="page-header">
+            <h1>Education</h1>
+            <p>Educational resources and outreach programs coming soon...</p>
+          </div>
+        )
+      case 'artgallery':
+        return (
+          <div className="page-header">
+            <h1>Art Gallery</h1>
+            <p>Creative visualizations and artistic representations coming soon...</p>
+          </div>
+        )
       case 'team':
         return <TeamPage />
       default:
