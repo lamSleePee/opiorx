@@ -18,6 +18,24 @@ const ContributionPage = () => {
           </div>
         </section>
 
+        {/* Overview Section */}
+        <section className="contribution-section">
+          <div className="contribution-card">
+            <h2 className="contribution-section-title">Overview</h2>
+            <div className="overview-content">
+              <p>
+                Our iGEM project, Opio-Rx, addresses the urgent public health issue of opioid overdose through the development of an innovative, user-friendly biosensor for rapid opioid detection. Combining synthetic biology with a human-centric design approach, our project empowers users and healthcare providers with real-time monitoring to enable timely intervention.
+              </p>
+              <p>
+                Beyond technological innovation, we contribute to the iGEM community through open science, collaboration, and responsible human practices. A key component of our contribution is education: we strive to disseminate knowledge about synthetic biology and biosensor technology through workshops, outreach programs, and educational materials targeted at students and the wider public.
+              </p>
+              <p>
+                These efforts aim to raise awareness and understanding of synthetic biology's potential to solve real-world problems, fostering the next generation of researchers and responsible citizens. By sharing our research, data, and tools openly on the iGEM Registry, we advance both scientific progress and public education, reflecting the core values of iGEM in innovation, teamwork, and societal impact.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Bio Bricks Section */}
         <section className="contribution-section">
           <div className="contribution-card">
