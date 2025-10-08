@@ -186,7 +186,7 @@ export default function WetLabResultsPage() {
               {/* 1 μM FITC Results */}
               <div className="wetlab-experiment-section wetlab-experiment-blue">
                 <div className="wetlab-experiment-header">
-                  <div className="wetlab-badge wetlab-badge-blue">1 μM FITC</div>
+                  <div className="wetlab-badge wetlab-badge-blue" style={{fontFamily: 'Arial, sans-serif', fontSize: '18px', fontWeight: '700'}}>1 Micro Meters FITC</div>
                   <h4 className="wetlab-experiment-title">Dose-Response Quenching</h4>
                 </div>
                 
@@ -233,7 +233,7 @@ export default function WetLabResultsPage() {
               {/* 10 μM FITC Results */}
               <div className="wetlab-experiment-section wetlab-experiment-cyan">
                 <div className="wetlab-experiment-header">
-                  <div className="wetlab-badge wetlab-badge-cyan">10 μM FITC</div>
+                  <div className="wetlab-badge wetlab-badge-cyan" style={{fontFamily: 'Arial, sans-serif', fontSize: '18px', fontWeight: '700'}}>10 Micro Meters FITC</div>
                   <h4 className="wetlab-experiment-title">High Concentration Study</h4>
                 </div>
                 
