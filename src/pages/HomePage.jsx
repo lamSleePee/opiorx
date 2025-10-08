@@ -30,7 +30,7 @@ const HomePage = ({ onNavigate }) => {
     <div className="home-page">
       <ScrollText />
       <DeathCounter />
-      <HeroPitch />
+      {/* <HeroPitch /> */}
       <WorldMap />
       <OpioidTrendsChart />
       <GlobalStats />
@@ -38,6 +38,9 @@ const HomePage = ({ onNavigate }) => {
       <BreakthroughInnovations />
       <TechnologyHero />
       {/* <PatientCharts patientData={patientData} /> */}
+      {
+        
+      }
       <Features />
       {/* <Stats /> */}
     </div>

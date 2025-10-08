@@ -19,38 +19,36 @@ const TechnologyHero = () => {
           </video>
         </div>
         <div className="hero-content">
-          {/* Scientific diagram showing aptamer-opioid interaction */}
-          <div className="scientific-diagram">
-            <div className="diagram-container">
-              <div className="diagram-left">
-                <div className="aptamer-structure">
-                  <div className="aptamer-chain"></div>
-                  <div className="aptamer-label">Aptamer</div>
-                  <div className="gray-sphere"></div>
-                </div>
-                <div className="opioid-molecule">
-                  <div className="pink-sphere"></div>
-                  <div className="opioid-label">synthetic opioid</div>
-                </div>
-                <div className="interaction-text">Aptamer interacts with the synthetic opioid.</div>
+          {/* OpioRx Pitch Content */}
+          <div className="opiorx-pitch">
+            <div className="pitch-header">
+              <h1 className="pitch-title">
+                <span className="title-line">OpioRx: Real Time Non Invasive</span>
+                <span className="title-line">Detection of Opioids</span>
+              </h1>
+              <p className="pitch-description">
+                Transforming opioid detection with breakthrough innovation that saves lives through precision, speed, and intelligence
+              </p>
+            </div>
+            
+            <div className="pitch-stats">
+              <div className="stat-card">
+                <div className="stat-number">2-3 min</div>
+                <div className="stat-label">Detection Speed</div>
               </div>
-              
-              <div className="diagram-arrow">
-                <div className="arrow-right"></div>
+              <div className="stat-card">
+                <div className="stat-number">99%+</div>
+                <div className="stat-label">Accuracy</div>
               </div>
-              
-              <div className="diagram-right">
-                <div className="aptamer-coiled">
-                  <div className="aptamer-chain-coiled"></div>
-                  <div className="green-sphere"></div>
-                  <div className="distance-bracket">
-                    <div className="bracket-line"></div>
-                    <div className="distance-text">&gt;10 nm</div>
-                  </div>
-                </div>
-                <div className="turn-on-text">Turn On state</div>
-                <div className="conformational-text">Conformational change in the aptamer structure causes regain in fluorescence.</div>
+              <div className="stat-card">
+                <div className="stat-number">5+</div>
+                <div className="stat-label">Analytes</div>
               </div>
+            </div>
+            
+            <div className="pitch-actions">
+              <button className="btn-primary">Download Pitch Deck</button>
+              <button className="btn-secondary">Contact</button>
             </div>
           </div>
         </div>

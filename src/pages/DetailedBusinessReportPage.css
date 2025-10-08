@@ -1,0 +1,416 @@
+/* Detailed Business Report Page Styles */
+.dbr-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Hero Section */
+.dbr-hero {
+  position: relative;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.dbr-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.dbr-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.dbr-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dbr-hero-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.dbr-hero-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Container */
+.dbr-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Controls Section */
+.dbr-controls {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.dbr-controls-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.dbr-controls-left {
+  flex: 1;
+}
+
+.dbr-controls-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.dbr-controls-description {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.dbr-controls-right {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons */
+.dbr-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.dbr-btn-primary {
+  background: #0f766e;
+  color: white;
+}
+
+.dbr-btn-primary:hover {
+  background: #0d6b63;
+  transform: translateY(-1px);
+}
+
+.dbr-btn-secondary {
+  background: white;
+  color: #0f766e;
+  border: 2px solid #0f766e;
+}
+
+.dbr-btn-secondary:hover {
+  background: #0f766e;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.dbr-btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* PDF Viewer */
+.dbr-viewer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.dbr-viewer-container {
+  position: relative;
+}
+
+.dbr-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dbr-viewer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.dbr-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dbr-viewer-status {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.dbr-pdf-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+}
+
+.dbr-pdf-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dbr-pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #f9fafb;
+  display: block;
+}
+
+.dbr-pdf-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.dbr-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #0f766e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.dbr-pdf-loading p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.dbr-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.dbr-fallback-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.dbr-fallback-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.dbr-fallback-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.dbr-fallback-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Info Section */
+.dbr-info {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.dbr-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.dbr-info-card {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.dbr-info-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.dbr-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dbr-info-list li {
+  padding: 0.5rem 0;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dbr-info-list li:last-child {
+  border-bottom: none;
+}
+
+.dbr-info-list li:before {
+  content: "✓";
+  color: #0f766e;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Metrics */
+.dbr-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dbr-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.dbr-metric-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.dbr-metric-value {
+  font-weight: 600;
+  color: #0f766e;
+  font-size: 1.1rem;
+}
+
+/* Details */
+.dbr-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dbr-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dbr-detail:last-child {
+  border-bottom: none;
+}
+
+.dbr-detail-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.dbr-detail-value {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dbr-hero-title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .dbr-hero-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .dbr-controls-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dbr-controls-right {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .dbr-pdf-container {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .dbr-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

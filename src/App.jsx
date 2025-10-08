@@ -12,6 +12,7 @@ import NotebooksPage from './pages/NotebooksPage'
 import EntrepreneurshipPage from './pages/EntrepreneurshipPage'
 import SafetyPage from './pages/SafetyPage'
 import { BusinessAnalysisPage } from './pages/BusinessAnalysisPage'
+import DetailedBusinessReportPage from './pages/DetailedBusinessReportPage'
 import PitchDeckPage from './pages/PitchDeckPage'
 import ContributionPage from './pages/ContributionPage'
 import ProtocolsPage from './pages/ProtocolsPage'
@@ -85,6 +86,8 @@ function App() {
         return <EntrepreneurshipPage />
       case 'business-analysis':
         return <BusinessAnalysisPage />
+      case 'detailed-business-report':
+        return <DetailedBusinessReportPage />
       case 'pitch-deck':
         return <PitchDeckPage />
       case 'education':

@@ -1152,3 +1152,34 @@
     text-align: left;
   }
 }
+
+/* FRET Analysis Styling */
+.wetlab-fret-analysis {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.wetlab-fret-content {
+  max-width: none;
+}
+
+.wetlab-fret-text {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.wetlab-fret-text:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .wetlab-fret-text {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}

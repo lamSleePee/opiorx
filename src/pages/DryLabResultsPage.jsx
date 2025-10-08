@@ -254,6 +254,23 @@ const DryLabResultsPage = () => {
               <div className="dlr-note blue"><h4>LibDock Score Analysis</h4><p>{d.analysis.libDock}</p></div>
               <div className="dlr-note green"><h4>Energy Contributions</h4><p>{d.analysis.energy}</p></div>
               <div className="dlr-note purple"><h4>Ligand Interactions</h4><p>{d.analysis.interactions}</p></div>
+              
+              {/* DNA Animation for Fentanyl */}
+              {opioid === 'fentanyl' && (
+                <div className="dlr-dna-section">
+                  <h4 className="dlr-dna-title">3D Fentanyl Aptamer Interactions</h4>
+                  <div className="dlr-dna-container">
+                    <img 
+                      src="/images/drylab-results/dna.gif"
+                      alt="DNA Structure Animation"
+                      className="dlr-dna-image"
+                    />
+                  </div>
+                  <div className="dlr-dna-description">
+                    <p>Molecular dynamics simulation showing DNA aptamer conformational changes during fentanyl binding. The animation demonstrates the structural flexibility and binding mechanism of the aptamer sequence.</p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -265,6 +282,13 @@ const DryLabResultsPage = () => {
             <div className="dlr-grid2">
               <div className="dlr-panel">
                 <h3>RMSD Plot Analysis</h3>
+                <div className="dlr-chart-container">
+                  <img 
+                    src="/images/drylab-results/graph1.jpg"
+                    alt="RMSD Plot Analysis"
+                    className="dlr-chart-image"
+                  />
+                </div>
                 <div className="dlr-code">{SIM.rmsdEq}</div>
                 <ul className="dlr-kv">
                   <li><span>Slope</span><b>0.0021 nm/ns</b></li>
@@ -275,6 +299,13 @@ const DryLabResultsPage = () => {
               </div>
               <div className="dlr-panel">
                 <h3>RMSF Plot Analysis</h3>
+                <div className="dlr-chart-container">
+                  <img 
+                    src="/images/drylab-results/graph2.jpg"
+                    alt="RMSF Plot Analysis"
+                    className="dlr-chart-image"
+                  />
+                </div>
                 <div className="dlr-badges">{SIM.peaks.map(p => <span key={p} className="dlr-badge red">Residue {p}</span>)}</div>
                 <div className="dlr-kv single"><span>Stable Regions</span><b>~ {SIM.trough} nm</b></div>
                 <div className="dlr-note purple"><p>{SIM.rmsfDesc}</p></div>

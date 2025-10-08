@@ -86,25 +86,25 @@ export default function WetLabResultsPage() {
   const experimentSections = [
     {
       id: 'fitc-go-quenching',
-      title: 'FITC-GO Fluorescence Quenching Studies',
-      icon: Zap,
+      title: 'Nano particle (AuNP) Synthesis and characterisation for nano particle based sensors',
+      icon: Beaker,
       color: 'blue'
     },
     {
       id: 'kinetic-analysis',
-      title: 'Kinetic Analysis & Time-Dependent Effects',
-      icon: Timer,
+      title: 'Kinetic Analysis & Fluorescent Study for optical sensing',
+      icon: Activity,
       color: 'emerald'
     },
     {
       id: 'fentanyl-detection',
-      title: 'Fentanyl Detection & Recovery Studies',
+      title: 'Fentanyl detection and intensity studies',
       icon: Target,
       color: 'purple'
     },
     {
       id: 'paper-based',
-      title: 'Paper-Based Device Optimization',
+      title: 'paper based ssensing device optimisation',
       icon: FileText,
       color: 'orange'
     }
@@ -226,7 +226,7 @@ export default function WetLabResultsPage() {
               </div>
 
               {/* 10 μM FITC Results */}
-              <div className="wetlab-experiment-section wetlab-experiment-cyan">
+              <div className="wetlab-experiment-section wetlab-experiment-purple">
                 <div className="wetlab-experiment-header">
                   <div className="wetlab-badge wetlab-badge-cyan" style={{fontFamily: 'Arial, sans-serif', fontSize: '18px', fontWeight: '700'}}>10 Micro Meters FITC</div>
                   <h4 className="wetlab-experiment-title">High Concentration Study</h4>
@@ -419,6 +419,25 @@ export default function WetLabResultsPage() {
                   </div>
                 </div>
               </div>
+
+              {/* FRET Mechanism Analysis */}
+              <div className="wetlab-experiment-section wetlab-experiment-purple">
+                <div className="wetlab-experiment-header">
+                  <Atom className="wetlab-experiment-icon wetlab-icon-purple" />
+                  <h4 className="wetlab-experiment-title">FRET Mechanism Analysis</h4>
+                </div>
+                
+                <div className="wetlab-fret-analysis">
+                  <div className="wetlab-fret-content">
+                    <p className="wetlab-fret-text">
+                      The fluorescence quenching observed upon addition of gold nanoparticles (AuNPs) to the FAM-labelled fentanyl aptamer confirms the occurrence of Förster Resonance Energy Transfer (FRET) between the donor fluorophore (FAM) and the acceptor (AuNPs). The efficient quenching of approximately 98% at 50 nM aptamer concentration within 10 minutes indicates a close proximity between the FAM and AuNP surface, a prerequisite for effective energy transfer.
+                    </p>
+                    <p className="wetlab-fret-text">
+                      Upon subsequent addition of fentanyl at increasing concentrations (20, 25, 50, and 100 nM), a gradual fluorescence recovery was observed. This recovery is attributed to the specific binding of fentanyl to its aptamer, leading to conformational changes and separation of the FAM donor from the AuNP acceptor, thereby disrupting the FRET process. The fluorescence restoration correlates with fentanyl concentration, confirming that the quenching and recovery behavior is governed by a FRET-based mechanism rather than non-specific adsorption or static quenching.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -513,9 +532,9 @@ export default function WetLabResultsPage() {
               </div>
 
               {/* Extended Concentration Study */}
-              <div className="wetlab-experiment-section wetlab-experiment-cyan">
+              <div className="wetlab-experiment-section wetlab-experiment-purple">
                 <div className="wetlab-experiment-header">
-                  <BarChart3 className="wetlab-experiment-icon wetlab-icon-cyan" />
+                  <BarChart3 className="wetlab-experiment-icon wetlab-icon-purple" />
                   <h4 className="wetlab-experiment-title">Extended Concentration Range (5-25 nM)</h4>
                 </div>
                 
@@ -597,6 +616,25 @@ export default function WetLabResultsPage() {
                         <span>Different quenching mechanisms: LSPR (AuNP) vs π-π stacking (rGO)</span>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* FRET Mechanism Analysis */}
+              <div className="wetlab-experiment-section wetlab-experiment-purple">
+                <div className="wetlab-experiment-header">
+                  <Atom className="wetlab-experiment-icon wetlab-icon-purple" />
+                  <h4 className="wetlab-experiment-title">FRET Mechanism Analysis</h4>
+                </div>
+                
+                <div className="wetlab-fret-analysis">
+                  <div className="wetlab-fret-content">
+                    <p className="wetlab-fret-text">
+                      The fluorescence quenching observed upon addition of gold nanoparticles (AuNPs) to the FAM-labelled fentanyl aptamer confirms the occurrence of Förster Resonance Energy Transfer (FRET) between the donor fluorophore (FAM) and the acceptor (AuNPs). The efficient quenching of approximately 98% at 50 nM aptamer concentration within 10 minutes indicates a close proximity between the FAM and AuNP surface, a prerequisite for effective energy transfer.
+                    </p>
+                    <p className="wetlab-fret-text">
+                      Upon subsequent addition of fentanyl at increasing concentrations (20, 25, 50, and 100 nM), a gradual fluorescence recovery was observed. This recovery is attributed to the specific binding of fentanyl to its aptamer, leading to conformational changes and separation of the FAM donor from the AuNP acceptor, thereby disrupting the FRET process. The fluorescence restoration correlates with fentanyl concentration, confirming that the quenching and recovery behavior is governed by a FRET-based mechanism rather than non-specific adsorption or static quenching.
+                    </p>
                   </div>
                 </div>
               </div>

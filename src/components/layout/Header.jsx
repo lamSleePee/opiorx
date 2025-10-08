@@ -233,15 +233,18 @@ const Header = ({ onNavigate }) => {
                   </a>
                   {isEntrepreneurshipDropdownOpen && (
                     <>
-                      <a href="#" onClick={(e) => handleClick(e, 'entrepreneurship')} className="nav-dropdown-sub-item">
-                        <span>Overview</span>
-                      </a>
-                      <a href="#" onClick={(e) => handleClick(e, 'business-analysis')} className="nav-dropdown-sub-item">
-                        <span>Business Analysis</span>
-                      </a>
-                      <a href="#" onClick={(e) => handleClick(e, 'pitch-deck')} className="nav-dropdown-sub-item">
-                        <span>Pitch Deck</span>
-                      </a>
+                <a href="#" onClick={(e) => handleClick(e, 'entrepreneurship')} className="nav-dropdown-sub-item">
+                  <span>Overview</span>
+                </a>
+                <a href="#" onClick={(e) => handleClick(e, 'business-analysis')} className="nav-dropdown-sub-item">
+                  <span>Business Analysis</span>
+                </a>
+                <a href="#" onClick={(e) => handleClick(e, 'detailed-business-report')} className="nav-dropdown-sub-item">
+                  <span>Detailed Business Report</span>
+                </a>
+                <a href="#" onClick={(e) => handleClick(e, 'pitch-deck')} className="nav-dropdown-sub-item">
+                  <span>Pitch Deck</span>
+                </a>
                     </>
                   )}
                 </div>

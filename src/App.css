@@ -5011,178 +5011,210 @@ body {
   }
 }
 
-/* Scientific Diagram Styles */
-.scientific-diagram {
-  padding: 2rem;
-  background: white;
+/* OpioRx Pitch Styles */
+.opiorx-pitch {
+  padding: 1rem 0.8rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.diagram-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.diagram-left,
-.diagram-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.aptamer-structure {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.aptamer-chain {
-  width: 80px;
-  height: 20px;
-  background: #1e40af;
-  border-radius: 10px;
-  position: relative;
-}
-
-.aptamer-chain::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 10px;
-  width: 60px;
-  height: 30px;
-  background: #1e40af;
-  border-radius: 15px;
-}
-
-.aptamer-label {
-  font-size: 0.9rem;
-  color: #374151;
-  font-weight: 600;
-}
-
-.gray-sphere {
-  width: 12px;
-  height: 12px;
-  background: #6b7280;
-  border-radius: 50%;
-  margin-left: 0.5rem;
-}
-
-.opioid-molecule {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.pink-sphere {
-  width: 24px;
-  height: 24px;
-  background: #ec4899;
-  border-radius: 50%;
-}
-
-.opioid-label {
-  font-size: 0.8rem;
-  color: #374151;
-  font-weight: 500;
-}
-
-.interaction-text {
-  font-size: 0.9rem;
-  color: #6b7280;
   text-align: center;
-  margin-top: 1rem;
-}
-
-.diagram-arrow {
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-left: 20px solid #374151;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+.pitch-header {
+  margin-bottom: 0.8rem;
 }
 
-.aptamer-coiled {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.pitch-title {
+  font-size: 20px !important;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 0.3rem;
+  line-height: 1.1;
 }
 
-.aptamer-chain-coiled {
-  width: 60px;
-  height: 40px;
-  background: #1e40af;
-  border-radius: 20px;
-  position: relative;
+.title-line {
+  display: block;
 }
 
-.aptamer-chain-coiled::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 5px;
-  width: 50px;
-  height: 50px;
-  background: #1e40af;
-  border-radius: 25px;
-}
-
-.green-sphere {
-  width: 12px;
-  height: 12px;
-  background: #10b981;
-  border-radius: 50%;
-  margin-left: 0.5rem;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
-}
-
-.distance-bracket {
-  position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.bracket-line {
-  width: 2px;
-  height: 30px;
-  background: #374151;
+.pitch-description {
+  font-size: 0.7rem;
+  color: #374151;
+  line-height: 1.2;
+  max-width: 300px;
   margin: 0 auto;
 }
 
-.distance-text {
-  font-size: 0.8rem;
-  color: #374151;
-  font-weight: 600;
-  margin-top: 0.5rem;
+.pitch-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
-.turn-on-text {
-  font-size: 1rem;
-  color: #374151;
-  font-weight: 700;
-  margin-top: 1rem;
-}
-
-.conformational-text {
-  font-size: 0.9rem;
-  color: #6b7280;
+.stat-card {
+  background: white;
+  padding: 0.6rem 0.4rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 60px;
   text-align: center;
-  margin-top: 0.5rem;
-  line-height: 1.4;
+}
+
+.stat-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.pitch-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: #0f766e;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0d6b63;
+}
+
+.btn-secondary {
+  background: white;
+  color: #0f766e;
+  border: 1px solid #0f766e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #0f766e;
+  color: white;
+}
+
+/* Dry Lab Results Chart Images */
+.dlr-chart-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.dlr-chart-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* DNA Animation Styling */
+.dlr-dna-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.dlr-dna-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.dlr-dna-description {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border-left: 4px solid #0f766e;
+}
+
+.dlr-dna-description p {
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* DNA Section within Analysis Tab */
+.dlr-dna-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.dlr-dna-title {
+  color: #0f766e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pitch-title {
+    font-size: 2rem;
+  }
+  
+  .pitch-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    min-width: auto;
+  }
+  
+  .pitch-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 200px;
+  }
 }
